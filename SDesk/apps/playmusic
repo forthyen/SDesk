@@ -1,0 +1,61 @@
+#!/bin/sh
+
+echo "playmusic $1 $2 $3" > /tmp/playmusic.log
+
+/usr/local/bin/ecp mp3player QUIT
+/usr/local/bin/ecp sonicaApp exit
+touch /tmp/stop.vlc
+if [ -f /tmp/vlc.runs ]; then
+    # There is a vlc running... stop it.
+    touch /tmp/stop.vlc
+    sleep 3
+    touch /tmp/stop.vlc
+fi
+
+case `/usr/bin/basename $1` in
+    'sonica')
+        if [ -f /tmp/songlist -a "$3" == "1" ]; then
+            FILES=$(/bin/cat /tmp/songlist)
+            rm /tmp/songlist
+        else
+            FILES=$(/usr/bin/find "$2" -name \*.mp3 -print)
+        fi
+        echo "playmusic $FILES" >> /tmp/playmusic.log
+        IFS="
+"
+        for fileName in $FILES; do
+            RESULT=`/usr/local/bin/ecp sonicaApp append $fileName`
+            echo "playmusic sonica $RESULT" >> /tmp/playmusic.log
+            if [ "$RESULT" != "sonicaApp: file appended" ]; then
+                /usr/local/bin/ecp mp3player QUIT
+                echo "\"$1\" -b -s \"$fileName\" &" >> /tmp/playmusic.log
+                "$1" -b -f "$2" &
+                echo "playmusic sonica $?" >> /tmp/playmusic.log
+                sleep 2
+            fi
+        done
+        /usr/local/bin/ecp sonicaApp play
+        ;;
+    *)
+        if [ -f /tmp/songlist -a "$3" == "1" ]; then
+            FILES=$(/bin/cat /tmp/songlist)
+            rm /tmp/songlist
+        else
+            FILES=$(/usr/bin/find "$2" -name \*.mp3 -print)
+        fi
+        echo "playmusic $FILES" >> /tmp/playmusic.log
+        IFS="
+"
+        for fileName in $FILES; do
+            RESULT=`/usr/local/bin/ecp mp3player APPEND $fileName`
+            echo "playmusic $RESULT" >> /tmp/playmusic.log
+            if [ "$RESULT" != "mp3player: file appended" ]; then
+                /usr/local/bin/mp3player --repeat=none "$fileName" &
+                echo "playmusic retry" >> /tmp/playmusic.log
+                sleep 2
+            fi
+        done
+        ;;
+esac
+
+# eof

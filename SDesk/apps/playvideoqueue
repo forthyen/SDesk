@@ -1,0 +1,28 @@
+#!/bin/sh
+
+echo "playvideoqueue $1" > /tmp/playvideoqueue.log
+
+if [ -f /tmp/videoqueue ]; then
+    FILES=$(/bin/cat /tmp/videoqueue)
+    rm /tmp/videoqueue
+else
+    echo "playvideoqueue no queue" >> /tmp/playvideoqueue.log
+    exit
+fi
+echo "playvideoqueue $FILES" >> /tmp/playvideoqueue.log
+IFS="
+"
+
+for fileName in $FILES; do
+    echo "/usr/local/bin/ecp MPlay Queue$fileName" >> /tmp/playvideoqueue.log
+    RESULT=`/usr/local/bin/ecp MPlay Queue$fileName`
+    echo "playvideoqueue $RESULT" >> /tmp/playvideoqueue.log
+    if [ "$RESULT" != "MPlay: OK" ]; then
+        "$1" -maxbuffer -nobrowserdelete -exitatend -FixTS "$fileName" &
+        echo "plavideoqueue retry" >> /tmp/playvideoqueue.log
+        sleep 4
+    fi
+done
+
+# eof
+

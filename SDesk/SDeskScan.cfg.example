@@ -1,0 +1,47 @@
+%mplay
+myapps/MPlay.app
+%weathersix
+myapps/WeatherSix
+%pictures
+/mnt/smb/terra/pictures
+%songs
+/mnt/smb/terra/audio
+%movies
+/mnt/smb/terra/video
+%favoritelist
+Dads Favorites
+%favoritelist
+Moms Favorites
+%favoritelist
+Little One Favorites
+%favoritelist
+Little Two Favorites
+%slideshow
+Grandpas Slideshow
+%status1
+apps/pingterra
+%status1interval
+60
+%excluded
+doc
+%excluded
+Develop
+%excluded
+folder.jpg
+%excluded
+cover.jpg
+%excluded
+id3lib-3.8.3
+%excluded
+libxml2-2.6.18
+%excluded
+Recycle
+%excluded
+System Volume Information
+%custominfo
+apps/switchVideo
+%status1
+apps/pingterra
+%status1interval
+60
+%usevlc

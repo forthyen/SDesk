@@ -1,0 +1,9 @@
+#!/bin/sh
+/bin/date > /tmp/sdeskdaily.log
+/bin/ntpdate ntp.apple.com
+cd "/mnt/smb/terra/media/Apps/Develop/src/SDesk/"
+/bin/echo start >> /tmp/sdeskdaily.log
+"/mnt/smb/terra/media/Apps/Develop/src/SDesk//SDeskScan" tags "/mnt/smb/terra/media/Apps/Develop/src/SDesk/"
+/bin/echo next >> /tmp/sdeskdaily.log
+"/mnt/smb/terra/media/Apps/Develop/src/SDesk//SDeskScan" radio "/mnt/smb/terra/media/Apps/Develop/src/SDesk/"
+/bin/echo done >> /tmp/sdeskdaily.log

@@ -1,0 +1,1275 @@
+# Makefile for PO directory in any package using GNU gettext.
+# Copyright (C) 1995-1997, 2000-2002 by Ulrich Drepper <drepper@gnu.ai.mit.edu>
+#
+# This file can be copied and used freely without restrictions.  It can
+# be used in projects which are not available under the GNU General Public
+# License but which still want to provide support for the GNU gettext
+# functionality.
+# Please note that the actual code of GNU gettext is covered by the GNU
+# General Public License and is *not* in the public domain.
+
+PACKAGE = vlc
+VERSION = 0.8.1
+
+SHELL = /bin/sh
+
+
+srcdir = .
+top_srcdir = ..
+
+
+prefix = /usr
+exec_prefix = ${prefix}
+datadir = ${prefix}/share
+localedir = $(datadir)/locale
+gettextsrcdir = $(datadir)/gettext/po
+
+INSTALL = ../autotools/install-sh -c
+INSTALL_DATA = ${INSTALL} -m 644
+MKINSTALLDIRS = autotools/mkinstalldirs
+mkinstalldirs = $(SHELL) `case "$(MKINSTALLDIRS)" in /*) echo "$(MKINSTALLDIRS)" ;; *) echo "$(top_builddir)/$(MKINSTALLDIRS)" ;; esac`
+
+GMSGFMT = /usr/bin/msgfmt
+MSGFMT = /usr/bin/msgfmt
+XGETTEXT = : --keyword=_NS --keyword=_ANS
+MSGMERGE = msgmerge
+MSGMERGE_UPDATE = : --update
+MSGINIT = msginit
+MSGCONV = msgconv
+MSGFILTER = msgfilter
+
+POFILES =  da.po de.po en_GB.po es.po fr.po hu.po it.po ja.po nl.po no.po pl.po pt_BR.po ru.po sv.po
+GMOFILES =  da.gmo de.gmo en_GB.gmo es.gmo fr.gmo hu.gmo it.gmo ja.gmo nl.gmo no.gmo pl.gmo pt_BR.gmo ru.gmo sv.gmo
+UPDATEPOFILES =  da.po-update de.po-update en_GB.po-update es.po-update fr.po-update hu.po-update it.po-update ja.po-update nl.po-update no.po-update pl.po-update pt_BR.po-update ru.po-update sv.po-update
+DUMMYPOFILES =  da.nop de.nop en_GB.nop es.nop fr.nop hu.nop it.nop ja.nop nl.nop no.nop pl.nop pt_BR.nop ru.nop sv.nop
+DISTFILES.common = Makefile.in.in Makevars remove-potcdate.sin \
+$(DISTFILES.common.extra1) $(DISTFILES.common.extra2) $(DISTFILES.common.extra3)
+DISTFILES = $(DISTFILES.common) POTFILES.in $(DOMAIN).pot \
+$(POFILES) $(GMOFILES) \
+$(DISTFILES.extra1) $(DISTFILES.extra2) $(DISTFILES.extra3)
+
+POTFILES = \
+     ../include/aout_internal.h \
+     ../include/audio_output.h \
+     ../include/beos_specific.h \
+     ../include/charset.h \
+     ../include/codecs.h \
+     ../include/configuration.h \
+     ../include/darwin_specific.h \
+     ../include/intf_eject.h \
+     ../include/iso_lang.h \
+     ../include/main.h \
+     ../include/mmx.h \
+     ../include/modules.h \
+     ../include/modules_inner.h \
+     ../include/mtime.h \
+     ../include/network.h \
+     ../include/os_specific.h \
+     ../include/osd.h \
+     ../include/snapshot.h \
+     ../include/stream_output.h \
+     ../include/variables.h \
+     ../include/video_output.h \
+     ../include/vlc/aout.h \
+     ../include/vlc/decoder.h \
+     ../include/vlc/input.h \
+     ../include/vlc/intf.h \
+     ../include/vlc/sout.h \
+     ../include/vlc/vlc.h \
+     ../include/vlc/vout.h \
+     ../include/vlc_access.h \
+     ../include/vlc_bits.h \
+     ../include/vlc_block.h \
+     ../include/vlc_block_helper.h \
+     ../include/vlc_codec.h \
+     ../include/vlc_common.h \
+     ../include/vlc_config.h \
+     ../include/vlc_cpu.h \
+     ../include/vlc_demux.h \
+     ../include/vlc_error.h \
+     ../include/vlc_es.h \
+     ../include/vlc_es_out.h \
+     ../include/vlc_filter.h \
+     ../include/vlc_help.h \
+     ../include/vlc_httpd.h \
+     ../include/vlc_input.h \
+     ../include/vlc_interface.h \
+     ../include/vlc_keys.h \
+     ../include/vlc_messages.h \
+     ../include/vlc_meta.h \
+     ../include/vlc_objects.h \
+     ../include/vlc_playlist.h \
+     ../include/vlc_spu.h \
+     ../include/vlc_stream.h \
+     ../include/vlc_threads.h \
+     ../include/vlc_threads_funcs.h \
+     ../include/vlc_tls.h \
+     ../include/vlc_video.h \
+     ../include/vlc_vlm.h \
+     ../include/vlc_vod.h \
+     ../include/vout_synchro.h \
+     ../include/win32_specific.h \
+     ../src/audio_output/common.c \
+     ../src/audio_output/dec.c \
+     ../src/audio_output/filters.c \
+     ../src/audio_output/input.c \
+     ../src/audio_output/intf.c \
+     ../src/audio_output/mixer.c \
+     ../src/audio_output/output.c \
+     ../src/extras/dirent.c \
+     ../src/extras/dirent.h \
+     ../src/extras/getopt.c \
+     ../src/extras/getopt.h \
+     ../src/extras/getopt1.c \
+     ../src/extras/libc.c \
+     ../src/input/access.c \
+     ../src/input/clock.c \
+     ../src/input/control.c \
+     ../src/input/decoder.c \
+     ../src/input/demux.c \
+     ../src/input/es_out.c \
+     ../src/input/input.c \
+     ../src/input/input_internal.h \
+     ../src/input/stream.c \
+     ../src/input/subtitles.c \
+     ../src/input/var.c \
+     ../src/interface/interface.c \
+     ../src/interface/intf_eject.c \
+     ../src/libvlc.c \
+     ../src/libvlc.h \
+     ../src/misc/beos_specific.cpp \
+     ../src/misc/block.c \
+     ../src/misc/charset.c \
+     ../src/misc/configuration.c \
+     ../src/misc/cpu.c \
+     ../src/misc/darwin_specific.m \
+     ../src/misc/error.c \
+     ../src/misc/httpd.c \
+     ../src/misc/iso-639_def.h \
+     ../src/misc/iso_lang.c \
+     ../src/misc/messages.c \
+     ../src/misc/modules.c \
+     ../src/misc/mtime.c \
+     ../src/misc/net.c \
+     ../src/misc/objects.c \
+     ../src/misc/threads.c \
+     ../src/misc/tls.c \
+     ../src/misc/variables.c \
+     ../src/misc/vlm.c \
+     ../src/misc/win32_specific.c \
+     ../src/playlist/group.c \
+     ../src/playlist/info.c \
+     ../src/playlist/item-ext.c \
+     ../src/playlist/item.c \
+     ../src/playlist/loadsave.c \
+     ../src/playlist/playlist.c \
+     ../src/playlist/sort.c \
+     ../src/stream_output/announce.c \
+     ../src/stream_output/sap.c \
+     ../src/stream_output/stream_output.c \
+     ../src/video_output/video_output.c \
+     ../src/video_output/video_text.c \
+     ../src/video_output/video_widgets.c \
+     ../src/video_output/vout_intf.c \
+     ../src/video_output/vout_pictures.c \
+     ../src/video_output/vout_pictures.h \
+     ../src/video_output/vout_subpictures.c \
+     ../src/video_output/vout_synchro.c \
+     ../src/vlc.c \
+     ../modules/access/cdda.c \
+     ../modules/access/cdda/access.c \
+     ../modules/access/cdda/access.h \
+     ../modules/access/cdda/callback.c \
+     ../modules/access/cdda/callback.h \
+     ../modules/access/cdda/cdda.c \
+     ../modules/access/cdda/cdda.h \
+     ../modules/access/cdda/info.c \
+     ../modules/access/cdda/info.h \
+     ../modules/access/directory.c \
+     ../modules/access/dshow/common.h \
+     ../modules/access/dshow/crossbar.cpp \
+     ../modules/access/dshow/dshow.cpp \
+     ../modules/access/dshow/filter.cpp \
+     ../modules/access/dshow/filter.h \
+     ../modules/access/dvb/access.c \
+     ../modules/access/dvb/dvb.h \
+     ../modules/access/dvb/en50221.c \
+     ../modules/access/dvb/linux_dvb.c \
+     ../modules/access/dvdnav.c \
+     ../modules/access/dvdread.c \
+     ../modules/access/file.c \
+     ../modules/access/ftp.c \
+     ../modules/access/http.c \
+     ../modules/access/mms/asf.c \
+     ../modules/access/mms/asf.h \
+     ../modules/access/mms/buffer.c \
+     ../modules/access/mms/buffer.h \
+     ../modules/access/mms/mms.c \
+     ../modules/access/mms/mms.h \
+     ../modules/access/mms/mmsh.c \
+     ../modules/access/mms/mmsh.h \
+     ../modules/access/mms/mmstu.c \
+     ../modules/access/mms/mmstu.h \
+     ../modules/access/pvr/pvr.c \
+     ../modules/access/pvr/videodev2.h \
+     ../modules/access/satellite/access.c \
+     ../modules/access/satellite/dvb.c \
+     ../modules/access/satellite/dvb.h \
+     ../modules/access/satellite/satellite.c \
+     ../modules/access/screen/beos.cpp \
+     ../modules/access/screen/mac.c \
+     ../modules/access/screen/screen.c \
+     ../modules/access/screen/screen.h \
+     ../modules/access/screen/win32.c \
+     ../modules/access/screen/x11.c \
+     ../modules/access/slp.c \
+     ../modules/access/tcp.c \
+     ../modules/access/udp.c \
+     ../modules/access/v4l/v4l.c \
+     ../modules/access/v4l/videodev_mjpeg.h \
+     ../modules/access/vcd/cdrom.c \
+     ../modules/access/vcd/cdrom.h \
+     ../modules/access/vcd/cdrom_internals.h \
+     ../modules/access/vcd/vcd.c \
+     ../modules/access/vcdx/access.c \
+     ../modules/access/vcdx/cdrom.c \
+     ../modules/access/vcdx/cdrom.h \
+     ../modules/access/vcdx/demux.c \
+     ../modules/access/vcdx/intf.c \
+     ../modules/access/vcdx/intf.h \
+     ../modules/access/vcdx/vcd.c \
+     ../modules/access/vcdx/vcd.h \
+     ../modules/access/vcdx/vcdplayer.c \
+     ../modules/access/vcdx/vcdplayer.h \
+     ../modules/access_output/dummy.c \
+     ../modules/access_output/file.c \
+     ../modules/access_output/http.c \
+     ../modules/access_output/udp.c \
+     ../modules/audio_filter/channel_mixer/headphone.c \
+     ../modules/audio_filter/channel_mixer/simple.c \
+     ../modules/audio_filter/channel_mixer/trivial.c \
+     ../modules/audio_filter/converter/a52tofloat32.c \
+     ../modules/audio_filter/converter/a52tospdif.c \
+     ../modules/audio_filter/converter/dtstofloat32.c \
+     ../modules/audio_filter/converter/dtstospdif.c \
+     ../modules/audio_filter/converter/fixed32tofloat32.c \
+     ../modules/audio_filter/converter/fixed32tos16.c \
+     ../modules/audio_filter/converter/float32tos16.c \
+     ../modules/audio_filter/converter/float32tos8.c \
+     ../modules/audio_filter/converter/float32tou16.c \
+     ../modules/audio_filter/converter/float32tou8.c \
+     ../modules/audio_filter/converter/mpgatofixed32.c \
+     ../modules/audio_filter/converter/s16tofixed32.c \
+     ../modules/audio_filter/converter/s16tofloat32.c \
+     ../modules/audio_filter/converter/s16tofloat32swab.c \
+     ../modules/audio_filter/converter/s8tofloat32.c \
+     ../modules/audio_filter/converter/u8tofixed32.c \
+     ../modules/audio_filter/converter/u8tofloat32.c \
+     ../modules/audio_filter/equalizer.c \
+     ../modules/audio_filter/equalizer_presets.h \
+     ../modules/audio_filter/format.c \
+     ../modules/audio_filter/normvol.c \
+     ../modules/audio_filter/resampler/bandlimited.c \
+     ../modules/audio_filter/resampler/bandlimited.h \
+     ../modules/audio_filter/resampler/coreaudio.c \
+     ../modules/audio_filter/resampler/linear.c \
+     ../modules/audio_filter/resampler/trivial.c \
+     ../modules/audio_filter/resampler/ugly.c \
+     ../modules/audio_mixer/float32.c \
+     ../modules/audio_mixer/spdif.c \
+     ../modules/audio_mixer/trivial.c \
+     ../modules/audio_output/alsa.c \
+     ../modules/audio_output/arts.c \
+     ../modules/audio_output/coreaudio.c \
+     ../modules/audio_output/directx.c \
+     ../modules/audio_output/esd.c \
+     ../modules/audio_output/file.c \
+     ../modules/audio_output/hd1000a.cpp \
+     ../modules/audio_output/oss.c \
+     ../modules/audio_output/portaudio.c \
+     ../modules/audio_output/sdl.c \
+     ../modules/audio_output/waveout.c \
+     ../modules/codec/a52.c \
+     ../modules/codec/adpcm.c \
+     ../modules/codec/araw.c \
+     ../modules/codec/cinepak.c \
+     ../modules/codec/cmml/browser_open.c \
+     ../modules/codec/cmml/browser_open.h \
+     ../modules/codec/cmml/cmml.c \
+     ../modules/codec/cmml/history.c \
+     ../modules/codec/cmml/history.h \
+     ../modules/codec/cmml/intf.c \
+     ../modules/codec/cmml/xarray.c \
+     ../modules/codec/cmml/xarray.h \
+     ../modules/codec/cmml/xlist.c \
+     ../modules/codec/cmml/xlist.h \
+     ../modules/codec/cmml/xstrcat.h \
+     ../modules/codec/cmml/xtag.c \
+     ../modules/codec/cmml/xtag.h \
+     ../modules/codec/cmml/xurl.c \
+     ../modules/codec/cmml/xurl.h \
+     ../modules/codec/dmo/buffer.c \
+     ../modules/codec/dmo/dmo.c \
+     ../modules/codec/dmo/dmo.h \
+     ../modules/codec/dts.c \
+     ../modules/codec/dv.c \
+     ../modules/codec/dvbsub.c \
+     ../modules/codec/faad.c \
+     ../modules/codec/ffmpeg/audio.c \
+     ../modules/codec/ffmpeg/chroma.c \
+     ../modules/codec/ffmpeg/demux.c \
+     ../modules/codec/ffmpeg/encoder.c \
+     ../modules/codec/ffmpeg/ffmpeg.c \
+     ../modules/codec/ffmpeg/ffmpeg.h \
+     ../modules/codec/ffmpeg/postprocess.c \
+     ../modules/codec/ffmpeg/video.c \
+     ../modules/codec/ffmpeg/video_filter.c \
+     ../modules/codec/flac.c \
+     ../modules/codec/libmpeg2.c \
+     ../modules/codec/lpcm.c \
+     ../modules/codec/mash.cpp \
+     ../modules/codec/mpeg_audio.c \
+     ../modules/codec/ogt/common.c \
+     ../modules/codec/ogt/common.h \
+     ../modules/codec/ogt/cvd.c \
+     ../modules/codec/ogt/cvd.h \
+     ../modules/codec/ogt/cvd_parse.c \
+     ../modules/codec/ogt/ogt.c \
+     ../modules/codec/ogt/ogt.h \
+     ../modules/codec/ogt/ogt_parse.c \
+     ../modules/codec/ogt/pixmap.c \
+     ../modules/codec/ogt/pixmap.h \
+     ../modules/codec/ogt/render.c \
+     ../modules/codec/ogt/render.h \
+     ../modules/codec/ogt/subtitle.h \
+     ../modules/codec/ogt/write_png.c \
+     ../modules/codec/ogt/write_png.h \
+     ../modules/codec/quicktime.c \
+     ../modules/codec/rawvideo.c \
+     ../modules/codec/speex.c \
+     ../modules/codec/spudec/parse.c \
+     ../modules/codec/spudec/spudec.c \
+     ../modules/codec/spudec/spudec.h \
+     ../modules/codec/subsdec.c \
+     ../modules/codec/tarkin.c \
+     ../modules/codec/theora.c \
+     ../modules/codec/toolame.c \
+     ../modules/codec/vorbis.c \
+     ../modules/codec/x264.c \
+     ../modules/codec/xvid.c \
+     ../modules/control/corba/corba.c \
+     ../modules/control/corba/mediacontrol-core.c \
+     ../modules/control/corba/mediacontrol-core.h \
+     ../modules/control/corba/mediacontrol-init.c \
+     ../modules/control/corba/mediacontrol-plugin.c \
+     ../modules/control/gestures.c \
+     ../modules/control/hotkeys.c \
+     ../modules/control/http.c \
+     ../modules/control/joystick.c \
+     ../modules/control/lirc.c \
+     ../modules/control/netsync.c \
+     ../modules/control/ntservice.c \
+     ../modules/control/rc.c \
+     ../modules/control/rtci.c \
+     ../modules/control/showintf.c \
+     ../modules/control/telnet.c \
+     ../modules/demux/a52.c \
+     ../modules/demux/aac.c \
+     ../modules/demux/aiff.c \
+     ../modules/demux/asf/asf.c \
+     ../modules/demux/asf/libasf.c \
+     ../modules/demux/asf/libasf.h \
+     ../modules/demux/au.c \
+     ../modules/demux/avi/avi.c \
+     ../modules/demux/avi/libavi.c \
+     ../modules/demux/avi/libavi.h \
+     ../modules/demux/demuxdump.c \
+     ../modules/demux/dts.c \
+     ../modules/demux/flac.c \
+     ../modules/demux/livedotcom.cpp \
+     ../modules/demux/m3u.c \
+     ../modules/demux/mjpeg.c \
+     ../modules/demux/mkv.cpp \
+     ../modules/demux/mod.c \
+     ../modules/demux/mp4/drms.c \
+     ../modules/demux/mp4/drms.h \
+     ../modules/demux/mp4/drmstables.h \
+     ../modules/demux/mp4/libmp4.c \
+     ../modules/demux/mp4/libmp4.h \
+     ../modules/demux/mp4/mp4.c \
+     ../modules/demux/mpeg/h264.c \
+     ../modules/demux/mpeg/m4a.c \
+     ../modules/demux/mpeg/m4v.c \
+     ../modules/demux/mpeg/mpga.c \
+     ../modules/demux/mpeg/mpgv.c \
+     ../modules/demux/nsv.c \
+     ../modules/demux/ogg.c \
+     ../modules/demux/playlist/m3u.c \
+     ../modules/demux/playlist/old.c \
+     ../modules/demux/playlist/playlist.c \
+     ../modules/demux/playlist/playlist.h \
+     ../modules/demux/playlist/pls.c \
+     ../modules/demux/ps.c \
+     ../modules/demux/ps.h \
+     ../modules/demux/pva.c \
+     ../modules/demux/rawdv.c \
+     ../modules/demux/real.c \
+     ../modules/demux/sgimb.c \
+     ../modules/demux/subtitle.c \
+     ../modules/demux/ts.c \
+     ../modules/demux/util/id3.c \
+     ../modules/demux/util/id3genres.h \
+     ../modules/demux/util/id3tag.c \
+     ../modules/demux/vobsub.c \
+     ../modules/demux/wav.c \
+     ../modules/gui/beos/AudioOutput.cpp \
+     ../modules/gui/beos/BeOS.cpp \
+     ../modules/gui/beos/Bitmaps.h \
+     ../modules/gui/beos/DrawingTidbits.cpp \
+     ../modules/gui/beos/DrawingTidbits.h \
+     ../modules/gui/beos/Interface.cpp \
+     ../modules/gui/beos/InterfaceWindow.cpp \
+     ../modules/gui/beos/InterfaceWindow.h \
+     ../modules/gui/beos/ListViews.cpp \
+     ../modules/gui/beos/ListViews.h \
+     ../modules/gui/beos/MediaControlView.cpp \
+     ../modules/gui/beos/MediaControlView.h \
+     ../modules/gui/beos/MessagesWindow.cpp \
+     ../modules/gui/beos/MessagesWindow.h \
+     ../modules/gui/beos/MsgVals.h \
+     ../modules/gui/beos/PlayListWindow.cpp \
+     ../modules/gui/beos/PlayListWindow.h \
+     ../modules/gui/beos/PreferencesWindow.cpp \
+     ../modules/gui/beos/PreferencesWindow.h \
+     ../modules/gui/beos/TransportButton.cpp \
+     ../modules/gui/beos/TransportButton.h \
+     ../modules/gui/beos/VideoOutput.cpp \
+     ../modules/gui/beos/VideoWindow.h \
+     ../modules/gui/gtk/common.h \
+     ../modules/gui/gtk/control.c \
+     ../modules/gui/gtk/control.h \
+     ../modules/gui/gtk/display.c \
+     ../modules/gui/gtk/display.h \
+     ../modules/gui/gtk/gnome.c \
+     ../modules/gui/gtk/gnome_callbacks.c \
+     ../modules/gui/gtk/gnome_callbacks.h \
+     ../modules/gui/gtk/gnome_interface.c \
+     ../modules/gui/gtk/gnome_interface.h \
+     ../modules/gui/gtk/gnome_support.c \
+     ../modules/gui/gtk/gnome_support.h \
+     ../modules/gui/gtk/gtk.c \
+     ../modules/gui/gtk/gtk_callbacks.c \
+     ../modules/gui/gtk/gtk_callbacks.h \
+     ../modules/gui/gtk/gtk_interface.c \
+     ../modules/gui/gtk/gtk_interface.h \
+     ../modules/gui/gtk/gtk_support.c \
+     ../modules/gui/gtk/gtk_support.h \
+     ../modules/gui/gtk/menu.c \
+     ../modules/gui/gtk/menu.h \
+     ../modules/gui/gtk/modules.c \
+     ../modules/gui/gtk/modules.h \
+     ../modules/gui/gtk/open.c \
+     ../modules/gui/gtk/open.h \
+     ../modules/gui/gtk/playlist.c \
+     ../modules/gui/gtk/playlist.h \
+     ../modules/gui/gtk/preferences.c \
+     ../modules/gui/gtk/preferences.h \
+     ../modules/gui/gtk/sout.c \
+     ../modules/gui/kde/QConfigItem.cpp \
+     ../modules/gui/kde/QConfigItem.h \
+     ../modules/gui/kde/common.h \
+     ../modules/gui/kde/disc.cpp \
+     ../modules/gui/kde/disc.h \
+     ../modules/gui/kde/info.cpp \
+     ../modules/gui/kde/info.h \
+     ../modules/gui/kde/interface.cpp \
+     ../modules/gui/kde/interface.h \
+     ../modules/gui/kde/kde.cpp \
+     ../modules/gui/kde/languagemenu.cpp \
+     ../modules/gui/kde/languagemenu.h \
+     ../modules/gui/kde/menu.cpp \
+     ../modules/gui/kde/menu.h \
+     ../modules/gui/kde/messages.cpp \
+     ../modules/gui/kde/messages.h \
+     ../modules/gui/kde/net.cpp \
+     ../modules/gui/kde/net.h \
+     ../modules/gui/kde/pluginsbox.cpp \
+     ../modules/gui/kde/pluginsbox.h \
+     ../modules/gui/kde/preferences.cpp \
+     ../modules/gui/kde/preferences.h \
+     ../modules/gui/kde/slider.cpp \
+     ../modules/gui/kde/slider.h \
+     ../modules/gui/macosx/about.h \
+     ../modules/gui/macosx/about.m \
+     ../modules/gui/macosx/applescript.h \
+     ../modules/gui/macosx/applescript.m \
+     ../modules/gui/macosx/controls.h \
+     ../modules/gui/macosx/controls.m \
+     ../modules/gui/macosx/equalizer.h \
+     ../modules/gui/macosx/equalizer.m \
+     ../modules/gui/macosx/intf.h \
+     ../modules/gui/macosx/intf.m \
+     ../modules/gui/macosx/macosx.m \
+     ../modules/gui/macosx/misc.h \
+     ../modules/gui/macosx/misc.m \
+     ../modules/gui/macosx/open.h \
+     ../modules/gui/macosx/open.m \
+     ../modules/gui/macosx/output.h \
+     ../modules/gui/macosx/output.m \
+     ../modules/gui/macosx/playlist.h \
+     ../modules/gui/macosx/playlist.m \
+     ../modules/gui/macosx/playlistinfo.h \
+     ../modules/gui/macosx/playlistinfo.m \
+     ../modules/gui/macosx/prefs.h \
+     ../modules/gui/macosx/prefs.m \
+     ../modules/gui/macosx/prefs_widgets.h \
+     ../modules/gui/macosx/prefs_widgets.m \
+     ../modules/gui/macosx/vout.h \
+     ../modules/gui/macosx/vout.m \
+     ../modules/gui/macosx/voutgl.m \
+     ../modules/gui/macosx/voutqt.m \
+     ../modules/gui/ncurses.c \
+     ../modules/gui/pda/pda.c \
+     ../modules/gui/pda/pda.h \
+     ../modules/gui/pda/pda_callbacks.c \
+     ../modules/gui/pda/pda_callbacks.h \
+     ../modules/gui/pda/pda_interface.c \
+     ../modules/gui/pda/pda_interface.h \
+     ../modules/gui/pda/pda_support.c \
+     ../modules/gui/pda/pda_support.h \
+     ../modules/gui/qnx/aout.c \
+     ../modules/gui/qnx/qnx.c \
+     ../modules/gui/qnx/vout.c \
+     ../modules/gui/qt/intf.cpp \
+     ../modules/gui/qt/intf.h \
+     ../modules/gui/qt/qt.cpp \
+     ../modules/gui/skins2/commands/async_queue.cpp \
+     ../modules/gui/skins2/commands/async_queue.hpp \
+     ../modules/gui/skins2/commands/cmd_add_item.cpp \
+     ../modules/gui/skins2/commands/cmd_add_item.hpp \
+     ../modules/gui/skins2/commands/cmd_change_skin.cpp \
+     ../modules/gui/skins2/commands/cmd_change_skin.hpp \
+     ../modules/gui/skins2/commands/cmd_dialogs.hpp \
+     ../modules/gui/skins2/commands/cmd_dummy.hpp \
+     ../modules/gui/skins2/commands/cmd_fullscreen.cpp \
+     ../modules/gui/skins2/commands/cmd_fullscreen.hpp \
+     ../modules/gui/skins2/commands/cmd_generic.hpp \
+     ../modules/gui/skins2/commands/cmd_input.cpp \
+     ../modules/gui/skins2/commands/cmd_input.hpp \
+     ../modules/gui/skins2/commands/cmd_layout.cpp \
+     ../modules/gui/skins2/commands/cmd_layout.hpp \
+     ../modules/gui/skins2/commands/cmd_minimize.cpp \
+     ../modules/gui/skins2/commands/cmd_minimize.hpp \
+     ../modules/gui/skins2/commands/cmd_on_top.cpp \
+     ../modules/gui/skins2/commands/cmd_on_top.hpp \
+     ../modules/gui/skins2/commands/cmd_playlist.cpp \
+     ../modules/gui/skins2/commands/cmd_playlist.hpp \
+     ../modules/gui/skins2/commands/cmd_quit.cpp \
+     ../modules/gui/skins2/commands/cmd_quit.hpp \
+     ../modules/gui/skins2/commands/cmd_resize.cpp \
+     ../modules/gui/skins2/commands/cmd_resize.hpp \
+     ../modules/gui/skins2/commands/cmd_show_window.hpp \
+     ../modules/gui/skins2/commands/cmd_vars.cpp \
+     ../modules/gui/skins2/commands/cmd_vars.hpp \
+     ../modules/gui/skins2/controls/ctrl_button.cpp \
+     ../modules/gui/skins2/controls/ctrl_button.hpp \
+     ../modules/gui/skins2/controls/ctrl_checkbox.cpp \
+     ../modules/gui/skins2/controls/ctrl_checkbox.hpp \
+     ../modules/gui/skins2/controls/ctrl_flat.hpp \
+     ../modules/gui/skins2/controls/ctrl_generic.cpp \
+     ../modules/gui/skins2/controls/ctrl_generic.hpp \
+     ../modules/gui/skins2/controls/ctrl_image.cpp \
+     ../modules/gui/skins2/controls/ctrl_image.hpp \
+     ../modules/gui/skins2/controls/ctrl_list.cpp \
+     ../modules/gui/skins2/controls/ctrl_list.hpp \
+     ../modules/gui/skins2/controls/ctrl_move.cpp \
+     ../modules/gui/skins2/controls/ctrl_move.hpp \
+     ../modules/gui/skins2/controls/ctrl_radialslider.cpp \
+     ../modules/gui/skins2/controls/ctrl_radialslider.hpp \
+     ../modules/gui/skins2/controls/ctrl_resize.cpp \
+     ../modules/gui/skins2/controls/ctrl_resize.hpp \
+     ../modules/gui/skins2/controls/ctrl_slider.cpp \
+     ../modules/gui/skins2/controls/ctrl_slider.hpp \
+     ../modules/gui/skins2/controls/ctrl_text.cpp \
+     ../modules/gui/skins2/controls/ctrl_text.hpp \
+     ../modules/gui/skins2/controls/ctrl_video.cpp \
+     ../modules/gui/skins2/controls/ctrl_video.hpp \
+     ../modules/gui/skins2/events/evt_enter.hpp \
+     ../modules/gui/skins2/events/evt_focus.hpp \
+     ../modules/gui/skins2/events/evt_generic.hpp \
+     ../modules/gui/skins2/events/evt_input.cpp \
+     ../modules/gui/skins2/events/evt_input.hpp \
+     ../modules/gui/skins2/events/evt_key.cpp \
+     ../modules/gui/skins2/events/evt_key.hpp \
+     ../modules/gui/skins2/events/evt_leave.hpp \
+     ../modules/gui/skins2/events/evt_motion.hpp \
+     ../modules/gui/skins2/events/evt_mouse.cpp \
+     ../modules/gui/skins2/events/evt_mouse.hpp \
+     ../modules/gui/skins2/events/evt_refresh.hpp \
+     ../modules/gui/skins2/events/evt_scroll.cpp \
+     ../modules/gui/skins2/events/evt_scroll.hpp \
+     ../modules/gui/skins2/events/evt_special.cpp \
+     ../modules/gui/skins2/events/evt_special.hpp \
+     ../modules/gui/skins2/parser/builder.cpp \
+     ../modules/gui/skins2/parser/builder.hpp \
+     ../modules/gui/skins2/parser/builder_data.hpp \
+     ../modules/gui/skins2/parser/expr_evaluator.cpp \
+     ../modules/gui/skins2/parser/expr_evaluator.hpp \
+     ../modules/gui/skins2/parser/interpreter.cpp \
+     ../modules/gui/skins2/parser/interpreter.hpp \
+     ../modules/gui/skins2/parser/skin_parser.cpp \
+     ../modules/gui/skins2/parser/skin_parser.hpp \
+     ../modules/gui/skins2/parser/xmlparser.cpp \
+     ../modules/gui/skins2/parser/xmlparser.hpp \
+     ../modules/gui/skins2/src/anchor.cpp \
+     ../modules/gui/skins2/src/anchor.hpp \
+     ../modules/gui/skins2/src/bitmap_font.cpp \
+     ../modules/gui/skins2/src/bitmap_font.hpp \
+     ../modules/gui/skins2/src/dialogs.cpp \
+     ../modules/gui/skins2/src/dialogs.hpp \
+     ../modules/gui/skins2/src/ft2_bitmap.cpp \
+     ../modules/gui/skins2/src/ft2_bitmap.hpp \
+     ../modules/gui/skins2/src/ft2_font.cpp \
+     ../modules/gui/skins2/src/ft2_font.hpp \
+     ../modules/gui/skins2/src/generic_bitmap.cpp \
+     ../modules/gui/skins2/src/generic_bitmap.hpp \
+     ../modules/gui/skins2/src/generic_font.hpp \
+     ../modules/gui/skins2/src/generic_layout.cpp \
+     ../modules/gui/skins2/src/generic_layout.hpp \
+     ../modules/gui/skins2/src/generic_window.cpp \
+     ../modules/gui/skins2/src/generic_window.hpp \
+     ../modules/gui/skins2/src/logger.cpp \
+     ../modules/gui/skins2/src/logger.hpp \
+     ../modules/gui/skins2/src/os_factory.cpp \
+     ../modules/gui/skins2/src/os_factory.hpp \
+     ../modules/gui/skins2/src/os_graphics.hpp \
+     ../modules/gui/skins2/src/os_loop.hpp \
+     ../modules/gui/skins2/src/os_timer.hpp \
+     ../modules/gui/skins2/src/os_tooltip.hpp \
+     ../modules/gui/skins2/src/os_window.hpp \
+     ../modules/gui/skins2/src/png_bitmap.cpp \
+     ../modules/gui/skins2/src/png_bitmap.hpp \
+     ../modules/gui/skins2/src/scaled_bitmap.cpp \
+     ../modules/gui/skins2/src/scaled_bitmap.hpp \
+     ../modules/gui/skins2/src/skin_common.hpp \
+     ../modules/gui/skins2/src/skin_main.cpp \
+     ../modules/gui/skins2/src/theme.cpp \
+     ../modules/gui/skins2/src/theme.hpp \
+     ../modules/gui/skins2/src/theme_loader.cpp \
+     ../modules/gui/skins2/src/theme_loader.hpp \
+     ../modules/gui/skins2/src/theme_repository.cpp \
+     ../modules/gui/skins2/src/theme_repository.hpp \
+     ../modules/gui/skins2/src/tooltip.cpp \
+     ../modules/gui/skins2/src/tooltip.hpp \
+     ../modules/gui/skins2/src/top_window.cpp \
+     ../modules/gui/skins2/src/top_window.hpp \
+     ../modules/gui/skins2/src/var_manager.cpp \
+     ../modules/gui/skins2/src/var_manager.hpp \
+     ../modules/gui/skins2/src/vlcproc.cpp \
+     ../modules/gui/skins2/src/vlcproc.hpp \
+     ../modules/gui/skins2/src/vout_window.cpp \
+     ../modules/gui/skins2/src/vout_window.hpp \
+     ../modules/gui/skins2/src/window_manager.cpp \
+     ../modules/gui/skins2/src/window_manager.hpp \
+     ../modules/gui/skins2/utils/bezier.cpp \
+     ../modules/gui/skins2/utils/bezier.hpp \
+     ../modules/gui/skins2/utils/fsm.cpp \
+     ../modules/gui/skins2/utils/fsm.hpp \
+     ../modules/gui/skins2/utils/observer.hpp \
+     ../modules/gui/skins2/utils/pointer.hpp \
+     ../modules/gui/skins2/utils/position.cpp \
+     ../modules/gui/skins2/utils/position.hpp \
+     ../modules/gui/skins2/utils/ustring.cpp \
+     ../modules/gui/skins2/utils/ustring.hpp \
+     ../modules/gui/skins2/utils/var_bool.cpp \
+     ../modules/gui/skins2/utils/var_bool.hpp \
+     ../modules/gui/skins2/utils/var_list.cpp \
+     ../modules/gui/skins2/utils/var_list.hpp \
+     ../modules/gui/skins2/utils/var_percent.cpp \
+     ../modules/gui/skins2/utils/var_percent.hpp \
+     ../modules/gui/skins2/utils/var_text.cpp \
+     ../modules/gui/skins2/utils/var_text.hpp \
+     ../modules/gui/skins2/utils/variable.hpp \
+     ../modules/gui/skins2/vars/playlist.cpp \
+     ../modules/gui/skins2/vars/playlist.hpp \
+     ../modules/gui/skins2/vars/stream.cpp \
+     ../modules/gui/skins2/vars/stream.hpp \
+     ../modules/gui/skins2/vars/time.cpp \
+     ../modules/gui/skins2/vars/time.hpp \
+     ../modules/gui/skins2/vars/volume.cpp \
+     ../modules/gui/skins2/vars/volume.hpp \
+     ../modules/gui/skins2/win32/win32_dragdrop.cpp \
+     ../modules/gui/skins2/win32/win32_dragdrop.hpp \
+     ../modules/gui/skins2/win32/win32_factory.cpp \
+     ../modules/gui/skins2/win32/win32_factory.hpp \
+     ../modules/gui/skins2/win32/win32_graphics.cpp \
+     ../modules/gui/skins2/win32/win32_graphics.hpp \
+     ../modules/gui/skins2/win32/win32_loop.cpp \
+     ../modules/gui/skins2/win32/win32_loop.hpp \
+     ../modules/gui/skins2/win32/win32_timer.cpp \
+     ../modules/gui/skins2/win32/win32_timer.hpp \
+     ../modules/gui/skins2/win32/win32_tooltip.cpp \
+     ../modules/gui/skins2/win32/win32_tooltip.hpp \
+     ../modules/gui/skins2/win32/win32_window.cpp \
+     ../modules/gui/skins2/win32/win32_window.hpp \
+     ../modules/gui/skins2/x11/x11_display.cpp \
+     ../modules/gui/skins2/x11/x11_display.hpp \
+     ../modules/gui/skins2/x11/x11_dragdrop.cpp \
+     ../modules/gui/skins2/x11/x11_dragdrop.hpp \
+     ../modules/gui/skins2/x11/x11_factory.cpp \
+     ../modules/gui/skins2/x11/x11_factory.hpp \
+     ../modules/gui/skins2/x11/x11_graphics.cpp \
+     ../modules/gui/skins2/x11/x11_graphics.hpp \
+     ../modules/gui/skins2/x11/x11_loop.cpp \
+     ../modules/gui/skins2/x11/x11_loop.hpp \
+     ../modules/gui/skins2/x11/x11_timer.cpp \
+     ../modules/gui/skins2/x11/x11_timer.hpp \
+     ../modules/gui/skins2/x11/x11_tooltip.cpp \
+     ../modules/gui/skins2/x11/x11_tooltip.hpp \
+     ../modules/gui/skins2/x11/x11_window.cpp \
+     ../modules/gui/skins2/x11/x11_window.hpp \
+     ../modules/gui/wxwindows/bookmarks.cpp \
+     ../modules/gui/wxwindows/dialogs.cpp \
+     ../modules/gui/wxwindows/extrapanel.cpp \
+     ../modules/gui/wxwindows/fileinfo.cpp \
+     ../modules/gui/wxwindows/interface.cpp \
+     ../modules/gui/wxwindows/iteminfo.cpp \
+     ../modules/gui/wxwindows/menus.cpp \
+     ../modules/gui/wxwindows/messages.cpp \
+     ../modules/gui/wxwindows/open.cpp \
+     ../modules/gui/wxwindows/playlist.cpp \
+     ../modules/gui/wxwindows/preferences.cpp \
+     ../modules/gui/wxwindows/preferences_widgets.cpp \
+     ../modules/gui/wxwindows/preferences_widgets.h \
+     ../modules/gui/wxwindows/streamdata.h \
+     ../modules/gui/wxwindows/streamout.cpp \
+     ../modules/gui/wxwindows/subtitles.cpp \
+     ../modules/gui/wxwindows/timer.cpp \
+     ../modules/gui/wxwindows/video.cpp \
+     ../modules/gui/wxwindows/wizard.cpp \
+     ../modules/gui/wxwindows/wxwindows.cpp \
+     ../modules/gui/wxwindows/wxwindows.h \
+     ../modules/misc/dummy/aout.c \
+     ../modules/misc/dummy/decoder.c \
+     ../modules/misc/dummy/dummy.c \
+     ../modules/misc/dummy/dummy.h \
+     ../modules/misc/dummy/encoder.c \
+     ../modules/misc/dummy/input.c \
+     ../modules/misc/dummy/interface.c \
+     ../modules/misc/dummy/renderer.c \
+     ../modules/misc/dummy/vout.c \
+     ../modules/misc/freetype.c \
+     ../modules/misc/gnutls.c \
+     ../modules/misc/gtk_main.c \
+     ../modules/misc/logger.c \
+     ../modules/misc/memcpy/fastmemcpy.h \
+     ../modules/misc/memcpy/memcpy.c \
+     ../modules/misc/memcpy/memcpyaltivec.c \
+     ../modules/misc/network/ipv4.c \
+     ../modules/misc/network/ipv6.c \
+     ../modules/misc/playlist/export.c \
+     ../modules/misc/playlist/m3u.c \
+     ../modules/misc/playlist/old.c \
+     ../modules/misc/qte_main.cpp \
+     ../modules/misc/rtsp.c \
+     ../modules/misc/sap.c \
+     ../modules/misc/screensaver.c \
+     ../modules/misc/svg.c \
+     ../modules/misc/testsuite/test1.c \
+     ../modules/misc/testsuite/test2.cpp \
+     ../modules/misc/testsuite/test3.m \
+     ../modules/misc/testsuite/test4.c \
+     ../modules/mux/asf.c \
+     ../modules/mux/avi.c \
+     ../modules/mux/dummy.c \
+     ../modules/mux/mp4.c \
+     ../modules/mux/mpeg/bits.h \
+     ../modules/mux/mpeg/csa.c \
+     ../modules/mux/mpeg/csa.h \
+     ../modules/mux/mpeg/pes.c \
+     ../modules/mux/mpeg/pes.h \
+     ../modules/mux/mpeg/ps.c \
+     ../modules/mux/mpeg/ts.c \
+     ../modules/mux/mpjpeg.c \
+     ../modules/mux/ogg.c \
+     ../modules/mux/wav.c \
+     ../modules/packetizer/copy.c \
+     ../modules/packetizer/h264.c \
+     ../modules/packetizer/mpeg4audio.c \
+     ../modules/packetizer/mpeg4video.c \
+     ../modules/packetizer/mpegvideo.c \
+     ../modules/stream_out/announce.c \
+     ../modules/stream_out/announce.h \
+     ../modules/stream_out/description.c \
+     ../modules/stream_out/display.c \
+     ../modules/stream_out/dummy.c \
+     ../modules/stream_out/duplicate.c \
+     ../modules/stream_out/es.c \
+     ../modules/stream_out/gather.c \
+     ../modules/stream_out/rtp.c \
+     ../modules/stream_out/standard.c \
+     ../modules/stream_out/transcode.c \
+     ../modules/stream_out/transrate/block.c \
+     ../modules/stream_out/transrate/frame.c \
+     ../modules/stream_out/transrate/getvlc.h \
+     ../modules/stream_out/transrate/putvlc.h \
+     ../modules/stream_out/transrate/transrate.c \
+     ../modules/stream_out/transrate/transrate.h \
+     ../modules/video_chroma/i420_rgb.c \
+     ../modules/video_chroma/i420_rgb.h \
+     ../modules/video_chroma/i420_rgb16.c \
+     ../modules/video_chroma/i420_rgb8.c \
+     ../modules/video_chroma/i420_rgb_c.h \
+     ../modules/video_chroma/i420_rgb_mmx.h \
+     ../modules/video_chroma/i420_ymga.c \
+     ../modules/video_chroma/i420_yuy2.c \
+     ../modules/video_chroma/i420_yuy2.h \
+     ../modules/video_chroma/i422_yuy2.c \
+     ../modules/video_chroma/i422_yuy2.h \
+     ../modules/video_filter/adjust.c \
+     ../modules/video_filter/blend.c \
+     ../modules/video_filter/clone.c \
+     ../modules/video_filter/crop.c \
+     ../modules/video_filter/deinterlace.c \
+     ../modules/video_filter/distort.c \
+     ../modules/video_filter/filter_common.h \
+     ../modules/video_filter/invert.c \
+     ../modules/video_filter/logo.c \
+     ../modules/video_filter/marq.c \
+     ../modules/video_filter/motionblur.c \
+     ../modules/video_filter/scale.c \
+     ../modules/video_filter/swscale/common.h \
+     ../modules/video_filter/swscale/filter.c \
+     ../modules/video_filter/swscale/rgb2rgb.c \
+     ../modules/video_filter/swscale/rgb2rgb.h \
+     ../modules/video_filter/swscale/rgb2rgb_template.c \
+     ../modules/video_filter/swscale/swscale.c \
+     ../modules/video_filter/swscale/swscale.h \
+     ../modules/video_filter/swscale/swscale_altivec_template.c \
+     ../modules/video_filter/swscale/swscale_internal.h \
+     ../modules/video_filter/swscale/swscale_template.c \
+     ../modules/video_filter/swscale/yuv2rgb.c \
+     ../modules/video_filter/swscale/yuv2rgb_altivec.c \
+     ../modules/video_filter/swscale/yuv2rgb_mlib.c \
+     ../modules/video_filter/swscale/yuv2rgb_template.c \
+     ../modules/video_filter/time.c \
+     ../modules/video_filter/transform.c \
+     ../modules/video_filter/wall.c \
+     ../modules/video_output/aa.c \
+     ../modules/video_output/caca.c \
+     ../modules/video_output/directx/directx.c \
+     ../modules/video_output/directx/events.c \
+     ../modules/video_output/directx/glwin32.c \
+     ../modules/video_output/directx/vout.h \
+     ../modules/video_output/fb.c \
+     ../modules/video_output/ggi.c \
+     ../modules/video_output/glide.c \
+     ../modules/video_output/hd1000v.cpp \
+     ../modules/video_output/mga.c \
+     ../modules/video_output/opengl.c \
+     ../modules/video_output/qte/qte.cpp \
+     ../modules/video_output/qte/qte.h \
+     ../modules/video_output/sdl.c \
+     ../modules/video_output/snapshot.c \
+     ../modules/video_output/svgalib.c \
+     ../modules/video_output/wingdi.c \
+     ../modules/video_output/x11/glx.c \
+     ../modules/video_output/x11/x11.c \
+     ../modules/video_output/x11/xcommon.c \
+     ../modules/video_output/x11/xcommon.h \
+     ../modules/video_output/x11/xvideo.c \
+     ../modules/visualization/galaktos/PCM.c \
+     ../modules/visualization/galaktos/PCM.h \
+     ../modules/visualization/galaktos/beat_detect.c \
+     ../modules/visualization/galaktos/beat_detect.h \
+     ../modules/visualization/galaktos/builtin_funcs.c \
+     ../modules/visualization/galaktos/builtin_funcs.h \
+     ../modules/visualization/galaktos/common.h \
+     ../modules/visualization/galaktos/compare.h \
+     ../modules/visualization/galaktos/custom_shape.c \
+     ../modules/visualization/galaktos/custom_shape.h \
+     ../modules/visualization/galaktos/custom_shape_types.h \
+     ../modules/visualization/galaktos/custom_wave.c \
+     ../modules/visualization/galaktos/custom_wave.h \
+     ../modules/visualization/galaktos/custom_wave_types.h \
+     ../modules/visualization/galaktos/engine_vars.c \
+     ../modules/visualization/galaktos/engine_vars.h \
+     ../modules/visualization/galaktos/eval.c \
+     ../modules/visualization/galaktos/eval.h \
+     ../modules/visualization/galaktos/expr_types.h \
+     ../modules/visualization/galaktos/fatal.h \
+     ../modules/visualization/galaktos/fftsg.c \
+     ../modules/visualization/galaktos/func.c \
+     ../modules/visualization/galaktos/func.h \
+     ../modules/visualization/galaktos/func_types.h \
+     ../modules/visualization/galaktos/idle_preset.h \
+     ../modules/visualization/galaktos/init_cond.c \
+     ../modules/visualization/galaktos/init_cond.h \
+     ../modules/visualization/galaktos/init_cond_types.h \
+     ../modules/visualization/galaktos/interface_types.h \
+     ../modules/visualization/galaktos/main.c \
+     ../modules/visualization/galaktos/main.h \
+     ../modules/visualization/galaktos/param.c \
+     ../modules/visualization/galaktos/param.h \
+     ../modules/visualization/galaktos/param_types.h \
+     ../modules/visualization/galaktos/parser.c \
+     ../modules/visualization/galaktos/parser.h \
+     ../modules/visualization/galaktos/per_frame_eqn.c \
+     ../modules/visualization/galaktos/per_frame_eqn.h \
+     ../modules/visualization/galaktos/per_frame_eqn_types.h \
+     ../modules/visualization/galaktos/per_pixel_eqn.c \
+     ../modules/visualization/galaktos/per_pixel_eqn.h \
+     ../modules/visualization/galaktos/per_pixel_eqn_types.h \
+     ../modules/visualization/galaktos/per_point_types.h \
+     ../modules/visualization/galaktos/plugin.c \
+     ../modules/visualization/galaktos/plugin.h \
+     ../modules/visualization/galaktos/preset.c \
+     ../modules/visualization/galaktos/preset.h \
+     ../modules/visualization/galaktos/preset_types.h \
+     ../modules/visualization/galaktos/splaytree.c \
+     ../modules/visualization/galaktos/splaytree.h \
+     ../modules/visualization/galaktos/splaytree_types.h \
+     ../modules/visualization/galaktos/tree_types.c \
+     ../modules/visualization/galaktos/tree_types.h \
+     ../modules/visualization/galaktos/video_init.c \
+     ../modules/visualization/galaktos/video_init.h \
+     ../modules/visualization/goom.c \
+     ../modules/visualization/visual/effects.c \
+     ../modules/visualization/visual/fft.c \
+     ../modules/visualization/visual/fft.h \
+     ../modules/visualization/visual/visual.c \
+     ../modules/visualization/visual/visual.h \
+     ../modules/visualization/xosd.c
+
+CATALOGS =  da.gmo de.gmo en_GB.gmo es.gmo fr.gmo hu.gmo it.gmo ja.gmo nl.gmo no.gmo pl.gmo pt_BR.gmo ru.gmo sv.gmo
+
+# Makevars gets inserted here. (Don't remove this line!)
+# Makefile variables for PO directory in any package using GNU gettext.
+
+# Usually the message domain is the same as the package name.
+DOMAIN = $(PACKAGE)
+
+# These two variables depend on the location of this directory.
+subdir = po
+top_builddir = ..
+
+# These options get passed to xgettext.
+XGETTEXT_OPTIONS = --keyword=_ --keyword=N_
+
+# This is the copyright holder that gets inserted into the header of the
+# $(DOMAIN).pot file.  Set this to the copyright holder of the surrounding
+# package.  (Note that the msgstr strings, extracted from the package's
+# sources, belong to the copyright holder of the package.)  Translators are
+# expected to transfer the copyright for their translations to this person
+# or entity, or to disclaim their copyright.  The empty string stands for
+# the public domain; in this case the translators are expected to disclaim
+# their copyright.
+COPYRIGHT_HOLDER = VideoLAN
+
+# This is the list of locale categories, beyond LC_MESSAGES, for which the
+# message catalogs shall be used.  It is usually empty.
+EXTRA_LOCALE_CATEGORIES =
+
+.SUFFIXES:
+.SUFFIXES: .po .gmo .mo .sed .sin .nop .po-update
+
+.po.mo:
+	@echo "$(MSGFMT) -c -o $@ $<"; \
+	$(MSGFMT) -c -o t-$@ $< && mv t-$@ $@
+
+.po.gmo:
+	@lang=`echo $* | sed -e 's,.*/,,'`; \
+	test "$(srcdir)" = . && cdcmd="" || cdcmd="cd $(srcdir) && "; \
+	echo "$${cdcmd}rm -f $${lang}.gmo && $(GMSGFMT) -c --statistics -o $${lang}.gmo $${lang}.po"; \
+	cd $(srcdir) && rm -f $${lang}.gmo && $(GMSGFMT) -c --statistics -o t-$${lang}.gmo $${lang}.po && mv t-$${lang}.gmo $${lang}.gmo
+
+.sin.sed:
+	sed -e '/^#/d' $< > t-$@
+	mv t-$@ $@
+
+
+all: all-yes
+
+all-yes: $(CATALOGS)
+all-no:
+
+# Note: Target 'all' must not depend on target '$(DOMAIN).pot-update',
+# otherwise packages like GCC can not be built if only parts of the source
+# have been downloaded.
+
+$(DOMAIN).pot-update: $(POTFILES) $(srcdir)/POTFILES.in remove-potcdate.sed
+	$(XGETTEXT) --default-domain=$(DOMAIN) --directory=$(top_srcdir) \
+	  --add-comments=TRANSLATORS: $(XGETTEXT_OPTIONS) \
+	  --files-from=$(srcdir)/POTFILES.in \
+	  --copyright-holder='$(COPYRIGHT_HOLDER)'
+	test ! -f $(DOMAIN).po || { \
+	  if test -f $(srcdir)/$(DOMAIN).pot; then \
+	    sed -f remove-potcdate.sed < $(srcdir)/$(DOMAIN).pot > $(DOMAIN).1po && \
+	    sed -f remove-potcdate.sed < $(DOMAIN).po > $(DOMAIN).2po && \
+	    if cmp $(DOMAIN).1po $(DOMAIN).2po >/dev/null 2>&1; then \
+	      rm -f $(DOMAIN).1po $(DOMAIN).2po $(DOMAIN).po; \
+	    else \
+	      rm -f $(DOMAIN).1po $(DOMAIN).2po $(srcdir)/$(DOMAIN).pot && \
+	      mv $(DOMAIN).po $(srcdir)/$(DOMAIN).pot; \
+	    fi; \
+	  else \
+	    mv $(DOMAIN).po $(srcdir)/$(DOMAIN).pot; \
+	  fi; \
+	}
+
+$(srcdir)/$(DOMAIN).pot:
+	$(MAKE) $(DOMAIN).pot-update
+
+$(POFILES): $(srcdir)/$(DOMAIN).pot
+	@lang=`echo $@ | sed -e 's,.*/,,' -e 's/\.po$$//'`; \
+	test "$(srcdir)" = . && cdcmd="" || cdcmd="cd $(srcdir) && "; \
+	echo "$${cdcmd}$(MSGMERGE_UPDATE) $${lang}.po $(DOMAIN).pot"; \
+	cd $(srcdir) && $(MSGMERGE_UPDATE) $${lang}.po $(DOMAIN).pot
+
+
+install: install-exec install-data
+install-exec:
+install-data: install-data-yes
+	if test "$(PACKAGE)" = "gettext"; then \
+	  $(mkinstalldirs) $(DESTDIR)$(gettextsrcdir); \
+	  for file in $(DISTFILES.common); do \
+	    $(INSTALL_DATA) $(srcdir)/$$file \
+			    $(DESTDIR)$(gettextsrcdir)/$$file; \
+	  done; \
+	else \
+	  : ; \
+	fi
+install-data-no: all
+install-data-yes: all
+	$(mkinstalldirs) $(DESTDIR)$(datadir)
+	@catalogs='$(CATALOGS)'; \
+	for cat in $$catalogs; do \
+	  cat=`basename $$cat`; \
+	  lang=`echo $$cat | sed -e 's/\.gmo$$//'`; \
+	  dir=$(localedir)/$$lang/LC_MESSAGES; \
+	  $(mkinstalldirs) $(DESTDIR)$$dir; \
+	  if test -r $$cat; then realcat=$$cat; else realcat=$(srcdir)/$$cat; fi; \
+	  $(INSTALL_DATA) $$realcat $(DESTDIR)$$dir/$(DOMAIN).mo; \
+	  echo "installing $$realcat as $(DESTDIR)$$dir/$(DOMAIN).mo"; \
+	  for lc in '' $(EXTRA_LOCALE_CATEGORIES); do \
+	    if test -n "$$lc"; then \
+	      if (cd $(DESTDIR)$(localedir)/$$lang && LC_ALL=C ls -l -d $$lc 2>/dev/null) | grep ' -> ' >/dev/null; then \
+	        link=`cd $(DESTDIR)$(localedir)/$$lang && LC_ALL=C ls -l -d $$lc | sed -e 's/^.* -> //'`; \
+	        mv $(DESTDIR)$(localedir)/$$lang/$$lc $(DESTDIR)$(localedir)/$$lang/$$lc.old; \
+	        mkdir $(DESTDIR)$(localedir)/$$lang/$$lc; \
+	        (cd $(DESTDIR)$(localedir)/$$lang/$$lc.old && \
+	         for file in *; do \
+	           if test -f $$file; then \
+	             ln -s ../$$link/$$file $(DESTDIR)$(localedir)/$$lang/$$lc/$$file; \
+	           fi; \
+	         done); \
+	        rm -f $(DESTDIR)$(localedir)/$$lang/$$lc.old; \
+	      else \
+	        if test -d $(DESTDIR)$(localedir)/$$lang/$$lc; then \
+	          :; \
+	        else \
+	          rm -f $(DESTDIR)$(localedir)/$$lang/$$lc; \
+	          mkdir $(DESTDIR)$(localedir)/$$lang/$$lc; \
+	        fi; \
+	      fi; \
+	      rm -f $(DESTDIR)$(localedir)/$$lang/$$lc/$(DOMAIN).mo; \
+	      ln -s ../LC_MESSAGES/$(DOMAIN).mo $(DESTDIR)$(localedir)/$$lang/$$lc/$(DOMAIN).mo 2>/dev/null || \
+	      ln $(DESTDIR)$(localedir)/$$lang/LC_MESSAGES/$(DOMAIN).mo $(DESTDIR)$(localedir)/$$lang/$$lc/$(DOMAIN).mo 2>/dev/null || \
+	      cp -p $(DESTDIR)$(localedir)/$$lang/LC_MESSAGES/$(DOMAIN).mo $(DESTDIR)$(localedir)/$$lang/$$lc/$(DOMAIN).mo; \
+	      echo "installing $$realcat link as $(DESTDIR)$(localedir)/$$lang/$$lc/$(DOMAIN).mo"; \
+	    fi; \
+	  done; \
+	done
+
+install-strip: install
+
+installdirs: installdirs-exec installdirs-data
+installdirs-exec:
+installdirs-data: installdirs-data-yes
+	if test "$(PACKAGE)" = "gettext"; then \
+	  $(mkinstalldirs) $(DESTDIR)$(gettextsrcdir); \
+	else \
+	  : ; \
+	fi
+installdirs-data-no:
+installdirs-data-yes:
+	$(mkinstalldirs) $(DESTDIR)$(datadir)
+	@catalogs='$(CATALOGS)'; \
+	for cat in $$catalogs; do \
+	  cat=`basename $$cat`; \
+	  lang=`echo $$cat | sed -e 's/\.gmo$$//'`; \
+	  dir=$(localedir)/$$lang/LC_MESSAGES; \
+	  $(mkinstalldirs) $(DESTDIR)$$dir; \
+	  for lc in '' $(EXTRA_LOCALE_CATEGORIES); do \
+	    if test -n "$$lc"; then \
+	      if (cd $(DESTDIR)$(localedir)/$$lang && LC_ALL=C ls -l -d $$lc 2>/dev/null) | grep ' -> ' >/dev/null; then \
+	        link=`cd $(DESTDIR)$(localedir)/$$lang && LC_ALL=C ls -l -d $$lc | sed -e 's/^.* -> //'`; \
+	        mv $(DESTDIR)$(localedir)/$$lang/$$lc $(DESTDIR)$(localedir)/$$lang/$$lc.old; \
+	        mkdir $(DESTDIR)$(localedir)/$$lang/$$lc; \
+	        (cd $(DESTDIR)$(localedir)/$$lang/$$lc.old && \
+	         for file in *; do \
+	           if test -f $$file; then \
+	             ln -s ../$$link/$$file $(DESTDIR)$(localedir)/$$lang/$$lc/$$file; \
+	           fi; \
+	         done); \
+	        rm -f $(DESTDIR)$(localedir)/$$lang/$$lc.old; \
+	      else \
+	        if test -d $(DESTDIR)$(localedir)/$$lang/$$lc; then \
+	          :; \
+	        else \
+	          rm -f $(DESTDIR)$(localedir)/$$lang/$$lc; \
+	          mkdir $(DESTDIR)$(localedir)/$$lang/$$lc; \
+	        fi; \
+	      fi; \
+	    fi; \
+	  done; \
+	done
+
+# Define this as empty until I found a useful application.
+installcheck:
+
+uninstall: uninstall-exec uninstall-data
+uninstall-exec:
+uninstall-data: uninstall-data-yes
+	if test "$(PACKAGE)" = "gettext"; then \
+	  for file in $(DISTFILES.common); do \
+	    rm -f $(DESTDIR)$(gettextsrcdir)/$$file; \
+	  done; \
+	else \
+	  : ; \
+	fi
+uninstall-data-no:
+uninstall-data-yes:
+	catalogs='$(CATALOGS)'; \
+	for cat in $$catalogs; do \
+	  cat=`basename $$cat`; \
+	  lang=`echo $$cat | sed -e 's/\.gmo$$//'`; \
+	  for lc in LC_MESSAGES $(EXTRA_LOCALE_CATEGORIES); do \
+	    rm -f $(DESTDIR)$(localedir)/$$lang/$$lc/$(DOMAIN).mo; \
+	  done; \
+	done
+
+check: all
+
+dvi info tags TAGS ID:
+
+mostlyclean:
+	rm -f remove-potcdate.sed
+	rm -f core core.* $(DOMAIN).po $(DOMAIN).1po $(DOMAIN).2po *.new.po
+	rm -fr *.o
+
+clean: mostlyclean
+
+distclean: clean
+	rm -f Makefile Makefile.in POTFILES *.mo
+
+maintainer-clean: distclean
+	@echo "This command is intended for maintainers to use;"
+	@echo "it deletes files that may require special tools to rebuild."
+	rm -f $(GMOFILES)
+
+distdir = $(top_builddir)/$(PACKAGE)-$(VERSION)/$(subdir)
+dist distdir:
+	$(MAKE) update-po
+	@$(MAKE) dist2
+# This is a separate target because 'update-po' must be executed before.
+dist2: $(DISTFILES)
+	dists="$(DISTFILES)"; \
+	if test -f $(srcdir)/ChangeLog; then dists="$$dists ChangeLog"; fi; \
+	if test -f $(srcdir)/LINGUAS; then dists="$$dists LINGUAS"; fi; \
+	for file in $$dists; do \
+	  if test -f $$file; then \
+	    cp -p $$file $(distdir); \
+	  else \
+	    cp -p $(srcdir)/$$file $(distdir); \
+	  fi; \
+	done
+
+update-po: Makefile
+	$(MAKE) $(DOMAIN).pot-update
+	$(MAKE) $(UPDATEPOFILES)
+	$(MAKE) update-gmo
+
+# General rule for updating PO files.
+
+.nop.po-update:
+	@lang=`echo $@ | sed -e 's/\.po-update$$//'`; \
+	if test "$(PACKAGE)" = "gettext"; then PATH=`pwd`/../src:$$PATH; fi; \
+	tmpdir=`pwd`; \
+	echo "$$lang:"; \
+	test "$(srcdir)" = . && cdcmd="" || cdcmd="cd $(srcdir) && "; \
+	echo "$${cdcmd}$(MSGMERGE) $$lang.po $(DOMAIN).pot -o $$lang.new.po"; \
+	cd $(srcdir); \
+	if $(MSGMERGE) $$lang.po $(DOMAIN).pot -o $$tmpdir/$$lang.new.po; then \
+	  if cmp $$lang.po $$tmpdir/$$lang.new.po >/dev/null 2>&1; then \
+	    rm -f $$tmpdir/$$lang.new.po; \
+	  else \
+	    if mv -f $$tmpdir/$$lang.new.po $$lang.po; then \
+	      :; \
+	    else \
+	      echo "msgmerge for $$lang.po failed: cannot move $$tmpdir/$$lang.new.po to $$lang.po" 1>&2; \
+	      exit 1; \
+	    fi; \
+	  fi; \
+	else \
+	  echo "msgmerge for $$lang.po failed!" 1>&2; \
+	  rm -f $$tmpdir/$$lang.new.po; \
+	fi
+
+$(DUMMYPOFILES):
+
+update-gmo: Makefile $(GMOFILES)
+	@:
+
+Makefile: Makefile.in.in $(top_builddir)/config.status POTFILES.in
+	cd $(top_builddir) \
+	  && CONFIG_FILES=$(subdir)/$@.in CONFIG_HEADERS= \
+	       $(SHELL) ./config.status
+
+force:
+
+# Tell versions [3.59,3.63) of GNU make not to export all variables.
+# Otherwise a system limit (for SysV at least) may be exceeded.
+.NOEXPORT:
+# Special Makefile rules for English message catalogs with quotation marks.
+
+DISTFILES.common.extra1 = quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot
+
+.SUFFIXES: .insert-header .po-update-en
+
+en@quot.po-update: en@quot.po-update-en
+en@boldquot.po-update: en@boldquot.po-update-en
+
+.insert-header.po-update-en:
+	@lang=`echo $@ | sed -e 's/\.po-update-en$$//'`; \
+	if test "$(PACKAGE)" = "gettext"; then PATH=`pwd`/../src:$$PATH; GETTEXTLIBDIR=`cd $(top_srcdir)/src && pwd`; export GETTEXTLIBDIR; fi; \
+	tmpdir=`pwd`; \
+	echo "$$lang:"; \
+	ll=`echo $$lang | sed -e 's/@.*//'`; \
+	LC_ALL=C; export LC_ALL; \
+	cd $(srcdir); \
+	if $(MSGINIT) -i $(DOMAIN).pot --no-translator -l $$ll -o - 2>/dev/null | sed -f $$tmpdir/$$lang.insert-header | $(MSGCONV) -t UTF-8 | $(MSGFILTER) sed -f `echo $$lang | sed -e 's/.*@//'`.sed 2>/dev/null > $$tmpdir/$$lang.new.po; then \
+	  if cmp $$lang.po $$tmpdir/$$lang.new.po >/dev/null 2>&1; then \
+	    rm -f $$tmpdir/$$lang.new.po; \
+	  else \
+	    if mv -f $$tmpdir/$$lang.new.po $$lang.po; then \
+	      :; \
+	    else \
+	      echo "creation of $$lang.po failed: cannot move $$tmpdir/$$lang.new.po to $$lang.po" 1>&2; \
+	      exit 1; \
+	    fi; \
+	  fi; \
+	else \
+	  echo "creation of $$lang.po failed!" 1>&2; \
+	  rm -f $$tmpdir/$$lang.new.po; \
+	fi
+
+en@quot.insert-header: insert-header.sin
+	sed -e '/^#/d' -e 's/HEADER/en@quot.header/g' $(srcdir)/insert-header.sin > en@quot.insert-header
+
+en@boldquot.insert-header: insert-header.sin
+	sed -e '/^#/d' -e 's/HEADER/en@boldquot.header/g' $(srcdir)/insert-header.sin > en@boldquot.insert-header
+
+mostlyclean: mostlyclean-quot
+mostlyclean-quot:
+	rm -f *.insert-header

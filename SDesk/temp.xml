@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding='UTF-8' standalone="yes"?>
+ <WinampXML>
+   <playlist num_entries="30" label="SHOUTcast top 30">
+    <entry Playstring="http://www.shoutcast.com/sbin/tunein-station.pls?id=3170&amp;filename=playlist.pls">
+     <Name>KissFM Romania- www.kissfm.ro -Hit Music Station</Name>
+     <Genre>Top 40</Genre>
+     <Nowplaying>Kiss Music cu Andreea Berghea</Nowplaying>
+     <Listeners>3991</Listeners>
+     <Bitrate>32</Bitrate>
+    </entry>
+    <entry Playstring="http://www.shoutcast.com/sbin/tunein-station.pls?id=3419&amp;filename=playlist.pls">
+     <Name>Republic of Korea Top Radio. MUKULCAST.COM &#42; KPOP</Name>
+     <Genre>Republic of KoreaPOP</Genre>
+     <Nowplaying>                   (Brown Eyed Girls) - Far Away (Feat. MC   )</Nowplaying>
+     <Listeners>3610</Listeners>
+     <Bitrate>128</Bitrate>
+    </entry>
+    <entry Playstring="http://www.shoutcast.com/sbin/tunein-station.pls?id=7528&amp;filename=playlist.pls">
+     <Name>.977 The 80s Channel</Name>
+     <Genre>80s Pop Rock</Genre>
+     <Nowplaying>Climie Fisher - Love changes everything</Nowplaying>
+     <Listeners>2865</Listeners>
+     <Bitrate>128</Bitrate>
+    </entry>
+    <entry Playstring="http://www.shoutcast.com/sbin/tunein-station.pls?id=3286&amp;filename=playlist.pls">
+     <Name>.977 The Hitz Channel</Name>
+     <Genre>Pop Rock Top 40</Genre>
+     <Nowplaying>Evanescence - Call Me When You&#96;re Sober</Nowplaying>
+     <Listeners>2182</Listeners>
+     <Bitrate>128</Bitrate>
+    </entry>
+    <entry Playstring="http://www.shoutcast.com/sbin/tunein-station.pls?id=45&amp;filename=playlist.pls">
+     <Name>SMOOTHJAZZ.COM - The Global Home for the Smoothest Jazz 24/7 - Live from Monterey Bay</Name>
+     <Genre>SMOOTH JAZZ</Genre>
+     <Nowplaying>Bob Mamet f. Gerald Albright - News From The Blues</Nowplaying>
+     <Listeners>2106</Listeners>
+     <Bitrate>128</Bitrate>
+    </entry>
+    <entry Playstring="http://www.shoutcast.com/sbin/tunein-station.pls?id=5761&amp;filename=playlist.pls">
+     <Name>Groove Salad: a nicely chilled plate of ambient beats and grooves. [SomaFM]</Name>
+     <Genre>Ambient Chill</Genre>
+     <Nowplaying>Dining Rooms - Anima Per Amarti</Nowplaying>
+     <Listeners>2104</Listeners>
+     <Bitrate>128</Bitrate>
+    </entry>
+    <entry Playstring="http://www.shoutcast.com/sbin/tunein-station.pls?id=9237&amp;filename=playlist.pls">
+     <Name>))) POLSKASTACJA .PL ((( - Muzyka na TOPIE (Polskie Radio),aacplus</Name>
+     <Genre>Polskie Polska Top40</Genre>
+     <Nowplaying>Sergio Mendes &amp; The Black Eyed Peas - Mas que nada</Nowplaying>
+     <Listeners>1954</Listeners>
+     <Bitrate>48</Bitrate>
+    </entry>
+    <entry Playstring="http://www.shoutcast.com/sbin/tunein-station.pls?id=86673&amp;filename=playlist.pls">
+     <Name>HOT FM - Lebih Hangat Daripada Biasa</Name>
+     <Genre>Malaysia   Malay</Genre>
+     <Nowplaying></Nowplaying>
+     <Listeners>1736</Listeners>
+     <Bitrate>24</Bitrate>
+    </entry>
+    <entry Playstring="http://www.shoutcast.com/sbin/tunein-station.pls?id=7733&amp;filename=playlist.pls">
+     <Name>FREQUENCE3 - www.frequence3.fr - No ads ! It's only HITS live from Paris France ! - French Webradio</Name>
+     <Genre>Top 40 Dance Pop Rock</Genre>
+     <Nowplaying>Murray Head - One night in Bangkok</Nowplaying>
+     <Listeners>1549</Listeners>
+     <Bitrate>192</Bitrate>
+    </entry>
+    <entry Playstring="http://www.shoutcast.com/sbin/tunein-station.pls?id=3820&amp;filename=playlist.pls">
+     <Name>RADYO7</Name>
+     <Genre>KARMA   Country</Genre>
+     <Nowplaying>IYI MUZIK DOGRU HABER</Nowplaying>
+     <Listeners>1438</Listeners>
+     <Bitrate>24</Bitrate>
+    </entry>
+    <entry Playstring="http://www.shoutcast.com/sbin/tunein-station.pls?id=4329&amp;filename=playlist.pls">
+     <Name>S K Y . F M - Top Hits Music - who cares about the chart order, less rap &amp; more hits!</Name>
+     <Genre>Pop Top 40 Dance Rock</Genre>
+     <Nowplaying>Kelly Clarkson - Low</Nowplaying>
+     <Listeners>1438</Listeners>
+     <Bitrate>96</Bitrate>
+    </entry>
+    <entry Playstring="http://www.shoutcast.com/sbin/tunein-station.pls?id=304&amp;filename=playlist.pls">
+     <Name>S K Y . F M - Absolutely Smooth Jazz - the world's smoothest jazz 24 hours a day</Name>
+     <Genre>Soft Smooth Jazz</Genre>
+     <Nowplaying>Goin, Garry - Will You Marry Me</Nowplaying>
+     <Listeners>1409</Listeners>
+     <Bitrate>96</Bitrate>
+    </entry>
+    <entry Playstring="http://www.shoutcast.com/sbin/tunein-station.pls?id=8172&amp;filename=playlist.pls">
+     <Name>-=[:: HOT 108 JAMZ ::]=- #1 FOR HIP HOP - 128K HD) &#42; CONNECT FROM OUR WEBSITE www.hot108.com</Name>
+     <Genre>hip hop urban rap rnb</Genre>
+     <Nowplaying>Monica - A Dozen Roses (You Remind Me)</Nowplaying>
+     <Listeners>1374</Listeners>
+     <Bitrate>128</Bitrate>
+    </entry>
+    <entry Playstring="http://www.shoutcast.com/sbin/tunein-station.pls?id=7105&amp;filename=playlist.pls">
+     <Name>181.fm - Kickin' Country - Today's Best Country</Name>
+     <Genre>Country Oldies Top 40</Genre>
+     <Nowplaying>Craig Morgan - That&#96;s What I Love About Sunday</Nowplaying>
+     <Listeners>1272</Listeners>
+     <Bitrate>128</Bitrate>
+    </entry>
+    <entry Playstring="http://www.shoutcast.com/sbin/tunein-station.pls?id=1680&amp;filename=playlist.pls">
+     <Name>))) POLSKASTACJA .PL ((( - Tylko Polskie Przeboje ,aacplus</Name>
+     <Genre>Polskie Polska</Genre>
+     <Nowplaying>Hey - MOJA I TWOJA NADZIEJA</Nowplaying>
+     <Listeners>1251</Listeners>
+     <Bitrate>48</Bitrate>
+    </entry>
+    <entry Playstring="http://www.shoutcast.com/sbin/tunein-station.pls?id=9821&amp;filename=playlist.pls">
+     <Name>Bay Smooth Jazz  Radio 105.9 ..powered by 1.fm </Name>
+     <Genre>Smooth Jazz  Jazz R&amp;B</Genre>
+     <Nowplaying>Earl Klugh - Private Affair</Nowplaying>
+     <Listeners>1183</Listeners>
+     <Bitrate>128</Bitrate>
+    </entry>
+    <entry Playstring="http://www.shoutcast.com/sbin/tunein-station.pls?id=3362&amp;filename=playlist.pls">
+     <Name>D I G I T A L L Y - I M P O R T E D - European Trance, Techno, Hi-NRG... we can't define it!</Name>
+     <Genre>Trance Techno Dance</Genre>
+     <Nowplaying>Fabio Stein - Nu Trance Vol. IV</Nowplaying>
+     <Listeners>1115</Listeners>
+     <Bitrate>96</Bitrate>
+    </entry>
+    <entry Playstring="http://www.shoutcast.com/sbin/tunein-station.pls?id=4734&amp;filename=playlist.pls">
+     <Name>D I G I T A L L Y - I M P O R T E D - Vocal Trance - a fusion of trance, dance, and chilling vocals </Name>
+     <Genre>Vocal Trance Dance Pop</Genre>
+     <Nowplaying>GT vs Project C - Voices Of Spring 2006 (Dreams)</Nowplaying>
+     <Listeners>1095</Listeners>
+     <Bitrate>96</Bitrate>
+    </entry>
+    <entry Playstring="http://www.shoutcast.com/sbin/tunein-station.pls?id=2891&amp;filename=playlist.pls">
+     <Name>HitzRadio.com - #1 for all the hits!</Name>
+     <Genre>Pop  Top 40 Urban RnB Hip</Genre>
+     <Nowplaying>Blue October - Hate Me </Nowplaying>
+     <Listeners>1046</Listeners>
+     <Bitrate>128</Bitrate>
+    </entry>
+    <entry Playstring="http://www.shoutcast.com/sbin/tunein-station.pls?id=4868&amp;filename=playlist.pls">
+     <Name>S K Y . F M - Mostly Classical - Listen and Relax, it's good for you! www.sky.fm</Name>
+     <Genre>classical easy symphonic</Genre>
+     <Nowplaying>Tchaikovsky - Waltz Of The Flowers</Nowplaying>
+     <Listeners>1012</Listeners>
+     <Bitrate>96</Bitrate>
+    </entry>
+    <entry Playstring="http://www.shoutcast.com/sbin/tunein-station.pls?id=9246&amp;filename=playlist.pls">
+     <Name>Radio Paradise - DJ-mixed modern &amp; classic rock, world, electronica &amp; more - info: radioparadise.com</Name>
+     <Genre>eclectic rock</Genre>
+     <Nowplaying>Ivy - Feel So Free</Nowplaying>
+     <Listeners>972</Listeners>
+     <Bitrate>128</Bitrate>
+    </entry>
+    <entry Playstring="http://www.shoutcast.com/sbin/tunein-station.pls?id=8530&amp;filename=playlist.pls">
+     <Name>idobi Radio: Music that doesn't suck! News, interviews and the best in alternative, rock, and punk m</Name>
+     <Genre>Alternative  Rock  Punk</Genre>
+     <Nowplaying>Army Of Freshmen - Road Less Traveled</Nowplaying>
+     <Listeners>950</Listeners>
+     <Bitrate>128</Bitrate>
+    </entry>
+    <entry Playstring="http://www.shoutcast.com/sbin/tunein-station.pls?id=387153&amp;filename=playlist.pls">
+     <Name>Jemne melodie LIVE</Name>
+     <Genre>Best of 80 s &amp; 90 s</Genre>
+     <Nowplaying></Nowplaying>
+     <Listeners>921</Listeners>
+     <Bitrate>128</Bitrate>
+    </entry>
+    <entry Playstring="http://www.shoutcast.com/sbin/tunein-station.pls?id=1763&amp;filename=playlist.pls">
+     <Name>S K Y . F M - 80s, 80s, 80s! - Hear your classic favorites right here! (www.sky.fm)</Name>
+     <Genre>80s Pop Rock Oldies</Genre>
+     <Nowplaying>Pat Benatar - Hit Me With Your Best Shot</Nowplaying>
+     <Listeners>858</Listeners>
+     <Bitrate>96</Bitrate>
+    </entry>
+    <entry Playstring="http://www.shoutcast.com/sbin/tunein-station.pls?id=1212&amp;filename=playlist.pls">
+     <Name>PulsRadio - www.pulsradio.com</Name>
+     <Genre>Dance Trance Techno House</Genre>
+     <Nowplaying>Captain Jack - Capitano</Nowplaying>
+     <Listeners>851</Listeners>
+     <Bitrate>192</Bitrate>
+    </entry>
+    <entry Playstring="http://www.shoutcast.com/sbin/tunein-station.pls?id=7017&amp;filename=playlist.pls">
+     <Name>RAC1 Des de Catalunya i per tot el mon</Name>
+     <Genre>Various</Genre>
+     <Nowplaying></Nowplaying>
+     <Listeners>826</Listeners>
+     <Bitrate>24</Bitrate>
+    </entry>
+    <entry Playstring="http://www.shoutcast.com/sbin/tunein-station.pls?id=5396&amp;filename=playlist.pls">
+     <Name>D I G I T A L L Y - I M P O R T E D - Chillout - ambient psy chillout, check out our trippy flavors!</Name>
+     <Genre>Chillout Ambient Psy</Genre>
+     <Nowplaying>Audioplacid vs. Coffee-Shop - Connected (Synaesthesia)</Nowplaying>
+     <Listeners>806</Listeners>
+     <Bitrate>96</Bitrate>
+    </entry>
+    <entry Playstring="http://www.shoutcast.com/sbin/tunein-station.pls?id=2759&amp;filename=playlist.pls">
+     <Name>))) POLSKASTACJA .PL ((( - Najwieksze Przeboje '80 '90 (Polskie Radio),aacplus</Name>
+     <Genre>Polskie Polska  80  90</Genre>
+     <Nowplaying>Bill Medley Jennifer Warnes-(I&#96;ve Had) The Time Of My Life</Nowplaying>
+     <Listeners>793</Listeners>
+     <Bitrate>48</Bitrate>
+    </entry>
+    <entry Playstring="http://www.shoutcast.com/sbin/tunein-station.pls?id=2917&amp;filename=playlist.pls">
+     <Name>Otto's Baroque Musick (www.Bach-radio.com)  Now on 1. FM!</Name>
+     <Genre>Classical</Genre>
+     <Nowplaying>HANDEL - Brandenburg Consort, Goodman - Organ Concerto Op 4 No 1 in g</Nowplaying>
+     <Listeners>784</Listeners>
+     <Bitrate>128</Bitrate>
+    </entry>
+    <entry Playstring="http://www.shoutcast.com/sbin/tunein-station.pls?id=3450&amp;filename=playlist.pls">
+     <Name>S K Y . F M - Classical &amp; Flamenco Guitar - a mix of classical, spanish, and flamenco guitar</Name>
+     <Genre>Flamenco Classical Guitar</Genre>
+     <Nowplaying>Steve Erquiaga - Themes From Cinema Paradiso</Nowplaying>
+     <Listeners>774</Listeners>
+     <Bitrate>96</Bitrate>
+    </entry>
+  </playlist>
+ </WinampXML>
+

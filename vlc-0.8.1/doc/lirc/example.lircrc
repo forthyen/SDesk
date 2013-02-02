@@ -1,0 +1,120 @@
+# This is an example .lircrc file that shows the different config strings that
+# vlc understand. button names are from an animax remote, and these may change
+# with different remotes
+
+begin
+  prog = vlc
+  button = PLAY_UP
+  config = PLAY
+end
+
+begin
+  prog = vlc
+  button = PAUSE_UP
+  config = PAUSE
+end
+
+#use this target if you have a combined play/pause button
+begin
+  prog = vlc
+  button = PLAY_UP
+  config = PLAYPAUSE
+end
+
+begin
+  prog = vlc
+  button = STOP_UP
+  config = STOP
+end
+
+begin
+  prog = vlc
+  button = POWER_UP
+  config = QUIT
+end
+
+begin
+  prog = vlc
+  button = SKIP_FORWARD_UP
+  config = NEXT
+end
+
+begin
+  prog = vlc
+  button = SKIP_BACKWARD
+  config = PREV
+end
+
+begin
+  prog = vlc
+  button = RED_BUTTON_UP
+  config = FULLSCREEN
+end
+
+begin
+  prog = vlc
+  button = REWIND_UP
+  config = SLOW
+end
+
+begin
+  prog = vlc
+  button = FORWARD_UP
+  config = FAST
+end
+
+#Audio controls
+begin
+  prog = vlc
+  button = VOLUME_DOWN_DOWN
+  config = VOL_DOWN
+end
+
+begin
+  prog = vlc
+  button = VOLUME_UP_DOWN
+  config = VOL_UP
+end
+
+begin
+  prog = vlc
+  button = SOMEBUTTON
+  config = AUDIO_TRACK
+end
+
+begin
+  prog = vlc
+  button = MUTE_UP
+  config = MUTE
+end
+
+#For dvd navigation
+begin
+  prog = vlc
+  button = 4_UP
+  config = LEFT
+end
+
+begin
+  prog = vlc
+  button = 5_UP
+  config = DOWN
+end
+
+begin
+  prog = vlc
+  button = 2_UP
+  config = UP
+end
+
+begin
+  prog = vlc
+  button = 6_UP
+  config = RIGHT
+end
+
+begin
+  prog = vlc
+  button = MENU_UP
+  config = ACTIVATE
+end

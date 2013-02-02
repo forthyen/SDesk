@@ -1,0 +1,25 @@
+#!/bin/sh
+
+echo "slideshow $1 $2" > /tmp/slideshow.log
+
+case `/usr/bin/basename $1` in
+    *)
+        # regular slide show of a single directory
+        IMAGE_DIR="$2"
+
+        RESULT="`/usr/local/bin/ecp photoApp IMAGEDIR \"$IMAGE_DIR\"`"
+        echo "slideshow $RESULT" >> /tmp/slideshow.log
+        if [ "$RESULT" != "photoApp: ok" ]; then
+            /usr/local/bin/photo -p &
+            echo "slideshow $?" >> /tmp/slideshow.log
+            /bin/sleep 2
+        fi
+
+        /usr/local/bin/ecp photoApp IMAGEDIR "$IMAGE_DIR"
+        /usr/local/bin/ecp photoApp SHOW_INFO none
+        /usr/local/bin/ecp photoApp FIT_MODE smart
+        /usr/local/bin/ecp photoApp SLIDESHOW "$IMAGE_DIR"
+        ;;
+esac
+
+#eof

@@ -1,0 +1,2 @@
+#!/bin/sh
+g++ -I /usr/share/rokudev/usr/local/include/roku -mips2 -msoft-float test.cpp read_tags.o -o readtag /usr/local/lib/libCascadeCore.so /usr/local/lib/libCascade.so -lpthread

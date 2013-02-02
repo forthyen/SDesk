@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo "queuevideo $1" > /tmp/queuevideo.log
+
+echo $1 >> /tmp/videoqueue
+
+# eof
+

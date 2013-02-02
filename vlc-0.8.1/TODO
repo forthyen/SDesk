@@ -1,0 +1,578 @@
+# VLC Todo
+# Difficulty values: Easy, Medium, Hard, Guru
+#
+# Urgency values: Wishlist, Normal, Important, Critical
+
+Task
+Difficulty: Easy
+Urgency: Critical
+Platform: any
+Description: World domination
+ We need to dominate the world
+Status: Todo
+
+Task
+Difficulty: Medium
+Platform: any
+Urgency: Wishlist
+Description: RAR/ZIP/... access
+An access module that would be able to uncompress compressed files.
+Status: Todo
+
+Task
+Difficulty: Medium
+Platform: any
+Urgency: Wishlist
+Description: DVTS support
+DV over RTP support. See <a href="http://www.sfc.wide.ad.jp/DVTS/">DVTS homepage</a>
+Status: Todo
+
+Task
+Difficulty: Easy
+Platform: any
+Urgency: Urgent
+Description: proper DVD controls
+Most importantly a proper button that will take you straight to the DVD menu. But also, next/prev chapter should be integrated with next/prev playlistitem.
+Status: Todo
+
+Task
+Difficulty: Easy
+Platform: Linux, Win32, Mac OS X
+Urgency: Normal
+Description: Streaming wizard
+ Finish the streaming wizard (85% finished)<br />
+The mac version is at 0%
+Status: Assigned to zorglub
+
+Task
+Difficulty: Easy
+Platform: all
+Urgency: Normal
+Description: configure overview of modules
+ configure should report what it will and what it won't build, after it is done running.
+Status: Todo
+
+Task
+Difficulty: Hard
+Platform: WinCE
+Urgency: Wishlist
+Description: WinCE port finalizing
+The WinCE port is already quite functional but we still miss a GAPI video output (GDI works but is slow) and an interface.
+Some code already exists for that (http://sourceforge.net/projects/vlcpocketpc/) and would need to be imported into the VLC source tree.
+Downloads should be added to the main vlc download page. We need an icon for this. 
+Status: Assigned to MixerAnderson
+
+Task
+Difficulty: Hard
+Urgency: Normal
+Platform: any
+Description: Dual window in embed mode
+Windows taskbar reports two windows in the video embed mode.
+Status: Assigned to gibalou
+
+Task
+Difficulty: Guru
+Urgency: Normal
+Platform: any
+Description: External audio file playing
+ Allow several access from an input thread to allow for multi-input<br />
+(90% done) Add GUI elements
+Status: Assigned to fenrir
+
+Task
+Difficulty: Hard
+Urgency: Normal
+Platform: any
+Description: make everything UTF-8 based
+ Convert everything that deals with strings to a UTF-8 based system. Not very difficult, but needs a lot of checking, testing and allows for easy breakage.
+Status: Todo
+
+Task
+Difficulty: Medium
+Urgency: Wishlist
+Platform: any
+Description: Full blown OSD system 
+ In the line of freevo etc.
+Status: Todo
+
+Task
+Difficulty: Medium
+Urgency: Normal
+Platform: any
+Description: Rewrite the SAP parser
+ The SAP parser is very dirty at the moment, and needs a complete rewrite.
+ - caching support<br />
+Mostly finished. Closely tied to the new playlist system
+Status: Assigned to zorglub
+
+Task
+Difficulty: Medium
+Urgency: Normal
+Platform: any
+Description: Tree playlist
+ A hierarchized playlist structure, eventually using a media library.
+Think playlist within playlist, directory structures, SAP section, TV channels list, iTunes library like stuff etc. <a href="http://sierra.via.ecp.fr/~zorglub/vlc/playlist.txt">Thoughts and ideas (not up-to-date)</a><br />
+Mostly finished. will be done after 0.8.0
+Status: Assigned to zorglub
+
+Task
+Difficulty: Easy
+Urgency: Normal
+Platform: any
+Description: fix ASX playlist parser
+Basically our asx parser is broken. It doesn't handle relative links. It should also URL encode the hrefs (spaces in the url need to be converted to %20 etc). protocol rollover, authors, title's etc etc aren't handled. See <a href="http://www.meetnewplayers.com/bend/Windows%20Media%20-%20Fun%20with%20asx%20files2.htm">this</a> for asx examples. It is still located in the old demux/m3u.c module instead of modules/demux/playlist/
+Status: Todo
+
+Task
+Difficulty: Medium
+Urgency: Normal
+Platform: any
+Description: fix current muxers.
+Our avi muxer doesn't produce valid files
+Status: Todo
+
+Task
+Task
+Difficulty: Easy
+Urgency: Wishlist
+Platform: any
+Description: GSM decoder
+The <a href="http://kbs.cs.tu-berlin.de/~jutta/toast.html">Toast</a> implementation.
+Status: Todo
+
+Task
+Difficulty: Easy
+Urgency: Wishlist
+Platform: any
+Description: AMR decoder
+We will need to find one that isn't based on the reference code.
+Status: Todo
+
+Task
+Difficulty: Easy
+Urgency: Wishlist
+Platform: any
+Description: MusePack decoder
+Need I say more? <a href="http://www.hydrogenaudio.org/index.php?showtopic=21775&">MPCdec</a>. We are awaiting MPC 7.5 or 8.0 specification which should split the codec from the fileformat.
+Status: Todo
+
+Task
+Difficulty: Easy
+Urgency: Normal
+Platform: any
+Description: 24 bit LPCM
+- Increasingly more DVDs use 24 bit LPCM sound. We should support it.
+Status: Todo
+
+Task
+Difficulty: Easy
+Urgency: Normal
+Platform: Mac OS X
+Description: LPCM
+The LPCM decoder outputs really small samples which aren't accepted properly by the macosx coreaudio resampler, causing VLC to not output any sound with many DVD's. A test sample that shows this effect on the mac is the Madonna clip.
+Status: Todo
+
+Task
+Difficulty: Easy
+Urgency: Wishlist
+Platform: any
+Description: APE decoder
+Need I say more? <a href="http://www.monkeysaudio.com/">Monkeys Audio (APE)</a> website. This codec is currently not GPL compatible. We will have to await a GPL compatible implementation of this.
+Status: Todo
+
+Task
+Difficulty: Easy
+Urgency: Wishlist
+Platform: any
+Description: flash video playing/streaming
+A flash video muxer and demuxer. FFMPEG can already output flash video. a waste not to make use of that capability.
+Status: Todo
+
+Task
+Difficulty: Medium
+Urgency: Wishlist
+Platform: any
+Description: Closed Captions/Teletext support
+In order to conform to international regulations, VLC needs to be able to decode the closed captions in TV, DVD, DVB and HDTV video. V4L has a CC api, DVD and HDTV usually have them in a seperate stream.
+Perhaps look at Xawtv, dvbtext and other vbi, vtx systems.
+Status: Todo
+
+Task
+Difficulty: Medium
+Urgency: Wishlist
+Platform: any
+Description: DVB info in NIT
+We need to get the information of a DVB stream that are in the NIT (current program, next program, ...)
+Status: Todo
+
+Task
+Difficulty: Medium
+Urgency: Wishlist
+Platform: any
+Description: IceCast/ShoutCast serving
+This would be a nice thing for the sake of completeness of VLC's streaming capabilities.
+Status: Todo
+
+Task
+Difficulty: Hard
+Urgency: Normal
+Platform: Mac OS X
+Description: New OS X preferences
+ New preferences for Mac OS X. Current not suited for Mac Users and several
+Pref. elements are broken (hotkeys and int with string desc.).
+Status: Todo
+
+Task
+Difficulty: Easy
+Urgency: Normal
+Platform: Mac OS X
+Description: OS X bookmarks window
+We miss a bookmarks window like the wxwidget one.
+Status: Todo
+
+Task
+Difficulty: Hard
+Urgency: Critical
+Platform: Mac OS X
+Description: CoreAudio multichannel audio output.
+ Convert to <a href="http://www.mat.ucsb.edu:8000/CoreAudio/108">AUHAL</a> based sytem.
+Still no info over S/PDIF output available.
+Outstanding issues:<br />
+ - G5 S/PDIF not working<br />
+ - G5 PCM not working because S/PDIF is selected by default, even if not connected.<br />
+Status: Todo
+
+Task
+Difficulty: Hard
+Urgency: Normal
+Platform: any
+Description: Stream text subtitles
+ Find a a way to stream text subtitles, in TS and in RTP.
+  - Find an existing norm
+  - Implement it
+<br />Needs testing and validating
+Status: 65% (fenrir)
+
+Task
+Difficulty: Medium
+Urgency: Normal
+Platform: any
+Description: RTSP server
+Full implementation of a RTSP server. We already have a very basic implementation working but it does need a lot more work. See the following <a href="http://via.ecp.fr/via/ml/streaming/200408/msg00068.html">mail</a> and <a href="http://via.ecp.fr/via/ml/streaming/200410/msg00002.html">mail</a>.
+Status: 90%
+
+Task
+Difficulty: Easy
+Urgency: Wishlist
+Platform: any
+Description: More Picture filters
+There are several picture filters (blend, scale), but we can use more (crop, move..)
+Status: Todo
+
+Task
+Difficulty: Guru
+Urgency: Wishlist
+Platform: any
+Description: Vout redesign
+- vout needs distinct splitting into vout_core, vout_window, pic_filter, vout_filter
+- needs 'assistence' vout windows (clone filters, goom) etc.
+- 4:3, 16:9, freeform Aspect Ratio
+- cropping and padding (do at OS level, but provide a core call to set it up and configure).
+- OSD at window resolution instead of video res (secondary vout channel)
+- a OSD needs to be bound to a vout stream (no subs on goom vout)
+- Use OS native calls where appropriate, with 'C' fallbacks. (OpenGL, Quartz, DirectX already has many of the funtionalities we seek and sometimes they are a lot faster too).
+Status: Todo
+
+Task
+Difficulty: Medium
+Urgency: Wishlist
+Platform: any
+Description: Subtitle work
+- better SSA support with postioning, colors etc.
+- Vobsub seeking
+- Fix subtitles dialogs (mac done)
+Status: Todo
+
+Task
+Difficulty: Easy
+Urgency: Wishlist
+Platform: any
+Description: Automatic charset recognition
+See if we can use <a href="http://trific.ath.cx/software/enca/">ENCA</a> for automatic charset recognition on subtitle files. Might simplify usage of sub files a lot? Might require complete file to be parsed by ENCA before good result is returned?
+Status: Todo
+
+Task
+Difficulty: Guru
+Urgency: Wishlist
+Platform: Mac OS X
+Description: skins2
+Port VLC skins to Objective C++ and OSX. Also requires the intf to be a dialog handler.
+Status: Todo
+
+Task
+Difficulty: Hard
+Urgency: Wishlist
+Platform: any
+Description: informing user.
+Implement a system to: <br />
+ - Alert the user of critical errors (cannot play file). Should be blocking. <br />
+ - Ask the user a question (Are you sure? or Try to Fix index of avi? or Overwrite File?)<br />
+ - Inform the user, without disturbing him. (Buffering stream). This might require a displaytime or something. Because how do we know how long this information should be displayed? Also think of buffering 0-100%<br /> 
+ - present a user/passwd dialog when we get an authentication failure on a stream.<br />
+Status: Todo
+
+Task
+Difficulty: Hard
+Urgency: Wishlist
+Platform: any
+Description: Full H323 Videoconferencing
+VLC isn't really suited for this yet, because it introduces quite large latencies. This should be fixed before the H323 can ever come close to working in VLC.
+We also will need SIP support.
+Status: Todo
+
+Task
+Difficulty: Guru
+Urgency: Normal
+Platform: Mac OS X
+Description: SVCD support
+libcdio needs to be ported to the Mac to support the cddax and vcdx modules for proper SVCD support
+Status: Todo
+
+Task
+Difficulty: Hard 
+Urgency: Wishlist
+Platform: Mac OS X
+Description: QuickTime capturing
+Allow capturing from QuickTime Firewire, USB and PCI devices.
+Possibly see: <a href="http://bugzilla.videolan.org/cgi-bin/bugzilla/show_bug.cgi?id=416">Bug 416</a>
+Status: Todo
+
+Task
+Difficulty: Medium
+Urgency: Normal
+Platform: Mac OS X
+Description: Finish Mac Mozilla plugin
+The Mac mozilla plugin needs some more work to be useable. Basic funtionality is working. However the video-output part needs some more work since it was crashing. See svn history for the old code. 
+Status: Halfway (stalled)
+
+Task
+Difficulty: Easy
+Urgency: Normal
+Platform: any
+Description: Controlling the mozilla plugin
+The mozilla plugin needs to be better controllable (via javascript). <br />
+- retrieve variable values.<br />
+- open VLC media player<br />
+- default html page to control the plugin<br />
+- XUL controls<br />
+(80% done) see:<br />
+<a href="http://sierra.via.ecp.fr/~zorglub/vlc/plugin/vlc.html">Javascript controls</a>
+<a href="http://sierra.via.ecp.fr/~zorglub/vlc/xul/">XUL controls</a>
+<a href="http://mplayerplug-in.sourceforge.net/">MPlayer Mozilla plugin</a>
+Status: Assigned to zorglub
+
+Task
+Difficulty: Hard
+Urgency: Wishlist
+Platform: Windows
+Description: ActiveX control for VLC
+ We need an ActiveX version of VLC for IE intergration
+Status: Todo
+
+Task
+Difficulty: Easy
+Urgency: Wishlist
+Platform: any
+Description: export paramaters of an input
+ Export the Media Info of a file/source to a standard xml file for use by other applications. Possibly combine with file "probe'ing".<br />
+ - AR<br />
+ - size<br />
+ - bitrate<br />
+ - resolution<br />
+ - codecs, etc.<br />
+Status: Todo
+
+Task
+Difficulty: Easy
+Urgency: Wishlist
+Platform: any
+Description: SSL http
+SSL encrypted HTTP communication. To support protected VoD.<br />
+The question is how to neatly integrate it into our API. Support for all our http handling plugins means complicating the API. Perhaps we should store the SSL context in the p_sys of the vlc_object that is calling it? Tad dangerous, but would keep stuff simple.
+Status: Todo
+
+Task
+Difficulty: Hard
+Urgency: Wishlist
+Platform: any
+Description: http cookies
+For protected VoD  (http://a-select.surfnet.nl)
+Status: Todo
+
+Task
+Difficulty: Easy
+Urgency: Wishlist
+Platform: any
+Description: mime-type VLC launching
+Allow application/vlc mimetype to launch VLC instead of plugin for video file.
+Allows for Progressive download to TEMP folder from browsers. VLC would play the file in the TEMP.
+Status: Todo
+
+Task
+Difficulty: Medium
+Urgency: Wishlist
+Platform: any
+Description: rendezvous announces
+Apple released the rendezvous code under a Open Source license now. perhaps it can be used. (It's OpenTalk now btw).<br />
+DMAP protocol announce for videos.
+Status: Todo
+
+Task
+Difficulty: Easy
+Urgency: Wishlist
+Platform: any
+Description: SDL vout cleaning
+The SDL vout hasn't been updated for a long while. It needs some cleaning up. New hotkeys support, better resizing, alignment etc. Even though SDL isn't used much, this vout shouldn't disappear, because it is a crossplatform API.
+Status: Todo
+
+Task
+Difficulty: Easy
+Urgency: Normal
+Platform: Win32/Linux
+Description: V4L and dshow tuning support
+We need an API that allows us to control the tuning of V4L and dshow TV cards.
+Status: Todo (CryHavoc)
+
+Task
+Difficulty: Easy
+Urgency: Wishlist
+Platform: any
+Description: Electronic Program Guide
+Integrate a EPG system into VLC.
+Status: Todo (CryHavoc)
+
+Task
+Difficulty: Hard
+Urgency: Wishlist
+Platform: any
+Description: a Time Shifting module
+This module should create TiVo like capabilities for VLC.
+Status: Todo (CryHavoc)
+
+Task
+Difficulty: Medium
+Urgency: Wishlist
+Platform: any
+Description: UDP packet reordering
+Currently we ignore every packet that is too late and just wait for a fresh one.
+It would be nice to be able to reorder the packets in the buffer to prevent degredation of the signal.
+Status: Todo
+
+Task
+Difficulty: Easy
+Urgency: Wishlist
+Platform: any
+Description: Make vlm more user friendly (setup etc)
+vlm is kinda a pain to setup if you are not entirely experienced with A/V and streaming or VLC for that matter. It can be heavily improved by updating the vlm http interface. Using seperate fields for the need paramters of a schedule/source.
+Status: Todo
+
+Task
+Difficulty: Easy
+Urgency: Wishlist
+Platform: any
+Description: Protocol rollover
+It would be cool if VLC supported something like a protocol rollover mechanism, much like WM server has as well. Multicast, UDP, TCP, HTTP etc.
+However, how spec compliant can this be?<br />
+We require a timeout on udp connecting. Beyond this a playlist file can be used to do a form of protocol rollover when one of the links fails ( or implement this in the new style playlist system [only advance index on failure]).
+Status: Todo
+
+Task
+Difficulty: Hard
+Urgency: Wishlist
+Platform: any
+Description: NAT issues
+Find a way to deal with clients behind a NAT. Multicast and RTSP work 'poorly' in these setups. NATP2P, STUN, UDP hole punching, other techniques ????
+Protocol rollover can be a solution for a lot of these issues.
+Use full DNS names in SDP
+Status: Todo
+
+Task
+Difficulty: Medium
+Urgency: Wishlist
+Platform: any
+Description: Gstreamer and Helix API integration
+See if you can support GStreamer and helix plugins in one way or another.
+Status: Todo
+
+Task
+Difficulty: Easy
+Urgency: Wishlist
+Platform: any
+Description: Gnome-vfs support
+For integration with smb, sftp and other file sharing/mounting methods
+Status: Todo
+
+Task
+Difficulty: Medium
+Platform: any
+Urgency: Normal
+Description: Update matroska demux
+ Better Seeking
+Status: Todo
+
+Task
+Difficulty: Hard
+Platform: any
+Urgency: Wishlist
+Description: Matroska muxer
+Status: Todo
+
+Task
+Difficulty: Medium
+Platform: any
+Urgency: Wishlist
+Description: TTA decoder
+  TTA is said to be a fast en good lossless codec. Opensource library
+  availabe: http://tta.corecodec.org/
+Status: Todo
+
+Task
+Difficulty: Medium
+Platform: any
+Urgency: Wishlist
+Description: Option to automatically deinterlace when needed
+  Mkv stores wether a video track is interlaced in the traxk descriptor
+  libmpeg2 etc output this information on a per-picture bases
+Status: Todo
+
+Task
+Difficulty: Easy
+Platform: any
+Urgency: Wishlist
+Description: UDF decoder
+Support for the new XML based subtitle format called UDF
+Status: Todo
+
+Task
+Difficulty: Hard
+Platform: any
+Urgency: Wishlist
+Description: Faster deinterlacing
+Our deinterlacers are relatively slow. DScaler has the best Soft deinterlacers out there.
+Unfortunatly it is very Win32 focused.
+
+Status: Todo
+
+Task
+Difficulty: Medium
+Platform: any
+Urgency: Wishlist
+Description: More service discovry modules
+- Port UPnP support from http://sourceforge.net/project/showfiles.php?group_id=89768 <br />
+- libhal based discovery (should be able to find cd,dvd,capture cards,etc etc <br />
+- Perhaps a generalized webpage parser (use user supplied templates to parse
+   streams from popular websites )
+Status: Todo
+
+# Do not remove me
+Task

@@ -1,0 +1,17 @@
+#!/bin/sh
+
+LOOP=1
+while [ $LOOP -ne 10 ]; do
+  if [ ! -x /mnt/smb/terra/video/New/Develop/src/SDesk/SDesk.roku ]; then
+    LOOP = $LOOP + 1
+    /bin/sleep 15
+  else
+    cd /mnt/smb/terra/video/New/Develop/src/SDesk
+    /mnt/smb/terra/video/New/Develop/src/SDesk/SDesk.roku &
+    exit 0
+  fi
+done
+
+exit 1
+
+# eof

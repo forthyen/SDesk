@@ -1,0 +1,45 @@
+#!/bin/sh
+
+LOOP=1
+while [ $LOOP -ne 10 ]; do
+  echo Loop $LOOP
+  if [ ! -x /mnt/flash1/SDesk.roku -o ! -x /mnt/smb/terra/media/Video ]; then
+    echo No SDesk.roku
+    if [ $LOOP = 9 ]; then
+      LOOP=10
+    fi
+    if [ $LOOP = 8 ]; then
+      LOOP=9
+    fi
+    if [ $LOOP = 7 ]; then
+      LOOP=8
+    fi
+    if [ $LOOP = 6 ]; then
+      LOOP=7
+    fi
+    if [ $LOOP = 5 ]; then
+      LOOP=6
+    fi
+    if [ $LOOP = 4 ]; then
+      LOOP=5
+    fi
+    if [ $LOOP = 3 ]; then
+      LOOP=4
+    fi
+    if [ $LOOP = 2 ]; then
+      LOOP=3
+    fi
+    if [ $LOOP = 1 ]; then
+      LOOP=2
+    fi
+    /bin/sleep 15
+  else
+    cd /mnt/flash1
+    /mnt/flash1/SDesk.roku > SDeskStart.log &
+    exit 0
+  fi
+done
+
+exit 1
+
+# eof

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=VLC for Gtk+
+Name[fr]=VLC pour Gtk+
+Comment=Gtk+ multimedia player
+Comment[fr]=Lecteur multimédia pour Gtk+
+Exec=gvlc
+Icon=gvlc.png
+Terminal=0
+Type=Application

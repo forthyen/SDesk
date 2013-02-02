@@ -1,0 +1,51 @@
+#!/bin/sh
+# chkconfig: 2345 100 100
+
+SWAPDIR=/mnt/flash1
+SWAPFILE=$SWAPDIR/swapfile
+RETVAL=0
+
+start() {
+    echo -n $"Starting swap: "
+    # Remount the flash RW
+    DEV=`mount | grep $SWAPDIR | awk '{print $1}'`
+    MNT=`mount | grep $SWAPDIR | awk '{print $3}'`
+    mount -o remount,rw $DEV $MNT
+    # Create the swap file
+    if [ ! -r $SWAPFILE ]; then    
+        dd if=/dev/zero of=$SWAPFILE bs=1024 count=60000    
+        mkswap $SWAPFILE
+    fi
+    swapon $SWAPFILE
+    RETVAL=$?
+    return $RETVAL
+}
+
+stop() {
+    echo -n $"Stopping swap: "
+    swapoff $SWAPFILE
+    RETVAL=$?
+    return $RETVAL
+}
+
+restart() {
+    stop
+    start
+}
+
+case "$1" in
+  start)
+        start
+        ;;
+  stop)
+        stop
+        ;;
+  restart)
+        restart
+        ;;
+  *)
+        echo $"Usage: $0 {start|stop|restart}"
+        exit 1
+esac
+
+exit $?

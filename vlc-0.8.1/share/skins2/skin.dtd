@@ -1,0 +1,200 @@
+<!-- version 2.0
+-->
+
+
+<!ELEMENT Theme (ThemeInfo,(Bitmap|BitmapFont|Font|Window)*)>
+    <!ATTLIST Theme
+        version     CDATA   #REQUIRED
+        tooltipfont CDATA   "defaultfont"
+        magnet      CDATA   "15"
+        alpha       CDATA   "255"
+        movealpha   CDATA   "255"
+    >
+
+<!-- main elements -->
+<!ELEMENT Bitmap EMPTY>
+    <!ATTLIST Bitmap
+        id          CDATA   #REQUIRED
+        file        CDATA   #REQUIRED
+        alphacolor  CDATA   #REQUIRED
+    >
+<!ELEMENT Font EMPTY>
+    <!ATTLIST Font
+        id          CDATA   #REQUIRED
+        file        CDATA   #REQUIRED
+        size        CDATA   "12"
+    >
+<!ELEMENT BitmapFont EMPTY>
+    <!ATTLIST BitmapFont
+        id          CDATA   #REQUIRED
+        file        CDATA   #REQUIRED
+        type        CDATA   "digits"
+    >
+<!ELEMENT ThemeInfo EMPTY>
+    <!ATTLIST ThemeInfo
+        name        CDATA   #IMPLIED
+        author      CDATA   #IMPLIED
+        email       CDATA   #IMPLIED
+        webpage     CDATA   #IMPLIED
+    >
+<!ELEMENT Window (Layout)+>
+    <!ATTLIST Window
+        id          CDATA   "none"
+        visible     CDATA   "true"
+        x           CDATA   "0"
+        y           CDATA   "0"
+        dragdrop    CDATA   "true"
+        playondrop  CDATA   "true"
+    >
+
+<!ELEMENT Layout (Group)>
+    <!ATTLIST Layout
+        id          CDATA   "none"
+        width       CDATA   #REQUIRED
+        height      CDATA   #REQUIRED
+        minwidth    CDATA   "-1"
+        maxwidth    CDATA   "-1"
+        minheight   CDATA   "-1"
+        maxheight   CDATA   "-1"
+    >
+<!ELEMENT Group (Group|Image|Button|Playlist|Slider|RadialSlider|Text|Checkbox|
+                 Anchor|Video)+>
+    <!ATTLIST Group
+        x           CDATA   "0"
+        y           CDATA   "0"
+    >
+
+<!-- Anchors -->
+<!ELEMENT Anchor EMPTY>
+    <!ATTLIST Anchor
+        x           CDATA   "0"
+        y           CDATA   "0"
+        priority    CDATA   #REQUIRED
+        points      CDATA   "(0,0)"
+        range       CDATA   "10"
+    >
+
+<!-- Controls -->
+<!ELEMENT Image EMPTY>
+    <!ATTLIST Image
+        id          CDATA   "none"
+        visible     CDATA   "true"
+        x           CDATA   "0"
+        y           CDATA   "0"
+        lefttop     CDATA   "lefttop"
+        rightbottom CDATA   "lefttop"
+        image       CDATA   #REQUIRED
+        action      CDATA   "none"
+        help        CDATA   ""
+    >
+<!ELEMENT Button EMPTY>
+    <!ATTLIST Button
+        id          CDATA   "none"
+        visible     CDATA   "true"
+        x           CDATA   "0"
+        y           CDATA   "0"
+        lefttop     CDATA   "lefttop"
+        rightbottom CDATA   "lefttop"
+        up          CDATA   #REQUIRED
+        down        CDATA   "none"
+        over        CDATA   "none"
+        action      CDATA   "none"
+        tooltiptext CDATA   ""
+        help        CDATA   ""
+    >
+<!ELEMENT Checkbox EMPTY>
+    <!ATTLIST Checkbox
+        id           CDATA   "none"
+        visible      CDATA   "true"
+        x            CDATA   "0"
+        y            CDATA   "0"
+        lefttop      CDATA   "lefttop"
+        rightbottom  CDATA   "lefttop"
+        up1          CDATA   #REQUIRED
+        down1        CDATA   "none"
+        over1        CDATA   "none"
+        up2          CDATA   #REQUIRED
+        down2        CDATA   "none"
+        over2        CDATA   "none"
+        state        CDATA   #REQUIRED
+        action1      CDATA   "none"
+        action2      CDATA   "none"
+        tooltiptext1 CDATA   ""
+        tooltiptext2 CDATA   ""
+        help         CDATA   ""
+    >
+<!ELEMENT Slider EMPTY>
+    <!ATTLIST Slider
+        id          CDATA   "none"
+        visible     CDATA   "true"
+        x           CDATA   "0"
+        y           CDATA   "0"
+        lefttop     CDATA   "lefttop"
+        rightbottom CDATA   "lefttop"
+        up          CDATA   #REQUIRED
+        down        CDATA   "none"
+        over        CDATA   "none"
+        points      CDATA   #REQUIRED
+        thickness   CDATA   "10"
+        value       CDATA   "none"
+        tooltiptext CDATA   ""
+        help        CDATA   ""
+    >
+<!ELEMENT RadialSlider EMPTY>
+    <!ATTLIST RadialSlider
+        id          CDATA   "none"
+        visible     CDATA   "true"
+        x           CDATA   "0"
+        y           CDATA   "0"
+        lefttop     CDATA   "lefttop"
+        rightbottom CDATA   "lefttop"
+        sequence    CDATA   #REQUIRED
+        nbimages    CDATA   #REQUIRED
+        minangle    CDATA   "0"
+        maxangle    CDATA   "360"
+        value       CDATA   "none"
+        tooltiptext CDATA   ""
+        help        CDATA   ""
+    >
+<!ELEMENT Text EMPTY>
+    <!ATTLIST Text
+        id          CDATA   "none"
+        visible     CDATA   "true"
+        x           CDATA   "0"
+        y           CDATA   "0"
+        text        CDATA   ""
+        font        CDATA   #REQUIRED
+        color       CDATA   "#000000"
+        width       CDATA   "0"
+        help        CDATA   ""
+    >
+<!ELEMENT Playlist (Slider)?>
+    <!ATTLIST Playlist
+        id          CDATA   #REQUIRED
+        visible     CDATA   "true"
+        x           CDATA   "0"
+        y           CDATA   "0"
+        width       CDATA   "0"
+        height      CDATA   "0"
+        lefttop     CDATA   "lefttop"
+        rightbottom CDATA   "lefttop"
+        font        CDATA   #REQUIRED
+        fgcolor     CDATA   "#000000"
+        playcolor   CDATA   "#FF0000"
+        bgcolor1    CDATA   "#FFFFFF"
+        bgcolor2    CDATA   "#FFFFFF"
+        selcolor    CDATA   "#0000FF"
+        help        CDATA   ""
+    >
+<!ELEMENT Video EMPTY>
+    <!ATTLIST Video
+        id          CDATA   "none"
+        visible     CDATA   "true"
+        x           CDATA   "0"
+        y           CDATA   "0"
+        width       CDATA   "0"
+        height      CDATA   "0"
+        lefttop     CDATA   "lefttop"
+        rightbottom CDATA   "lefttop"
+        help        CDATA   ""
+    >

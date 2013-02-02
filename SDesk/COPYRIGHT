@@ -1,0 +1,5 @@
+The SDesk and SDeskScan packages are Copyright 2004-2007 by Sven Delmas.
+
+I have put the SDeskScan and SDesk code under the GPL, mostly because
+the packages it relies upon are under that license. Personally I prefer the
+less restrictive BSD license.

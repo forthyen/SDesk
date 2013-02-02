@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo "prevsong" > /tmp/prevsong.log
+
+/usr/local/bin/ecp sonicaApp previous
+/usr/local/bin/ecp mp3player PREVIOUS
+
+#eof

@@ -1,0 +1,792 @@
+$(OBJECT_DIR)/SDeskScanGenre.o: ./SDeskScanGenre.cpp /usr/include/string.h \
+  /usr/include/features.h /usr/include/sys/cdefs.h \
+  /usr/include/gnu/stubs.h /usr/include/bits/symver.h \
+  /usr/include/bits/symverinfo.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/stddef.h SDeskScan.h \
+  /usr/include/g++-3/string /usr/include/g++-3/std/bastring.h \
+  /usr/include/g++-3/cstddef /usr/include/g++-3/std/straits.h \
+  /usr/include/g++-3/cctype /usr/include/ctype.h \
+  /usr/include/bits/types.h /usr/include/bits/pthreadtypes.h \
+  /usr/include/bits/sched.h /usr/include/endian.h \
+  /usr/include/bits/endian.h /usr/include/g++-3/cstring \
+  /usr/include/g++-3/alloc.h /usr/include/g++-3/stl_config.h \
+  /usr/include/_G_config.h /usr/include/wchar.h /usr/include/bits/wchar.h \
+  /usr/include/gconv.h /usr/include/g++-3/stl_alloc.h \
+  /usr/include/g++-3/iostream.h /usr/include/g++-3/streambuf.h \
+  /usr/include/libio.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/stdarg.h \
+  /usr/include/stdlib.h /usr/include/sys/types.h /usr/include/time.h \
+  /usr/include/sys/select.h /usr/include/bits/select.h \
+  /usr/include/bits/sigset.h /usr/include/bits/time.h \
+  /usr/include/sys/sysmacros.h /usr/include/alloca.h \
+  /usr/include/assert.h /usr/include/pthread.h /usr/include/sched.h \
+  /usr/include/signal.h /usr/include/bits/initspin.h \
+  /usr/include/bits/sigthread.h /usr/include/g++-3/iterator \
+  /usr/include/g++-3/stl_relops.h /usr/include/g++-3/stl_iterator.h \
+  /usr/include/g++-3/std/bastring.cc /usr/include/g++-3/vector \
+  /usr/include/g++-3/stl_algobase.h /usr/include/g++-3/stl_pair.h \
+  /usr/include/g++-3/type_traits.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/limits.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/syslimits.h \
+  /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+  /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+  /usr/include/bits/posix2_lim.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/new.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/new \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/exception \
+  /usr/include/g++-3/stl_construct.h \
+  /usr/include/g++-3/stl_uninitialized.h /usr/include/g++-3/stl_vector.h \
+  /usr/include/g++-3/stl_bvector.h /usr/include/g++-3/algorithm \
+  /usr/include/g++-3/stl_tempbuf.h /usr/include/g++-3/stl_algo.h \
+  /usr/include/g++-3/stl_heap.h /usr/local/include/roku/cascade/Cascade.h \
+  /usr/local/include/roku/cascade/CascadeTypedefs.h \
+  /usr/local/include/roku/cascade/CascadeObject.h \
+  /usr/local/include/roku/cascade/app/CascadeApp.h \
+  /usr/local/include/roku/cascade/app/CascadeAppMessageSink.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeMessage.h \
+  /usr/local/include/roku/cascade/util/CascadeTime.h \
+  /usr/local/include/roku/cascade/util/CascadeString.h \
+  /usr/local/include/roku/cascade/app/CascadeMountMessage.h \
+  /usr/local/include/roku/cascade/app/CascadePowerMessage.h \
+  /usr/local/include/roku/cascade/app/CascadeTimer.h \
+  /usr/local/include/roku/cascade/app/CascadeWindow.h \
+  /usr/local/include/roku/cascade/graphics/CascadeRect.h \
+  /usr/local/include/roku/cascade/graphics/CascadePoint.h \
+  /usr/local/include/roku/cascade/graphics/CascadeBitmap.h \
+  /usr/local/include/roku/cascade/util/CascadeFile.h \
+  /usr/local/include/roku/cascade/util/CascadeFSObject.h \
+  /usr/include/regex.h /usr/include/sys/stat.h /usr/include/bits/stat.h \
+  /usr/local/include/roku/cascade/graphics/CascadeDims.h \
+  /usr/local/include/roku/cascade/graphics/CascadeColor.h \
+  /usr/local/include/roku/cascade/graphics/CascadeFont.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeSharedMemZone.h \
+  /usr/local/include/roku/cascade/graphics/CascadeScreenMessage.h \
+  /usr/local/include/roku/cascade/graphics/CascadeScreen.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeWormhole.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeMessageDefs.h \
+  /usr/local/include/roku/cascade/util/CascadeArray.h \
+  /usr/local/include/roku/cascade/app/CascadeInput.h \
+  /usr/local/include/roku/cascade/app/CascadeKeyDefs.h \
+  /usr/local/include/roku/cascade/app/CascadeMessageBox.h \
+  /usr/local/include/roku/cascade/widgets/CascadeButtonWidget.h \
+  /usr/local/include/roku/cascade/widgets/CascadeWidget.h \
+  /usr/local/include/roku/cascade/app/CascadePowerLED.h \
+  /usr/local/include/roku/cascade/app/CascadePowerLEDMessage.h \
+  /usr/local/include/roku/cascade/av/CascadeAudioPlaybackDevice.h \
+  /usr/local/include/roku/cascade/av/CascadeMP3Player.h \
+  /usr/local/include/roku/cascade/av/CascadeWAVPlayer.h \
+  /usr/local/include/roku/cascade/av/CascadeMPEGFile.h \
+  /usr/local/include/roku/cascade/util/CascadeStream.h \
+  /usr/local/include/roku/cascade/av/CascadeMPEGPlayer.h \
+  /usr/local/include/roku/cascade/av/CascadeMPEGPlayerMessage.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeSemLock.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeSharedList.h \
+  /usr/local/include/roku/cascade/interthread/CascadeMonitor.h \
+  /usr/local/include/roku/cascade/interthread/CascadeMutex.h \
+  /usr/local/include/roku/cascade/interthread/CascadeThread.h \
+  /usr/local/include/roku/cascade/net/CascadeHTTPClient.h \
+  /usr/local/include/roku/cascade/net/CascadeUPnP.h \
+  /usr/local/include/roku/cascade/util/CascadeNewArray.h \
+  /usr/local/include/roku/cascade/util/CascadeDirectory.h \
+  /usr/local/include/roku/cascade/util/CascadeDirScanner.h \
+  /usr/local/include/roku/cascade/util/CascadeElapsedTime.h \
+  /usr/local/include/roku/cascade/util/CascadeSettings.h \
+  /usr/local/include/roku/cascade/util/CascadeSpawn.h \
+  /usr/local/include/roku/cascade/util/CascadeFileStream.h \
+  /usr/local/include/roku/cascade/util/CascadeTokenArray.h \
+  /usr/local/include/roku/cascade/util/CascadeHashTable.h \
+  /usr/local/include/roku/cascade/widgets/CascadeLabelWidget.h \
+  /usr/local/include/roku/cascade/widgets/CascadePictureWidget.h \
+  /usr/local/include/roku/cascade/widgets/CascadeSpinnerWidget.h \
+  /usr/local/include/roku/cascade/widgets/CascadeVesselPanel.h \
+  /usr/local/include/roku/cascade/util/CascadeDirBrowser.h \
+  /usr/local/include/roku/cascade/util/CascadeVessel.h SDeskLog.h \
+  /usr/include/stdio.h /usr/include/bits/stdio_lim.h SDeskScanApp.h \
+  SDeskScanNews.h SDeskScanRadio.h SDeskScanGenre.h SDeskScanSongByTag.h \
+  SDeskScanSong.h
+$(OBJECT_DIR)/SDeskScanRadio.o: ./SDeskScanRadio.cpp /usr/include/string.h \
+  /usr/include/features.h /usr/include/sys/cdefs.h \
+  /usr/include/gnu/stubs.h /usr/include/bits/symver.h \
+  /usr/include/bits/symverinfo.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/stddef.h SDeskScan.h \
+  /usr/include/g++-3/string /usr/include/g++-3/std/bastring.h \
+  /usr/include/g++-3/cstddef /usr/include/g++-3/std/straits.h \
+  /usr/include/g++-3/cctype /usr/include/ctype.h \
+  /usr/include/bits/types.h /usr/include/bits/pthreadtypes.h \
+  /usr/include/bits/sched.h /usr/include/endian.h \
+  /usr/include/bits/endian.h /usr/include/g++-3/cstring \
+  /usr/include/g++-3/alloc.h /usr/include/g++-3/stl_config.h \
+  /usr/include/_G_config.h /usr/include/wchar.h /usr/include/bits/wchar.h \
+  /usr/include/gconv.h /usr/include/g++-3/stl_alloc.h \
+  /usr/include/g++-3/iostream.h /usr/include/g++-3/streambuf.h \
+  /usr/include/libio.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/stdarg.h \
+  /usr/include/stdlib.h /usr/include/sys/types.h /usr/include/time.h \
+  /usr/include/sys/select.h /usr/include/bits/select.h \
+  /usr/include/bits/sigset.h /usr/include/bits/time.h \
+  /usr/include/sys/sysmacros.h /usr/include/alloca.h \
+  /usr/include/assert.h /usr/include/pthread.h /usr/include/sched.h \
+  /usr/include/signal.h /usr/include/bits/initspin.h \
+  /usr/include/bits/sigthread.h /usr/include/g++-3/iterator \
+  /usr/include/g++-3/stl_relops.h /usr/include/g++-3/stl_iterator.h \
+  /usr/include/g++-3/std/bastring.cc /usr/include/g++-3/vector \
+  /usr/include/g++-3/stl_algobase.h /usr/include/g++-3/stl_pair.h \
+  /usr/include/g++-3/type_traits.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/limits.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/syslimits.h \
+  /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+  /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+  /usr/include/bits/posix2_lim.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/new.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/new \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/exception \
+  /usr/include/g++-3/stl_construct.h \
+  /usr/include/g++-3/stl_uninitialized.h /usr/include/g++-3/stl_vector.h \
+  /usr/include/g++-3/stl_bvector.h /usr/include/g++-3/algorithm \
+  /usr/include/g++-3/stl_tempbuf.h /usr/include/g++-3/stl_algo.h \
+  /usr/include/g++-3/stl_heap.h /usr/local/include/roku/cascade/Cascade.h \
+  /usr/local/include/roku/cascade/CascadeTypedefs.h \
+  /usr/local/include/roku/cascade/CascadeObject.h \
+  /usr/local/include/roku/cascade/app/CascadeApp.h \
+  /usr/local/include/roku/cascade/app/CascadeAppMessageSink.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeMessage.h \
+  /usr/local/include/roku/cascade/util/CascadeTime.h \
+  /usr/local/include/roku/cascade/util/CascadeString.h \
+  /usr/local/include/roku/cascade/app/CascadeMountMessage.h \
+  /usr/local/include/roku/cascade/app/CascadePowerMessage.h \
+  /usr/local/include/roku/cascade/app/CascadeTimer.h \
+  /usr/local/include/roku/cascade/app/CascadeWindow.h \
+  /usr/local/include/roku/cascade/graphics/CascadeRect.h \
+  /usr/local/include/roku/cascade/graphics/CascadePoint.h \
+  /usr/local/include/roku/cascade/graphics/CascadeBitmap.h \
+  /usr/local/include/roku/cascade/util/CascadeFile.h \
+  /usr/local/include/roku/cascade/util/CascadeFSObject.h \
+  /usr/include/regex.h /usr/include/sys/stat.h /usr/include/bits/stat.h \
+  /usr/local/include/roku/cascade/graphics/CascadeDims.h \
+  /usr/local/include/roku/cascade/graphics/CascadeColor.h \
+  /usr/local/include/roku/cascade/graphics/CascadeFont.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeSharedMemZone.h \
+  /usr/local/include/roku/cascade/graphics/CascadeScreenMessage.h \
+  /usr/local/include/roku/cascade/graphics/CascadeScreen.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeWormhole.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeMessageDefs.h \
+  /usr/local/include/roku/cascade/util/CascadeArray.h \
+  /usr/local/include/roku/cascade/app/CascadeInput.h \
+  /usr/local/include/roku/cascade/app/CascadeKeyDefs.h \
+  /usr/local/include/roku/cascade/app/CascadeMessageBox.h \
+  /usr/local/include/roku/cascade/widgets/CascadeButtonWidget.h \
+  /usr/local/include/roku/cascade/widgets/CascadeWidget.h \
+  /usr/local/include/roku/cascade/app/CascadePowerLED.h \
+  /usr/local/include/roku/cascade/app/CascadePowerLEDMessage.h \
+  /usr/local/include/roku/cascade/av/CascadeAudioPlaybackDevice.h \
+  /usr/local/include/roku/cascade/av/CascadeMP3Player.h \
+  /usr/local/include/roku/cascade/av/CascadeWAVPlayer.h \
+  /usr/local/include/roku/cascade/av/CascadeMPEGFile.h \
+  /usr/local/include/roku/cascade/util/CascadeStream.h \
+  /usr/local/include/roku/cascade/av/CascadeMPEGPlayer.h \
+  /usr/local/include/roku/cascade/av/CascadeMPEGPlayerMessage.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeSemLock.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeSharedList.h \
+  /usr/local/include/roku/cascade/interthread/CascadeMonitor.h \
+  /usr/local/include/roku/cascade/interthread/CascadeMutex.h \
+  /usr/local/include/roku/cascade/interthread/CascadeThread.h \
+  /usr/local/include/roku/cascade/net/CascadeHTTPClient.h \
+  /usr/local/include/roku/cascade/net/CascadeUPnP.h \
+  /usr/local/include/roku/cascade/util/CascadeNewArray.h \
+  /usr/local/include/roku/cascade/util/CascadeDirectory.h \
+  /usr/local/include/roku/cascade/util/CascadeDirScanner.h \
+  /usr/local/include/roku/cascade/util/CascadeElapsedTime.h \
+  /usr/local/include/roku/cascade/util/CascadeSettings.h \
+  /usr/local/include/roku/cascade/util/CascadeSpawn.h \
+  /usr/local/include/roku/cascade/util/CascadeFileStream.h \
+  /usr/local/include/roku/cascade/util/CascadeTokenArray.h \
+  /usr/local/include/roku/cascade/util/CascadeHashTable.h \
+  /usr/local/include/roku/cascade/widgets/CascadeLabelWidget.h \
+  /usr/local/include/roku/cascade/widgets/CascadePictureWidget.h \
+  /usr/local/include/roku/cascade/widgets/CascadeSpinnerWidget.h \
+  /usr/local/include/roku/cascade/widgets/CascadeVesselPanel.h \
+  /usr/local/include/roku/cascade/util/CascadeDirBrowser.h \
+  /usr/local/include/roku/cascade/util/CascadeVessel.h SDeskLog.h \
+  /usr/include/stdio.h /usr/include/bits/stdio_lim.h SDeskScanApp.h \
+  SDeskScanNews.h SDeskScanRadio.h SDeskScanGenre.h SDeskScanSongByTag.h \
+  SDeskScanSong.h
+$(OBJECT_DIR)/SDeskScanSongByTag.o: ./SDeskScanSongByTag.cpp /usr/include/string.h \
+  /usr/include/features.h /usr/include/sys/cdefs.h \
+  /usr/include/gnu/stubs.h /usr/include/bits/symver.h \
+  /usr/include/bits/symverinfo.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/stddef.h SDeskScan.h \
+  /usr/include/g++-3/string /usr/include/g++-3/std/bastring.h \
+  /usr/include/g++-3/cstddef /usr/include/g++-3/std/straits.h \
+  /usr/include/g++-3/cctype /usr/include/ctype.h \
+  /usr/include/bits/types.h /usr/include/bits/pthreadtypes.h \
+  /usr/include/bits/sched.h /usr/include/endian.h \
+  /usr/include/bits/endian.h /usr/include/g++-3/cstring \
+  /usr/include/g++-3/alloc.h /usr/include/g++-3/stl_config.h \
+  /usr/include/_G_config.h /usr/include/wchar.h /usr/include/bits/wchar.h \
+  /usr/include/gconv.h /usr/include/g++-3/stl_alloc.h \
+  /usr/include/g++-3/iostream.h /usr/include/g++-3/streambuf.h \
+  /usr/include/libio.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/stdarg.h \
+  /usr/include/stdlib.h /usr/include/sys/types.h /usr/include/time.h \
+  /usr/include/sys/select.h /usr/include/bits/select.h \
+  /usr/include/bits/sigset.h /usr/include/bits/time.h \
+  /usr/include/sys/sysmacros.h /usr/include/alloca.h \
+  /usr/include/assert.h /usr/include/pthread.h /usr/include/sched.h \
+  /usr/include/signal.h /usr/include/bits/initspin.h \
+  /usr/include/bits/sigthread.h /usr/include/g++-3/iterator \
+  /usr/include/g++-3/stl_relops.h /usr/include/g++-3/stl_iterator.h \
+  /usr/include/g++-3/std/bastring.cc /usr/include/g++-3/vector \
+  /usr/include/g++-3/stl_algobase.h /usr/include/g++-3/stl_pair.h \
+  /usr/include/g++-3/type_traits.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/limits.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/syslimits.h \
+  /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+  /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+  /usr/include/bits/posix2_lim.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/new.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/new \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/exception \
+  /usr/include/g++-3/stl_construct.h \
+  /usr/include/g++-3/stl_uninitialized.h /usr/include/g++-3/stl_vector.h \
+  /usr/include/g++-3/stl_bvector.h /usr/include/g++-3/algorithm \
+  /usr/include/g++-3/stl_tempbuf.h /usr/include/g++-3/stl_algo.h \
+  /usr/include/g++-3/stl_heap.h /usr/local/include/roku/cascade/Cascade.h \
+  /usr/local/include/roku/cascade/CascadeTypedefs.h \
+  /usr/local/include/roku/cascade/CascadeObject.h \
+  /usr/local/include/roku/cascade/app/CascadeApp.h \
+  /usr/local/include/roku/cascade/app/CascadeAppMessageSink.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeMessage.h \
+  /usr/local/include/roku/cascade/util/CascadeTime.h \
+  /usr/local/include/roku/cascade/util/CascadeString.h \
+  /usr/local/include/roku/cascade/app/CascadeMountMessage.h \
+  /usr/local/include/roku/cascade/app/CascadePowerMessage.h \
+  /usr/local/include/roku/cascade/app/CascadeTimer.h \
+  /usr/local/include/roku/cascade/app/CascadeWindow.h \
+  /usr/local/include/roku/cascade/graphics/CascadeRect.h \
+  /usr/local/include/roku/cascade/graphics/CascadePoint.h \
+  /usr/local/include/roku/cascade/graphics/CascadeBitmap.h \
+  /usr/local/include/roku/cascade/util/CascadeFile.h \
+  /usr/local/include/roku/cascade/util/CascadeFSObject.h \
+  /usr/include/regex.h /usr/include/sys/stat.h /usr/include/bits/stat.h \
+  /usr/local/include/roku/cascade/graphics/CascadeDims.h \
+  /usr/local/include/roku/cascade/graphics/CascadeColor.h \
+  /usr/local/include/roku/cascade/graphics/CascadeFont.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeSharedMemZone.h \
+  /usr/local/include/roku/cascade/graphics/CascadeScreenMessage.h \
+  /usr/local/include/roku/cascade/graphics/CascadeScreen.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeWormhole.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeMessageDefs.h \
+  /usr/local/include/roku/cascade/util/CascadeArray.h \
+  /usr/local/include/roku/cascade/app/CascadeInput.h \
+  /usr/local/include/roku/cascade/app/CascadeKeyDefs.h \
+  /usr/local/include/roku/cascade/app/CascadeMessageBox.h \
+  /usr/local/include/roku/cascade/widgets/CascadeButtonWidget.h \
+  /usr/local/include/roku/cascade/widgets/CascadeWidget.h \
+  /usr/local/include/roku/cascade/app/CascadePowerLED.h \
+  /usr/local/include/roku/cascade/app/CascadePowerLEDMessage.h \
+  /usr/local/include/roku/cascade/av/CascadeAudioPlaybackDevice.h \
+  /usr/local/include/roku/cascade/av/CascadeMP3Player.h \
+  /usr/local/include/roku/cascade/av/CascadeWAVPlayer.h \
+  /usr/local/include/roku/cascade/av/CascadeMPEGFile.h \
+  /usr/local/include/roku/cascade/util/CascadeStream.h \
+  /usr/local/include/roku/cascade/av/CascadeMPEGPlayer.h \
+  /usr/local/include/roku/cascade/av/CascadeMPEGPlayerMessage.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeSemLock.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeSharedList.h \
+  /usr/local/include/roku/cascade/interthread/CascadeMonitor.h \
+  /usr/local/include/roku/cascade/interthread/CascadeMutex.h \
+  /usr/local/include/roku/cascade/interthread/CascadeThread.h \
+  /usr/local/include/roku/cascade/net/CascadeHTTPClient.h \
+  /usr/local/include/roku/cascade/net/CascadeUPnP.h \
+  /usr/local/include/roku/cascade/util/CascadeNewArray.h \
+  /usr/local/include/roku/cascade/util/CascadeDirectory.h \
+  /usr/local/include/roku/cascade/util/CascadeDirScanner.h \
+  /usr/local/include/roku/cascade/util/CascadeElapsedTime.h \
+  /usr/local/include/roku/cascade/util/CascadeSettings.h \
+  /usr/local/include/roku/cascade/util/CascadeSpawn.h \
+  /usr/local/include/roku/cascade/util/CascadeFileStream.h \
+  /usr/local/include/roku/cascade/util/CascadeTokenArray.h \
+  /usr/local/include/roku/cascade/util/CascadeHashTable.h \
+  /usr/local/include/roku/cascade/widgets/CascadeLabelWidget.h \
+  /usr/local/include/roku/cascade/widgets/CascadePictureWidget.h \
+  /usr/local/include/roku/cascade/widgets/CascadeSpinnerWidget.h \
+  /usr/local/include/roku/cascade/widgets/CascadeVesselPanel.h \
+  /usr/local/include/roku/cascade/util/CascadeDirBrowser.h \
+  /usr/local/include/roku/cascade/util/CascadeVessel.h SDeskLog.h \
+  /usr/include/stdio.h /usr/include/bits/stdio_lim.h SDeskScanApp.h \
+  SDeskScanNews.h SDeskScanRadio.h SDeskScanGenre.h SDeskScanSongByTag.h \
+  SDeskScanSong.h
+$(OBJECT_DIR)/SDeskScan.o: ./SDeskScan.cpp /usr/include/signal.h \
+  /usr/include/features.h /usr/include/sys/cdefs.h \
+  /usr/include/gnu/stubs.h /usr/include/bits/symver.h \
+  /usr/include/bits/symverinfo.h /usr/include/bits/sigset.h \
+  /usr/include/bits/types.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/stddef.h \
+  /usr/include/bits/pthreadtypes.h /usr/include/bits/sched.h \
+  /usr/include/bits/signum.h /usr/include/time.h \
+  /usr/include/bits/siginfo.h /usr/include/bits/sigaction.h \
+  /usr/include/bits/sigcontext.h /usr/include/asm/sigcontext.h \
+  /usr/include/bits/sigstack.h /usr/include/bits/sigthread.h \
+  /usr/include/unistd.h /usr/include/bits/posix_opt.h \
+  /usr/include/bits/confname.h /usr/include/getopt.h \
+  /usr/local/include/roku/cascade/net/CascadeHTTPClient.h \
+  /usr/local/include/roku/cascade/CascadeObject.h \
+  /usr/local/include/roku/cascade/CascadeTypedefs.h \
+  /usr/local/include/roku/cascade/util/CascadeString.h \
+  /usr/local/include/roku/cascade/util/CascadeFileStream.h \
+  /usr/local/include/roku/cascade/util/CascadeStream.h \
+  /usr/local/include/roku/cascade/util/CascadeFile.h \
+  /usr/local/include/roku/cascade/util/CascadeFSObject.h \
+  /usr/include/sys/types.h /usr/include/endian.h \
+  /usr/include/bits/endian.h /usr/include/sys/select.h \
+  /usr/include/bits/select.h /usr/include/bits/time.h \
+  /usr/include/sys/sysmacros.h /usr/include/regex.h \
+  /usr/include/sys/stat.h /usr/include/bits/stat.h ../mxml-2.2.1/mxml.h \
+  /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
+  /usr/include/wchar.h /usr/include/bits/wchar.h /usr/include/gconv.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/stdarg.h \
+  /usr/include/bits/stdio_lim.h /usr/include/stdlib.h \
+  /usr/include/alloca.h /usr/include/string.h /usr/include/ctype.h \
+  /usr/include/errno.h /usr/include/bits/errno.h \
+  /usr/include/linux/errno.h /usr/include/asm/errno.h read_tags.h \
+  /usr/local/include/roku/cascade/graphics/CascadeBitmap.h \
+  /usr/local/include/roku/cascade/graphics/CascadeDims.h \
+  /usr/local/include/roku/cascade/graphics/CascadePoint.h \
+  /usr/local/include/roku/cascade/graphics/CascadeRect.h \
+  /usr/local/include/roku/cascade/graphics/CascadeColor.h \
+  /usr/local/include/roku/cascade/graphics/CascadeFont.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeSharedMemZone.h \
+  SDeskScan.h /usr/include/g++-3/string /usr/include/g++-3/std/bastring.h \
+  /usr/include/g++-3/cstddef /usr/include/g++-3/std/straits.h \
+  /usr/include/g++-3/cctype /usr/include/g++-3/cstring \
+  /usr/include/g++-3/alloc.h /usr/include/g++-3/stl_config.h \
+  /usr/include/g++-3/stl_alloc.h /usr/include/g++-3/iostream.h \
+  /usr/include/g++-3/streambuf.h /usr/include/assert.h \
+  /usr/include/pthread.h /usr/include/sched.h \
+  /usr/include/bits/initspin.h /usr/include/g++-3/iterator \
+  /usr/include/g++-3/stl_relops.h /usr/include/g++-3/stl_iterator.h \
+  /usr/include/g++-3/std/bastring.cc /usr/include/g++-3/vector \
+  /usr/include/g++-3/stl_algobase.h /usr/include/g++-3/stl_pair.h \
+  /usr/include/g++-3/type_traits.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/limits.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/syslimits.h \
+  /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+  /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+  /usr/include/bits/posix2_lim.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/new.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/new \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/exception \
+  /usr/include/g++-3/stl_construct.h \
+  /usr/include/g++-3/stl_uninitialized.h /usr/include/g++-3/stl_vector.h \
+  /usr/include/g++-3/stl_bvector.h /usr/include/g++-3/algorithm \
+  /usr/include/g++-3/stl_tempbuf.h /usr/include/g++-3/stl_algo.h \
+  /usr/include/g++-3/stl_heap.h /usr/local/include/roku/cascade/Cascade.h \
+  /usr/local/include/roku/cascade/app/CascadeApp.h \
+  /usr/local/include/roku/cascade/app/CascadeAppMessageSink.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeMessage.h \
+  /usr/local/include/roku/cascade/util/CascadeTime.h \
+  /usr/local/include/roku/cascade/app/CascadeMountMessage.h \
+  /usr/local/include/roku/cascade/app/CascadePowerMessage.h \
+  /usr/local/include/roku/cascade/app/CascadeTimer.h \
+  /usr/local/include/roku/cascade/app/CascadeWindow.h \
+  /usr/local/include/roku/cascade/graphics/CascadeScreenMessage.h \
+  /usr/local/include/roku/cascade/graphics/CascadeScreen.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeWormhole.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeMessageDefs.h \
+  /usr/local/include/roku/cascade/util/CascadeArray.h \
+  /usr/local/include/roku/cascade/app/CascadeInput.h \
+  /usr/local/include/roku/cascade/app/CascadeKeyDefs.h \
+  /usr/local/include/roku/cascade/app/CascadeMessageBox.h \
+  /usr/local/include/roku/cascade/widgets/CascadeButtonWidget.h \
+  /usr/local/include/roku/cascade/widgets/CascadeWidget.h \
+  /usr/local/include/roku/cascade/app/CascadePowerLED.h \
+  /usr/local/include/roku/cascade/app/CascadePowerLEDMessage.h \
+  /usr/local/include/roku/cascade/av/CascadeAudioPlaybackDevice.h \
+  /usr/local/include/roku/cascade/av/CascadeMP3Player.h \
+  /usr/local/include/roku/cascade/av/CascadeWAVPlayer.h \
+  /usr/local/include/roku/cascade/av/CascadeMPEGFile.h \
+  /usr/local/include/roku/cascade/av/CascadeMPEGPlayer.h \
+  /usr/local/include/roku/cascade/av/CascadeMPEGPlayerMessage.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeSemLock.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeSharedList.h \
+  /usr/local/include/roku/cascade/interthread/CascadeMonitor.h \
+  /usr/local/include/roku/cascade/interthread/CascadeMutex.h \
+  /usr/local/include/roku/cascade/interthread/CascadeThread.h \
+  /usr/local/include/roku/cascade/net/CascadeUPnP.h \
+  /usr/local/include/roku/cascade/util/CascadeNewArray.h \
+  /usr/local/include/roku/cascade/util/CascadeDirectory.h \
+  /usr/local/include/roku/cascade/util/CascadeDirScanner.h \
+  /usr/local/include/roku/cascade/util/CascadeElapsedTime.h \
+  /usr/local/include/roku/cascade/util/CascadeSettings.h \
+  /usr/local/include/roku/cascade/util/CascadeSpawn.h \
+  /usr/local/include/roku/cascade/util/CascadeTokenArray.h \
+  /usr/local/include/roku/cascade/util/CascadeHashTable.h \
+  /usr/local/include/roku/cascade/widgets/CascadeLabelWidget.h \
+  /usr/local/include/roku/cascade/widgets/CascadePictureWidget.h \
+  /usr/local/include/roku/cascade/widgets/CascadeSpinnerWidget.h \
+  /usr/local/include/roku/cascade/widgets/CascadeVesselPanel.h \
+  /usr/local/include/roku/cascade/util/CascadeDirBrowser.h \
+  /usr/local/include/roku/cascade/util/CascadeVessel.h SDeskLog.h \
+  SDeskScanApp.h SDeskScanNews.h SDeskScanRadio.h SDeskScanGenre.h \
+  SDeskScanSongByTag.h SDeskScanSong.h SDeskDirScanner.h
+$(OBJECT_DIR)/SDeskScanNews.o: ./SDeskScanNews.cpp /usr/include/string.h \
+  /usr/include/features.h /usr/include/sys/cdefs.h \
+  /usr/include/gnu/stubs.h /usr/include/bits/symver.h \
+  /usr/include/bits/symverinfo.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/stddef.h SDeskScan.h \
+  /usr/include/g++-3/string /usr/include/g++-3/std/bastring.h \
+  /usr/include/g++-3/cstddef /usr/include/g++-3/std/straits.h \
+  /usr/include/g++-3/cctype /usr/include/ctype.h \
+  /usr/include/bits/types.h /usr/include/bits/pthreadtypes.h \
+  /usr/include/bits/sched.h /usr/include/endian.h \
+  /usr/include/bits/endian.h /usr/include/g++-3/cstring \
+  /usr/include/g++-3/alloc.h /usr/include/g++-3/stl_config.h \
+  /usr/include/_G_config.h /usr/include/wchar.h /usr/include/bits/wchar.h \
+  /usr/include/gconv.h /usr/include/g++-3/stl_alloc.h \
+  /usr/include/g++-3/iostream.h /usr/include/g++-3/streambuf.h \
+  /usr/include/libio.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/stdarg.h \
+  /usr/include/stdlib.h /usr/include/sys/types.h /usr/include/time.h \
+  /usr/include/sys/select.h /usr/include/bits/select.h \
+  /usr/include/bits/sigset.h /usr/include/bits/time.h \
+  /usr/include/sys/sysmacros.h /usr/include/alloca.h \
+  /usr/include/assert.h /usr/include/pthread.h /usr/include/sched.h \
+  /usr/include/signal.h /usr/include/bits/initspin.h \
+  /usr/include/bits/sigthread.h /usr/include/g++-3/iterator \
+  /usr/include/g++-3/stl_relops.h /usr/include/g++-3/stl_iterator.h \
+  /usr/include/g++-3/std/bastring.cc /usr/include/g++-3/vector \
+  /usr/include/g++-3/stl_algobase.h /usr/include/g++-3/stl_pair.h \
+  /usr/include/g++-3/type_traits.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/limits.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/syslimits.h \
+  /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+  /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+  /usr/include/bits/posix2_lim.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/new.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/new \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/exception \
+  /usr/include/g++-3/stl_construct.h \
+  /usr/include/g++-3/stl_uninitialized.h /usr/include/g++-3/stl_vector.h \
+  /usr/include/g++-3/stl_bvector.h /usr/include/g++-3/algorithm \
+  /usr/include/g++-3/stl_tempbuf.h /usr/include/g++-3/stl_algo.h \
+  /usr/include/g++-3/stl_heap.h /usr/local/include/roku/cascade/Cascade.h \
+  /usr/local/include/roku/cascade/CascadeTypedefs.h \
+  /usr/local/include/roku/cascade/CascadeObject.h \
+  /usr/local/include/roku/cascade/app/CascadeApp.h \
+  /usr/local/include/roku/cascade/app/CascadeAppMessageSink.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeMessage.h \
+  /usr/local/include/roku/cascade/util/CascadeTime.h \
+  /usr/local/include/roku/cascade/util/CascadeString.h \
+  /usr/local/include/roku/cascade/app/CascadeMountMessage.h \
+  /usr/local/include/roku/cascade/app/CascadePowerMessage.h \
+  /usr/local/include/roku/cascade/app/CascadeTimer.h \
+  /usr/local/include/roku/cascade/app/CascadeWindow.h \
+  /usr/local/include/roku/cascade/graphics/CascadeRect.h \
+  /usr/local/include/roku/cascade/graphics/CascadePoint.h \
+  /usr/local/include/roku/cascade/graphics/CascadeBitmap.h \
+  /usr/local/include/roku/cascade/util/CascadeFile.h \
+  /usr/local/include/roku/cascade/util/CascadeFSObject.h \
+  /usr/include/regex.h /usr/include/sys/stat.h /usr/include/bits/stat.h \
+  /usr/local/include/roku/cascade/graphics/CascadeDims.h \
+  /usr/local/include/roku/cascade/graphics/CascadeColor.h \
+  /usr/local/include/roku/cascade/graphics/CascadeFont.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeSharedMemZone.h \
+  /usr/local/include/roku/cascade/graphics/CascadeScreenMessage.h \
+  /usr/local/include/roku/cascade/graphics/CascadeScreen.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeWormhole.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeMessageDefs.h \
+  /usr/local/include/roku/cascade/util/CascadeArray.h \
+  /usr/local/include/roku/cascade/app/CascadeInput.h \
+  /usr/local/include/roku/cascade/app/CascadeKeyDefs.h \
+  /usr/local/include/roku/cascade/app/CascadeMessageBox.h \
+  /usr/local/include/roku/cascade/widgets/CascadeButtonWidget.h \
+  /usr/local/include/roku/cascade/widgets/CascadeWidget.h \
+  /usr/local/include/roku/cascade/app/CascadePowerLED.h \
+  /usr/local/include/roku/cascade/app/CascadePowerLEDMessage.h \
+  /usr/local/include/roku/cascade/av/CascadeAudioPlaybackDevice.h \
+  /usr/local/include/roku/cascade/av/CascadeMP3Player.h \
+  /usr/local/include/roku/cascade/av/CascadeWAVPlayer.h \
+  /usr/local/include/roku/cascade/av/CascadeMPEGFile.h \
+  /usr/local/include/roku/cascade/util/CascadeStream.h \
+  /usr/local/include/roku/cascade/av/CascadeMPEGPlayer.h \
+  /usr/local/include/roku/cascade/av/CascadeMPEGPlayerMessage.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeSemLock.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeSharedList.h \
+  /usr/local/include/roku/cascade/interthread/CascadeMonitor.h \
+  /usr/local/include/roku/cascade/interthread/CascadeMutex.h \
+  /usr/local/include/roku/cascade/interthread/CascadeThread.h \
+  /usr/local/include/roku/cascade/net/CascadeHTTPClient.h \
+  /usr/local/include/roku/cascade/net/CascadeUPnP.h \
+  /usr/local/include/roku/cascade/util/CascadeNewArray.h \
+  /usr/local/include/roku/cascade/util/CascadeDirectory.h \
+  /usr/local/include/roku/cascade/util/CascadeDirScanner.h \
+  /usr/local/include/roku/cascade/util/CascadeElapsedTime.h \
+  /usr/local/include/roku/cascade/util/CascadeSettings.h \
+  /usr/local/include/roku/cascade/util/CascadeSpawn.h \
+  /usr/local/include/roku/cascade/util/CascadeFileStream.h \
+  /usr/local/include/roku/cascade/util/CascadeTokenArray.h \
+  /usr/local/include/roku/cascade/util/CascadeHashTable.h \
+  /usr/local/include/roku/cascade/widgets/CascadeLabelWidget.h \
+  /usr/local/include/roku/cascade/widgets/CascadePictureWidget.h \
+  /usr/local/include/roku/cascade/widgets/CascadeSpinnerWidget.h \
+  /usr/local/include/roku/cascade/widgets/CascadeVesselPanel.h \
+  /usr/local/include/roku/cascade/util/CascadeDirBrowser.h \
+  /usr/local/include/roku/cascade/util/CascadeVessel.h SDeskLog.h \
+  /usr/include/stdio.h /usr/include/bits/stdio_lim.h SDeskScanApp.h \
+  SDeskScanNews.h SDeskScanRadio.h SDeskScanGenre.h SDeskScanSongByTag.h \
+  SDeskScanSong.h
+$(OBJECT_DIR)/read_tags.o: ./read_tags.cpp /usr/include/stdio.h /usr/include/features.h \
+  /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+  /usr/include/bits/symver.h /usr/include/bits/symverinfo.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/stddef.h \
+  /usr/include/bits/types.h /usr/include/bits/pthreadtypes.h \
+  /usr/include/bits/sched.h /usr/include/libio.h /usr/include/_G_config.h \
+  /usr/include/wchar.h /usr/include/bits/wchar.h /usr/include/gconv.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/stdarg.h \
+  /usr/include/bits/stdio_lim.h /usr/include/string.h \
+  /usr/include/malloc.h /usr/include/stdlib.h /usr/include/sys/types.h \
+  /usr/include/time.h /usr/include/endian.h /usr/include/bits/endian.h \
+  /usr/include/sys/select.h /usr/include/bits/select.h \
+  /usr/include/bits/sigset.h /usr/include/bits/time.h \
+  /usr/include/sys/sysmacros.h /usr/include/alloca.h \
+  /usr/include/stdint.h /usr/include/bits/wordsize.h /usr/include/ctype.h \
+  /usr/local/include/roku/cascade/util/CascadeFileStream.h \
+  /usr/local/include/roku/cascade/util/CascadeStream.h \
+  /usr/local/include/roku/cascade/util/CascadeString.h \
+  /usr/local/include/roku/cascade/CascadeObject.h \
+  /usr/local/include/roku/cascade/CascadeTypedefs.h \
+  /usr/local/include/roku/cascade/util/CascadeFile.h \
+  /usr/local/include/roku/cascade/util/CascadeFSObject.h \
+  /usr/include/regex.h /usr/include/sys/stat.h /usr/include/bits/stat.h \
+  /usr/local/include/roku/cascade/util/CascadeMemoryStream.h \
+  /usr/local/include/roku/cascade/graphics/CascadeBitmap.h \
+  /usr/local/include/roku/cascade/graphics/CascadeDims.h \
+  /usr/local/include/roku/cascade/graphics/CascadePoint.h \
+  /usr/local/include/roku/cascade/graphics/CascadeRect.h \
+  /usr/local/include/roku/cascade/graphics/CascadeColor.h \
+  /usr/local/include/roku/cascade/graphics/CascadeFont.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeSharedMemZone.h \
+  /usr/local/include/roku/cascade/util/CascadeJpegFile.h read_tags.h
+$(OBJECT_DIR)/SDeskScanSong.o: ./SDeskScanSong.cpp /usr/include/string.h \
+  /usr/include/features.h /usr/include/sys/cdefs.h \
+  /usr/include/gnu/stubs.h /usr/include/bits/symver.h \
+  /usr/include/bits/symverinfo.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/stddef.h SDeskScan.h \
+  /usr/include/g++-3/string /usr/include/g++-3/std/bastring.h \
+  /usr/include/g++-3/cstddef /usr/include/g++-3/std/straits.h \
+  /usr/include/g++-3/cctype /usr/include/ctype.h \
+  /usr/include/bits/types.h /usr/include/bits/pthreadtypes.h \
+  /usr/include/bits/sched.h /usr/include/endian.h \
+  /usr/include/bits/endian.h /usr/include/g++-3/cstring \
+  /usr/include/g++-3/alloc.h /usr/include/g++-3/stl_config.h \
+  /usr/include/_G_config.h /usr/include/wchar.h /usr/include/bits/wchar.h \
+  /usr/include/gconv.h /usr/include/g++-3/stl_alloc.h \
+  /usr/include/g++-3/iostream.h /usr/include/g++-3/streambuf.h \
+  /usr/include/libio.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/stdarg.h \
+  /usr/include/stdlib.h /usr/include/sys/types.h /usr/include/time.h \
+  /usr/include/sys/select.h /usr/include/bits/select.h \
+  /usr/include/bits/sigset.h /usr/include/bits/time.h \
+  /usr/include/sys/sysmacros.h /usr/include/alloca.h \
+  /usr/include/assert.h /usr/include/pthread.h /usr/include/sched.h \
+  /usr/include/signal.h /usr/include/bits/initspin.h \
+  /usr/include/bits/sigthread.h /usr/include/g++-3/iterator \
+  /usr/include/g++-3/stl_relops.h /usr/include/g++-3/stl_iterator.h \
+  /usr/include/g++-3/std/bastring.cc /usr/include/g++-3/vector \
+  /usr/include/g++-3/stl_algobase.h /usr/include/g++-3/stl_pair.h \
+  /usr/include/g++-3/type_traits.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/limits.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/syslimits.h \
+  /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+  /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+  /usr/include/bits/posix2_lim.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/new.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/new \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/exception \
+  /usr/include/g++-3/stl_construct.h \
+  /usr/include/g++-3/stl_uninitialized.h /usr/include/g++-3/stl_vector.h \
+  /usr/include/g++-3/stl_bvector.h /usr/include/g++-3/algorithm \
+  /usr/include/g++-3/stl_tempbuf.h /usr/include/g++-3/stl_algo.h \
+  /usr/include/g++-3/stl_heap.h /usr/local/include/roku/cascade/Cascade.h \
+  /usr/local/include/roku/cascade/CascadeTypedefs.h \
+  /usr/local/include/roku/cascade/CascadeObject.h \
+  /usr/local/include/roku/cascade/app/CascadeApp.h \
+  /usr/local/include/roku/cascade/app/CascadeAppMessageSink.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeMessage.h \
+  /usr/local/include/roku/cascade/util/CascadeTime.h \
+  /usr/local/include/roku/cascade/util/CascadeString.h \
+  /usr/local/include/roku/cascade/app/CascadeMountMessage.h \
+  /usr/local/include/roku/cascade/app/CascadePowerMessage.h \
+  /usr/local/include/roku/cascade/app/CascadeTimer.h \
+  /usr/local/include/roku/cascade/app/CascadeWindow.h \
+  /usr/local/include/roku/cascade/graphics/CascadeRect.h \
+  /usr/local/include/roku/cascade/graphics/CascadePoint.h \
+  /usr/local/include/roku/cascade/graphics/CascadeBitmap.h \
+  /usr/local/include/roku/cascade/util/CascadeFile.h \
+  /usr/local/include/roku/cascade/util/CascadeFSObject.h \
+  /usr/include/regex.h /usr/include/sys/stat.h /usr/include/bits/stat.h \
+  /usr/local/include/roku/cascade/graphics/CascadeDims.h \
+  /usr/local/include/roku/cascade/graphics/CascadeColor.h \
+  /usr/local/include/roku/cascade/graphics/CascadeFont.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeSharedMemZone.h \
+  /usr/local/include/roku/cascade/graphics/CascadeScreenMessage.h \
+  /usr/local/include/roku/cascade/graphics/CascadeScreen.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeWormhole.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeMessageDefs.h \
+  /usr/local/include/roku/cascade/util/CascadeArray.h \
+  /usr/local/include/roku/cascade/app/CascadeInput.h \
+  /usr/local/include/roku/cascade/app/CascadeKeyDefs.h \
+  /usr/local/include/roku/cascade/app/CascadeMessageBox.h \
+  /usr/local/include/roku/cascade/widgets/CascadeButtonWidget.h \
+  /usr/local/include/roku/cascade/widgets/CascadeWidget.h \
+  /usr/local/include/roku/cascade/app/CascadePowerLED.h \
+  /usr/local/include/roku/cascade/app/CascadePowerLEDMessage.h \
+  /usr/local/include/roku/cascade/av/CascadeAudioPlaybackDevice.h \
+  /usr/local/include/roku/cascade/av/CascadeMP3Player.h \
+  /usr/local/include/roku/cascade/av/CascadeWAVPlayer.h \
+  /usr/local/include/roku/cascade/av/CascadeMPEGFile.h \
+  /usr/local/include/roku/cascade/util/CascadeStream.h \
+  /usr/local/include/roku/cascade/av/CascadeMPEGPlayer.h \
+  /usr/local/include/roku/cascade/av/CascadeMPEGPlayerMessage.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeSemLock.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeSharedList.h \
+  /usr/local/include/roku/cascade/interthread/CascadeMonitor.h \
+  /usr/local/include/roku/cascade/interthread/CascadeMutex.h \
+  /usr/local/include/roku/cascade/interthread/CascadeThread.h \
+  /usr/local/include/roku/cascade/net/CascadeHTTPClient.h \
+  /usr/local/include/roku/cascade/net/CascadeUPnP.h \
+  /usr/local/include/roku/cascade/util/CascadeNewArray.h \
+  /usr/local/include/roku/cascade/util/CascadeDirectory.h \
+  /usr/local/include/roku/cascade/util/CascadeDirScanner.h \
+  /usr/local/include/roku/cascade/util/CascadeElapsedTime.h \
+  /usr/local/include/roku/cascade/util/CascadeSettings.h \
+  /usr/local/include/roku/cascade/util/CascadeSpawn.h \
+  /usr/local/include/roku/cascade/util/CascadeFileStream.h \
+  /usr/local/include/roku/cascade/util/CascadeTokenArray.h \
+  /usr/local/include/roku/cascade/util/CascadeHashTable.h \
+  /usr/local/include/roku/cascade/widgets/CascadeLabelWidget.h \
+  /usr/local/include/roku/cascade/widgets/CascadePictureWidget.h \
+  /usr/local/include/roku/cascade/widgets/CascadeSpinnerWidget.h \
+  /usr/local/include/roku/cascade/widgets/CascadeVesselPanel.h \
+  /usr/local/include/roku/cascade/util/CascadeDirBrowser.h \
+  /usr/local/include/roku/cascade/util/CascadeVessel.h SDeskLog.h \
+  /usr/include/stdio.h /usr/include/bits/stdio_lim.h SDeskScanApp.h \
+  SDeskScanNews.h SDeskScanRadio.h SDeskScanGenre.h SDeskScanSongByTag.h \
+  SDeskScanSong.h
+$(OBJECT_DIR)/SDeskScanApp.o: ./SDeskScanApp.cpp /usr/include/string.h \
+  /usr/include/features.h /usr/include/sys/cdefs.h \
+  /usr/include/gnu/stubs.h /usr/include/bits/symver.h \
+  /usr/include/bits/symverinfo.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/stddef.h SDeskScan.h \
+  /usr/include/g++-3/string /usr/include/g++-3/std/bastring.h \
+  /usr/include/g++-3/cstddef /usr/include/g++-3/std/straits.h \
+  /usr/include/g++-3/cctype /usr/include/ctype.h \
+  /usr/include/bits/types.h /usr/include/bits/pthreadtypes.h \
+  /usr/include/bits/sched.h /usr/include/endian.h \
+  /usr/include/bits/endian.h /usr/include/g++-3/cstring \
+  /usr/include/g++-3/alloc.h /usr/include/g++-3/stl_config.h \
+  /usr/include/_G_config.h /usr/include/wchar.h /usr/include/bits/wchar.h \
+  /usr/include/gconv.h /usr/include/g++-3/stl_alloc.h \
+  /usr/include/g++-3/iostream.h /usr/include/g++-3/streambuf.h \
+  /usr/include/libio.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/stdarg.h \
+  /usr/include/stdlib.h /usr/include/sys/types.h /usr/include/time.h \
+  /usr/include/sys/select.h /usr/include/bits/select.h \
+  /usr/include/bits/sigset.h /usr/include/bits/time.h \
+  /usr/include/sys/sysmacros.h /usr/include/alloca.h \
+  /usr/include/assert.h /usr/include/pthread.h /usr/include/sched.h \
+  /usr/include/signal.h /usr/include/bits/initspin.h \
+  /usr/include/bits/sigthread.h /usr/include/g++-3/iterator \
+  /usr/include/g++-3/stl_relops.h /usr/include/g++-3/stl_iterator.h \
+  /usr/include/g++-3/std/bastring.cc /usr/include/g++-3/vector \
+  /usr/include/g++-3/stl_algobase.h /usr/include/g++-3/stl_pair.h \
+  /usr/include/g++-3/type_traits.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/limits.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/syslimits.h \
+  /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+  /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+  /usr/include/bits/posix2_lim.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/new.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/new \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/exception \
+  /usr/include/g++-3/stl_construct.h \
+  /usr/include/g++-3/stl_uninitialized.h /usr/include/g++-3/stl_vector.h \
+  /usr/include/g++-3/stl_bvector.h /usr/include/g++-3/algorithm \
+  /usr/include/g++-3/stl_tempbuf.h /usr/include/g++-3/stl_algo.h \
+  /usr/include/g++-3/stl_heap.h /usr/local/include/roku/cascade/Cascade.h \
+  /usr/local/include/roku/cascade/CascadeTypedefs.h \
+  /usr/local/include/roku/cascade/CascadeObject.h \
+  /usr/local/include/roku/cascade/app/CascadeApp.h \
+  /usr/local/include/roku/cascade/app/CascadeAppMessageSink.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeMessage.h \
+  /usr/local/include/roku/cascade/util/CascadeTime.h \
+  /usr/local/include/roku/cascade/util/CascadeString.h \
+  /usr/local/include/roku/cascade/app/CascadeMountMessage.h \
+  /usr/local/include/roku/cascade/app/CascadePowerMessage.h \
+  /usr/local/include/roku/cascade/app/CascadeTimer.h \
+  /usr/local/include/roku/cascade/app/CascadeWindow.h \
+  /usr/local/include/roku/cascade/graphics/CascadeRect.h \
+  /usr/local/include/roku/cascade/graphics/CascadePoint.h \
+  /usr/local/include/roku/cascade/graphics/CascadeBitmap.h \
+  /usr/local/include/roku/cascade/util/CascadeFile.h \
+  /usr/local/include/roku/cascade/util/CascadeFSObject.h \
+  /usr/include/regex.h /usr/include/sys/stat.h /usr/include/bits/stat.h \
+  /usr/local/include/roku/cascade/graphics/CascadeDims.h \
+  /usr/local/include/roku/cascade/graphics/CascadeColor.h \
+  /usr/local/include/roku/cascade/graphics/CascadeFont.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeSharedMemZone.h \
+  /usr/local/include/roku/cascade/graphics/CascadeScreenMessage.h \
+  /usr/local/include/roku/cascade/graphics/CascadeScreen.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeWormhole.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeMessageDefs.h \
+  /usr/local/include/roku/cascade/util/CascadeArray.h \
+  /usr/local/include/roku/cascade/app/CascadeInput.h \
+  /usr/local/include/roku/cascade/app/CascadeKeyDefs.h \
+  /usr/local/include/roku/cascade/app/CascadeMessageBox.h \
+  /usr/local/include/roku/cascade/widgets/CascadeButtonWidget.h \
+  /usr/local/include/roku/cascade/widgets/CascadeWidget.h \
+  /usr/local/include/roku/cascade/app/CascadePowerLED.h \
+  /usr/local/include/roku/cascade/app/CascadePowerLEDMessage.h \
+  /usr/local/include/roku/cascade/av/CascadeAudioPlaybackDevice.h \
+  /usr/local/include/roku/cascade/av/CascadeMP3Player.h \
+  /usr/local/include/roku/cascade/av/CascadeWAVPlayer.h \
+  /usr/local/include/roku/cascade/av/CascadeMPEGFile.h \
+  /usr/local/include/roku/cascade/util/CascadeStream.h \
+  /usr/local/include/roku/cascade/av/CascadeMPEGPlayer.h \
+  /usr/local/include/roku/cascade/av/CascadeMPEGPlayerMessage.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeSemLock.h \
+  /usr/local/include/roku/cascade/interprocess/CascadeSharedList.h \
+  /usr/local/include/roku/cascade/interthread/CascadeMonitor.h \
+  /usr/local/include/roku/cascade/interthread/CascadeMutex.h \
+  /usr/local/include/roku/cascade/interthread/CascadeThread.h \
+  /usr/local/include/roku/cascade/net/CascadeHTTPClient.h \
+  /usr/local/include/roku/cascade/net/CascadeUPnP.h \
+  /usr/local/include/roku/cascade/util/CascadeNewArray.h \
+  /usr/local/include/roku/cascade/util/CascadeDirectory.h \
+  /usr/local/include/roku/cascade/util/CascadeDirScanner.h \
+  /usr/local/include/roku/cascade/util/CascadeElapsedTime.h \
+  /usr/local/include/roku/cascade/util/CascadeSettings.h \
+  /usr/local/include/roku/cascade/util/CascadeSpawn.h \
+  /usr/local/include/roku/cascade/util/CascadeFileStream.h \
+  /usr/local/include/roku/cascade/util/CascadeTokenArray.h \
+  /usr/local/include/roku/cascade/util/CascadeHashTable.h \
+  /usr/local/include/roku/cascade/widgets/CascadeLabelWidget.h \
+  /usr/local/include/roku/cascade/widgets/CascadePictureWidget.h \
+  /usr/local/include/roku/cascade/widgets/CascadeSpinnerWidget.h \
+  /usr/local/include/roku/cascade/widgets/CascadeVesselPanel.h \
+  /usr/local/include/roku/cascade/util/CascadeDirBrowser.h \
+  /usr/local/include/roku/cascade/util/CascadeVessel.h SDeskLog.h \
+  /usr/include/stdio.h /usr/include/bits/stdio_lim.h SDeskScanApp.h \
+  SDeskScanNews.h SDeskScanRadio.h SDeskScanGenre.h SDeskScanSongByTag.h \
+  SDeskScanSong.h
+$(OBJECT_DIR)/SDeskLog.o: ./SDeskLog.cpp /usr/include/string.h /usr/include/features.h \
+  /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
+  /usr/include/bits/symver.h /usr/include/bits/symverinfo.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/stddef.h \
+  /usr/lib/gcc-lib/mipsel-redhat-linux/2.96/include/stdarg.h SDeskLog.h \
+  /usr/include/stdio.h /usr/include/bits/types.h \
+  /usr/include/bits/pthreadtypes.h /usr/include/bits/sched.h \
+  /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+  /usr/include/bits/wchar.h /usr/include/gconv.h \
+  /usr/include/bits/stdio_lim.h /usr/include/time.h \
+  /usr/include/bits/time.h

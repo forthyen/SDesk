@@ -1,0 +1,18 @@
+Quick instructions on how to build this. This is pretty involved stuff, so
+the expectation is that you are familiar with building software:
+
+1) You need the general Roku development kit.
+2) Tweak the Makefiles in SDeskScan and SDesk to point to the correct
+   locations.
+3) Run make in SDeskScan while on the Roku
+4) Run make in SDesk while on the Roku
+5) To build a distribution file, run make on a linux box (look for the 
+   deploy target to see what get's packaged up).
+
+Have FUN :-)! Anyone is welcome to use this code in any way they wish, as
+long as it is lagal. Feel free to continue to develop/maintain it. 
+Unfortunately, my Roku burned out, so I have no means to do any additional
+support/development anymore.
+
+Notes: As you can see in the Makefiles, there external packages which I am
+including in this package (vlc, mxml and id3lib.

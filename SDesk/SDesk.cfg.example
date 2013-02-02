@@ -1,0 +1,135 @@
+mplay
+/mnt/smb/terra/media/Apps/Develop/src/SDesk//myapps/MPlay.app
+radioplayer
+/mnt/smb/terra/media/Apps/Develop/src/SDesk/apps/vlc.sdesk
+custominfo
+/mnt/smb/terra/media/Apps/Develop/src/SDesk//apps/switchVideo
+nosecurity
+exitisup
+exitallowed
+customrotate
+stopplay
+customff
+apps/nextsong
+customfb
+apps/prevsong
+excluded
+System Volume Information
+excluded
+Recycle
+excluded
+folder.jpg
+excluded
+cover.jpg
+musicextension
+.aac
+musicextension
+.aiff
+musicextension
+.mp3
+musicextension
+.wav
+pictureextension
+.gif
+pictureextension
+.jpg
+pictureextension
+.jpeg
+videoextension
+.mpg
+videoextension
+.mpeg
+videoextension
+.vob
+favorite
+%songs
+Add To Song Favorites
+/mnt/smb/terra/media/Apps/Develop/src/SDesk//menus/Song Favorites.mnu
+favorite
+%pictures
+Add To Picture Favorites
+/mnt/smb/terra/media/Apps/Develop/src/SDesk//menus/Picture Favorites.mnu
+favorite
+%movies
+Add To Action & Adventure
+/mnt/smb/terra/media/Apps/Develop/src/SDesk//menus/Action _ Adventure.mnu
+favorite
+%movies
+Add To Anime & Animation
+/mnt/smb/terra/media/Apps/Develop/src/SDesk//menus/Anime _ Animation.mnu
+favorite
+%movies
+Add To Children & Family
+/mnt/smb/terra/media/Apps/Develop/src/SDesk//menus/Children _ Family.mnu
+favorite
+%movies
+Add To Classics
+/mnt/smb/terra/media/Apps/Develop/src/SDesk//menus/Classics.mnu
+favorite
+%movies
+Add To Comedy
+/mnt/smb/terra/media/Apps/Develop/src/SDesk//menus/Comedy.mnu
+favorite
+%movies
+Add To Documentary
+/mnt/smb/terra/media/Apps/Develop/src/SDesk//menus/Documentary.mnu
+favorite
+%movies
+Add To Drama
+/mnt/smb/terra/media/Apps/Develop/src/SDesk//menus/Drama.mnu
+favorite
+%movies
+Add To Foreign
+/mnt/smb/terra/media/Apps/Develop/src/SDesk//menus/Foreign.mnu
+favorite
+%movies
+Add To Home Videos
+/mnt/smb/terra/media/Apps/Develop/src/SDesk//menus/Home Videos.mnu
+favorite
+%movies
+Add To Horror
+/mnt/smb/terra/media/Apps/Develop/src/SDesk//menus/Horror.mnu
+favorite
+%movies
+Add To Independent
+/mnt/smb/terra/media/Apps/Develop/src/SDesk//menus/Independent.mnu
+favorite
+%movies
+Add To Music & Musicals
+/mnt/smb/terra/media/Apps/Develop/src/SDesk//menus/Music _ Musicals.mnu
+favorite
+%movies
+Add To Other
+/mnt/smb/terra/media/Apps/Develop/src/SDesk//menus/Other.mnu
+favorite
+%movies
+Add To Romance
+/mnt/smb/terra/media/Apps/Develop/src/SDesk//menus/Romance.mnu
+favorite
+%movies
+Add To Sci-Fi & Fantasy
+/mnt/smb/terra/media/Apps/Develop/src/SDesk//menus/Sci-Fi _ Fantasy.mnu
+favorite
+%movies
+Add To Sports
+/mnt/smb/terra/media/Apps/Develop/src/SDesk//menus/Sports.mnu
+favorite
+%movies
+Add To Television
+/mnt/smb/terra/media/Apps/Develop/src/SDesk//menus/Television.mnu
+favorite
+%movies
+Add To Thrillers
+/mnt/smb/terra/media/Apps/Develop/src/SDesk//menus/Thrillers.mnu
+favorite
+%radios
+Add To Radio Favorites
+/mnt/smb/terra/media/Apps/Develop/src/SDesk//menus/Radio Favorites.mnu
+favorite
+%radios
+Add To Stations
+/mnt/smb/terra/media/Apps/Develop/src/SDesk//menus/Stations.mnu
+favorite
+%slideshow
+Add To Opas Slideshow
+/mnt/smb/terra/media/Apps/Develop/src/SDesk//menus/Opas Slideshow.mnu

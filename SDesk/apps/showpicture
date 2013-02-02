@@ -1,0 +1,24 @@
+#!/bin/sh
+
+echo "showpicture $1 $2" > /tmp/showpicture.log
+
+case `/usr/bin/basename $1` in
+    *)
+        IMAGE_DIR="`/usr/bin/dirname \"$2\"`"
+
+        RESULT="`/usr/local/bin/ecp photoApp IMAGEDIR \"$IMAGE_DIR\"`"
+        echo "showpicture $RESULT" >> /tmp/showpicture.log
+        if [ "$RESULT" != "photoApp: ok" ]; then
+            /usr/local/bin/photo -p &
+            echo "showpicture started $?" >> /tmp/showpicture.log
+            /bin/sleep 2
+        fi
+
+        /usr/local/bin/ecp photoApp IMAGEDIR "$IMAGE_DIR"
+        /usr/local/bin/ecp photoApp FIT_MODE smart
+        /usr/local/bin/ecp photoApp DISPLAY_IMAGE "$2"
+        ;;
+esac
+
+# eof
+

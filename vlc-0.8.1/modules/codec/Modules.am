@@ -1,0 +1,25 @@
+# Disabled modules
+EXTRA_DIST += dv.c xvid.c
+
+SOURCES_a52 = a52.c
+SOURCES_cinepak = cinepak.c
+SOURCES_dts = dts.c
+SOURCES_flacdec = flac.c
+SOURCES_lpcm = lpcm.c
+SOURCES_araw = araw.c
+SOURCES_vorbis = vorbis.c
+SOURCES_tarkin = tarkin.c
+SOURCES_theora = theora.c
+SOURCES_tremor = vorbis.c
+SOURCES_speex = speex.c
+SOURCES_adpcm = adpcm.c
+SOURCES_mpeg_audio = mpeg_audio.c
+SOURCES_libmpeg2 = libmpeg2.c
+SOURCES_rawvideo = rawvideo.c
+SOURCES_quicktime = quicktime.c
+SOURCES_subsdec = subsdec.c
+SOURCES_faad = faad.c
+SOURCES_dvbsub = dvbsub.c
+SOURCES_mash = mash.cpp
+SOURCES_x264 = x264.c
+SOURCES_toolame = toolame.c

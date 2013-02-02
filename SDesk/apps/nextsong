@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo "nextsong" > /tmp/nextsong.log
+
+/usr/local/bin/ecp sonicaApp next
+/usr/local/bin/ecp mp3player NEXT
+
+#eof

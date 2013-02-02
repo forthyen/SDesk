@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo "clearvideoqueue" > /tmp/clearvideoqueue.log
+
+if [ -f /tmp/videoqueue ]; then
+    /bin/rm -f /tmp/videoqueue >> /tmp/clearvideoqueue.log
+fi
+
+# eof
+

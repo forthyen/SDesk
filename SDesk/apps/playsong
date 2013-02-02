@@ -1,0 +1,28 @@
+#!/bin/sh
+
+echo "playsong $1 $2" > /tmp/playsong.log
+
+case `/usr/bin/basename $1` in
+    'sonica')
+        RESULT=`/usr/local/bin/ecp sonicaApp append $2`
+        echo "playsong sonica $RESULT" >> /tmp/playsong.log
+        if [ "$RESULT" != "sonicaApp: file appended" ]; then
+            /usr/local/bin/ecp mp3player QUIT
+            echo "\"$1\" -b -f \"$2\" &" >> /tmp/playsong.log
+            "$1" -b -f "$2" &
+            echo "playsong $?" >> /tmp/playsong.log
+        fi
+        ;;
+    *)
+        RESULT=`/usr/local/bin/ecp mp3player APPEND $2`
+        echo "playsong listen $RESULT" >> /tmp/playsong.log
+        if [ "$RESULT" != "mp3player: file appended" ]; then
+            /usr/local/bin/ecp sonicaApp exit
+            /usr/local/bin/mp3player --repeat=all "$2" &
+            echo "playsong $?" >> /tmp/playsong.log
+        fi
+        ;;
+esac
+
+# eof
+

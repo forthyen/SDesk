@@ -1,0 +1,16 @@
+#!/bin/sh
+
+echo "showplaylist $1" > /tmp/showplaylist.log
+
+rm -f /tmp/showplaylist
+case `/usr/bin/basename $1` in
+    'sonica')
+        echo "/usr/local/bin/ecp sonicaApp dump" >> /tmp/showplaylist.log
+        /usr/local/bin/ecp sonicaApp dump > /tmp/showplaylist
+        ;;
+    *)
+        echo "Unable to retrieve play list." > /tmp/showplaylist
+        ;;
+esac
+
+# eof

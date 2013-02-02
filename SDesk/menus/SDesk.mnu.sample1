@@ -1,0 +1,50 @@
+%menu
+favorites
+My Favorites
+menus/MyFavorites.mnu
+0
+%menu
+movies
+My Videos
+/mnt/smb/terra/media/Video
+0
+%menu
+songs
+My Music
+/mnt/smb/terra/media/Audio
+0
+%menu
+radios
+My Radio
+menus/Radio/MyRadio.mnu
+0
+%menu
+pictures
+My Pictures
+menus/MyPictures.mnu
+0
+%rssfeed
+My News
+http://rss.news.yahoo.com/rss/topstories
+0
+%menu
+favorites
+My SlideShows
+menus/MySlideShows.mnu
+0
+%application
+My Weather
+/mnt/smb/terra/media/Apps/Develop/src/SDesk/myapps/WeatherSix
+0
+%menu
+apps
+My Applications
+menus/MyApplications.mnu
+0
+%space
+15
+0
+%application
+Stop Music
+apps/stopplay
+0

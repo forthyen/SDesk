@@ -1,0 +1,38 @@
+SOURCES_wxwindows = \
+	wxwindows.cpp \
+	wxwindows.h \
+	interface.cpp \
+	extrapanel.cpp \
+	dialogs.cpp \
+	open.cpp \
+	streamout.cpp \
+	wizard.cpp \
+	streamdata.h \
+	messages.cpp \
+	playlist.cpp \
+	iteminfo.cpp \
+	menus.cpp \
+	preferences.cpp \
+	preferences_widgets.cpp \
+	preferences_widgets.h \
+	timer.cpp \
+	fileinfo.cpp \
+	subtitles.cpp \
+	bookmarks.cpp \
+	video.cpp \
+	$(NULL)
+
+EXTRA_DIST += \
+	bitmaps/stop.xpm \
+	bitmaps/play.xpm \
+	bitmaps/pause.xpm \
+	bitmaps/eject.xpm \
+	bitmaps/prev.xpm \
+	bitmaps/next.xpm \
+	bitmaps/slow.xpm \
+	bitmaps/fast.xpm \
+	bitmaps/playlist.xpm \
+	bitmaps/speaker.xpm \
+	bitmaps/shuffle.xpm \
+	bitmaps/repeat.xpm \
+	bitmaps/loop.xpm

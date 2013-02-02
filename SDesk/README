@@ -1,0 +1,978 @@
+DESCRIPTION
+===========
+SDesk v0.18
+Supported Roku Firmware: 2.0.36 (earlier versions will probably
+                                 work, but I haven't tested that).
+
+WARNING! This application is beta. It is provided "As Is", without any
+explicit or implied warranty. Any damage caused by it is not my 
+responsibility (not that I expect it to cause any damage).
+
+IMPORTANT! When you start the application for the first time, it will
+most likely take several minutes (on my system it takes about 6-7
+minutes) before the menu shows up. This is due to the fact that the
+program will scan through all accessible file systems in an effort
+to identify all directories that contain media and also read the tag 
+information for music files, and now also video files.
+
+
+Copyright 2005-2007, by Sven Delmas.
+
+Please give me your feedback via the Roku third party forum. 
+
+If there is anyone out there with some artistic sense, please feel free
+to provide me with a better background/layout. Pretty much all locations
+for displayed items can be changed through themes/default.theme.
+
+
+This is a replacement/enhancement for the regular Roku interface. It
+provides easy access to all your media and applications. There is
+some integration with other third party applications, such as MPlay
+and Sonica.
+
+Highlights:
+    - Seamless integration of all media types through one UI (pictures,
+      music, video, radio).
+    - Completely customizable menu structure.
+    - Easy favorites/playlist management.
+    - Support for RSS feeds.
+    - Support for multiple users.
+    - Child protection for media content.
+    - Shortcut key bindings for often used functions.
+    - Support for large size video cover art.
+    - Menu item/media types represented with icons.
+    - Display arbitrary status information.
+    - Automatic initial setup (including scanning for radio stations).
+    - Music file tag parsing for tag driven music organization.
+    - Completly customizable menu structure. The application will
+      perform a scan of your filesystems and generate a menu structure
+      based upon that scan. However, feel free to use the various
+      configuration files (described below) to customize the 
+      interface.
+
+
+KNOWN ISSUES
+============
+* The initial menu building may take several minutes (on my system it
+  takes about 6-7 minutes). This is due to the fact that it will scan
+  through all accessible file systems in an effort to identify all
+  directories that contain media and also read the tag information 
+  for music files, and now also video files.
+* For Revision A Roku boxes, you have to have a swap file enabled. Please
+  refer to the relevant Forum article on how to set one up.
+* If you have multiple versions of MPlay, do make sure you check that
+  you are running the correct one. Look into the file SDesk.cfg and
+  search for the mplay entry.
+* Except for applications, all commands that are invoked have to be
+  shell scripts.
+* To run applications, please make sure that execute permission is set.
+* I have found that certain radio stations don't work when playing them
+  through Sonica. It seems that the codec is crashing due to unsupported
+  bit rates. In that case the Roku seems to loose it's SMB shares (I
+  assume this is a side-effect of dumping core... I would like to
+  understand why that is though). It would be nice if there was a way
+  to not crash... not sure what to do abou that...
+
+
+CHANGES
+=======
+from 0.1
+- Added * for entered password characters
+- Renamed vlc to vlc.sdesk to make sure this is the one we find.
+- Changed the command invocation to use /bin/sh, so execute permission
+  is not an issue. This implies that all internal apps are scripts.
+from 0.2
+- Added a warning page, and extra sanity checks for the app.
+- Changed the output location for the log files to the current directory
+  instead the /tmp directory.
+- Changed the directory scan root from /mnt/smb to /mnt, so flash cards
+  are a also searched.
+from 0.3
+- Rebuilt for Roku firmware 2.0.24.
+from 0.4
+- Improved support for DVDs/VOBs.
+from 0.5
+- Enabled .sdthm files for all item types.
+- Added page up and page down capability linked to zoom in and zoom out.
+- Improved DVD VOB scanning.
+- Added excluded configuration item, to suppress specific directory
+  and file names in the browsing windows.
+- Added a flat menu mode, where all media type directories are at one
+  level.
+- Added scanning of radio stations as part of the application.
+from 0.6
+- Added global "security" and "nosecurity" flags to disable the child
+  protection. By default I am now turning off security.
+- Added rss feeds.
+- Improved DVD support, and also the initial scanning.
+- Added resacnning for radio genres.
+from 0.7
+- Added -noresume to the playmovie script. While that is a personal
+  preference, it works better for my primary users (my kids :-).
+from 0.8
+- Added example SDesk.mnu files to show different toplevel menu
+  setups via using the SDesk.cfg option 'menu'.
+- Added support for Sonica.
+- Artpacks (identified by the .artpack file) are now added to the
+  My Slideshows sub menu.
+- Supported media types can now be specified via the config file, 
+  but default to the ones computed at startup time.
+- Items from different drives shoud be sorted correctly in
+  flat mode now.
+- Added instructions on how to make SDesk the default UI. Use with
+  caution.
+- Added next song and previous song capability to the fast forward 
+  and backward buttons.
+- Added support for showing folder.jpg, folder.thm, cover.jpg, cover.thm.
+- Added thumbnail display for pictures. Hmmm... by default this
+  is disabled because the transformation/rescaling is too slow when 
+  browsing. Use the new "showthumb" option to see for yourself :-).
+- Added reading of music tags for generating tag based menus.
+- Added support for showing embedded cover art from music files.
+- Added a nightly run script to perform generic tasks. By default the
+  nightly script will sync the time of the roku, and then rebuild
+  the menu structure.
+- Dropped use of vlc. Radio stations are now played through sonica.
+- Added new %showplaylist menu type to display current play list.
+- Added status bar to show additional information when actions are
+  performed.
+from 0.9
+- Added vlc back in, for cases where sonica is not there or 
+  it doesn't quite work.
+- Fixed a bug in the up/down moving for empty folders.
+- Fixed a bug in the DVD subdirectory detection. It appears
+  that stat is not always working well.
+from 0.10
+- Fixed a bug in the favorites removal code that crashed the app.
+- Included a simple Tcl script to convert .m3u files to .mnu files. This
+  is only to show how I do this. The script will need to be adjusted to
+  the respective environment, and also requires a Tcl installation.
+- Added the ability to remove files from the interface. Add a file
+  called sdesk.remove to a foder, and all files in that folder can
+  be removed. The actual removal is done by the script apps/removefile, 
+  which could be customized if needed. The file removal requires write
+  permission on the smb mount. WARNING!!! The file will be gone
+  permanently, and without any further warning.
+- Set the timer interval to the normal value of 1 hour.
+- Implemented a slightly improved look for the UI (still not very
+  professional, but I am not an artist).
+- Fixed RSS feed parsing (at least for the feeds I know).
+- Added a new menu item type url, which I am using to hit urls on my
+  local web server to trigger actions. In my case I am controling my 
+  x10 devices this way (I have a brief description of my setup below in 
+  case anyone is interested).
+- Added more theme images, a lot of them came from mythtv themes:
+     MythTV itself
+     Titivillus: jdonavan@jdonavan.net (http://www.jdonavan.net/myth)
+- Added a new option called showlittleicons, which will reenable the
+  displaying of the little type icons. This is not set on by default
+  because I like the big icons :-).
+- Added a new option called justsdthm, which means SDesk just
+  looks for .sdthm file for content images. This reduces network
+  traffic (but is off by defaul to not upset folks that use .thm and
+  related files).
+- Added new imagesdir option to specify additional images that
+  do not reside in the directory structure. The file name has to 
+  match the item name to be found.
+from 0.11
+- fixed bug in the scheduling of multiple songs (per album)
+- added help text for certain items to make clear what <Play> will do.
+- fixed aspect ratio for cover art
+- added support for http://www.permanence.com/MPlay/infobuilder.aspx to
+  get a set of parsable dvd information (thanks to the endless). This
+  currently displays the summary underneath the image. Currently the
+  .nfo file has to be right where the movie file is (or the directory 
+  containing the vob files as folder.nfo). Also added a new submenu 
+  item for movies that shows all details. See notes below...
+- Investigated support for .jpg for movie cover art... this isn't really
+  a good idea, as thos files will show up as regular pictures. Instead
+  rename the .jpg files to .thm.
+- Added a new SDeskScan.cfg option %dontoverwritevideofavorites, which
+  allows the protecting of hand modified Genre specific video favorites. By
+  default it is assumed that these are created by scanning the .nfo files.
+- Added %compactrootmenu to SDeskScan.cfg, which moves some menu items
+  into sub menus to produce a more compact root menu.
+- Added %homemanagement to SDeskScan.cfg, which adds a menu item for
+  home management (mainly for my own setup).
+- Added tmpdir option to SDesk.cfg to specify the location for certain
+  temporary files. Usually you don't need to worry about this option.
+from 0.12
+- Added .ts and .ps as supported video extensions.
+- Added a "Rescan videos" menu item to the video menu.
+- Added the ability to play all songs in a favorties list by pressing Play
+  on the favorite list name.
+- Added smallFontSize to the theme options to control text size for
+  the summary portion of the movie display, as well as any other
+  future areas that need to display high density information.
+- Implemented .my scanning.
+from 0.13
+- Fixed scanning of videos to retain the share names
+- Suppressing sequence files that follow the convention of <movie>.002.mpg,
+  where we do expect a leading 0.
+- Added ability to queue multiple movies for playback
+  - Added %playvideoqueue menu entry to play the currently queued movies.
+  - Added %clearvideoqueue menu entry to clear the currently queued movies.
+- Minor adjustments to the generated menu structure
+from 0.14
+- Minor bug fixes to file removal
+from 0.15
+- Reenabled mplay resume
+- Fixed file removing
+- Fixed sonica locating
+- Fixed sonica album playing
+from 0.16
+- Fixed the slideshow handling. It should now be possible to add
+  music and pictures to the slideshow folders (go right on a picure
+  or music item and choose "Add to ...". You can create new slideshow
+  folders by changing the menu definition (I change the MySlideshows.mnu
+  file to add new ones). Choose play in the respective slideshow menu.
+from 0.17
+- added %dobackup option to SdeskScan.cfg to no longer create .save
+  files for newly scanned .mnu files. 
+- now statusdailyhour can be set to -1 to disable the daily script.
+- changed SDeskScan to not create a fresh SDesk.cfg or sdedkdaily if
+  these files already exist (when doing a full scan). So please, if
+  you want to have a clean start, remove these files manually.
+
+
+SETUP
+=====
+WARNING! This app does require some manual tweaking of configuration 
+files to get the most out of it. I am open to suggestions for improving
+the initial setup, but it felt like the tweaking is not that hard (well
+at least for me ;-), and going much beyond what it does today would
+add a lot of work for me (well... and we don't want that... right ;-).
+
+1) Unpack the distribution into a convenient location that is visible 
+   from the Roku. Make sure that you can write to that location from
+   the Roku box.
+2) Make sure that the following external thirdparty applications are
+   installed on your Roku before running SDesk for the first time:
+    a) MPlay (the main video player).
+    b) Sonica (the main music player).
+    c) WeatherSix (optional, but very cool).
+3) When the program is run for the first time, it will scan your
+   currently mounted file systems for applications and media. NOTE: This
+   may take several minutes, depending on the size of your file system. It
+   will then set up the menu structure accordingly. This scan can be
+   done again from the "My Applications/SDesk Setip" menu, but be careful,
+   as that will overwrite any manual changes you made in the configuration
+   files.
+4) After the inital setup you may change the menu files manually. Adding
+   new menus, applications, media, favorite locations etc. Please see the
+   description of the configuration file formats below.
+5) For child protection to work, you need write access to your
+   shares.
+6) The user switching is done under MyApplications. The default password
+   for the super user is "wewe". Passwords are composed of "n", "s", "w"
+   and "e" for the directional buttons on your remote, and are specified
+   in the respective .mnu file.
+7) The themes subdirectory contains a set of default images for the
+   user interface. Feel free to change/add the theme files, please share :-).
+8) The images directory contains additional images that can be used. Make
+   sure the name patches the item you want to represent (up to the last .
+   plus the .sdthm extension), and put the image at the same location
+   as the item that you wish to represent. For menus, you can put the
+   icon where the .mnu file resides.
+
+
+MAKING SDESK THE MAIN UI
+========================
+You can make SDesk start automatically when the Roku is booting. I have
+not made this a UI level change as manipulating that file is
+potentially dangerous and I don't want to mess up peoples systems.
+
+Two solutions:
+
+1) The original Roku UI will be there but if you exit SDesk it is
+   immediately restarted. Adjust the path of SDesk to reflect
+   the actual location of SDesk on your system. Add the following
+   line to /etc/inittab.
+
+::respawn:/mnt/smb/terra/video/SDesk.roku
+
+2) The original will be accessible when you exit SDesk (or if it
+   crashes). Copy SDeskRunOnce into /etc and make sure its permissions
+   are set to executable with "chmod a+x /etc/SDeskRunOnce". Edit
+   SDeskRunOnce to point to the installed SDesk executable. Add the
+   following line to /etc/inittab.
+
+::once:/etc/SDeskRunOnce
+
+
+CREATING A SWAP FILE
+====================
+I am runnig the following script when the Roku starts. I put the
+startswap script into /etc/init.d. Make sure the file has
+execute permission, and also adjust the SWAPDIR location to your
+respective location. Then create symbolic links to /etc/rc3.d as
+such:
+
+ln -s /etc/init.d/startswap /etc/rc3.d/S100startswap
+ln -s /etc/init.d/startswap /etc/rc3.d/K10startswap
+
+Making the swap file creation automatic like this is convenient,
+but do make sure that you do not remove the flash drive unless you
+first call "/etc/init.d/startswap stop".
+
+
+RUNNING DAILY TASKS
+===================
+The sdeskdaily script located in the apps directory will be run once
+every day after midnight. It used to sync the time and to
+rebuild the menus. Feel free to change it any way you want, just
+be aware that a rescan of the filesystem will reset it to its original
+content. Due to large memory consumption I put a '#' in front of the 
+"::respawn:/bin/ntpd -g -n" entry in the /etc/inittab file.
+
+
+OPERATION
+=========
+1) Use left, right, up, down and select to choose items. A set of direction
+   icons on the left will indicate what arrow keys may be used.
+2) The menu button can be used to open sub menus on items (especially
+   useful on directory items).
+3) The select button will perform the default action for the respective
+   item.
+4) The play button will play the currently selected item. If the item is
+   a directory or play list the respective set of pictures and/or songs
+   will be played.
+5) The upper right corner shows the current user name.
+6) Left from the user name, a key icon is displayed if you are in protected
+   mode. This means that specific media may not be played, and that certain
+   applications are not available (like rebooting). The child protection
+   will create a file named after the media file with an added extension
+   of .sdprot.
+7) Left from the protected mode icon there are four status lights. It is
+   possible to run applications that will return 0 for ok, or 1 for failure,
+   which will then affect the color of the status icons. I am using this for
+   example to ping my main file server.
+8) The rotate button is currently preset with the "stopplay" script, which
+   means you can turn off music playback by pressing that button.
+9) You can use larger size cover art for videos, and actually any
+   item in the system. Just create a png file (maximum size is 300x300)
+   at the location of thefile and name it <file>.sdthm. 
+10) The pingterra script is an example for a status display script.
+11) You can use the zoom in and zoom out buttons to page up and down.
+12) By default the setup contains a group of favorites folders for video
+    organized by genre. You can add videos to the different lists by
+    pressing the right arrow button on the respective item. This will show
+    the list of favorites. Select the favorite list to add to and press
+    the right arrow again.
+13) Support for a daily run script (apps/sdeskdaily) that will rebuild
+    the menus and also sync the time (in case ntpd is disabled).
+14) Add a file named sdesk.remove to any directory, and you will see
+    an additional sub menu item to remove the individual files in that
+    directory. 
+
+
+VIDEO INFO FILES
+================
+SDesk can read .nfo, .my and .txt files (all following the same format
+as seen in the nfo files) to provide movie details. The name of the
+.nfo file has to be <BaseName>.nfo (or the other supported extensions),
+where <BaseName> is either the name of the mpg file (minus the .mpg) or
+the name of a subdirectory containg the vob files. Sorry... I am not
+implementing the full blown list of mplay supported file locations for
+the lookup, but this is what I am using, and it works well for me :-).
+
+ 
+CREATING THEME IMAGES
+=====================
+I am using GIMP, with an added alpha channel. That seems to do the trick,
+however I do have to reboot the Roku sometimes between image updates. The
+image area can support images up to 300x300 pixels. 
+
+
+HOME AUTOMATION
+===============
+The folder home automation contains a number of files that that I am using
+to implement home automation at my home. I basically set up my linux box to
+be able to issue X10 commands, set up Apache to have some script that do
+the operations I want, and added the ability to hit urls from SDesk (the
+new %url type).
+* menus/HomeManagement.mnu is an example of the url activation
+  commands. Add a reference to that menu in your top level menus/SDesk.mnu
+  file like this:
+    %menu
+    apps
+    Home Management
+    menus/HomeManagement.mnu
+    0
+* var/www/cgi-bin contains the script that I put into the corresponding 
+  Apache cgi-bin directory. Make sure the files are set executable.
+* I installed ActiveTcl (http://www.activestate.com), as that version of Tcl 
+  has more interesting packages by default. You can probably use the
+  standard Tcl that comes with Linux (make sure you change the cgi scripts
+  so they can find the Tcl executable.
+* I installed x10dev (http://wish.sourceforge.net/index2.html), which will
+  generate /dev/x10 (and the relevant device underneath that directory. I
+  gave everyone write and execute permission on all the devices in there
+  (chmod a+wx /dev/x10/*), so Apache can write to it. I added that in the
+  /etc/init.d/x10.plusb script.
+* I included a script called x10schedule.tcl (and the associated file 
+  commands.tcl) in the var/www/cgi-bin directory. I run that on my server
+  to have repeated tasks happen. This is just a starting point, so whoever
+  feels like spending more time on this, feel free to do so. 
+
+
+TODO
+====
+Next release:
+
+More long term:
+* Testing on different resolutions. If somebody has a free big screen/hdtv
+  for me, I am gladly going to test on that too ;-).
+* Support chapter selection on movies (if mplay would allow for specifiying
+  that on the command line... probably not any time soon :-).
+
+
+CONFIGURATION FILE FORMATS
+==========================
+Please check out the generated files... the basic structure of
+the files should be easily understandable (sorry... no XML... although
+I now have XML available, we are now dealing with lagacy files :-).
+
+
+SDesk.cfg:
+----------
+
+rootmenu
+the file name of the root .mnu file. If it doesn't start with /, SDesk will
+prepend it's current directory (this applies to all path/filename options
+that can be configured). By default name for this file is
+<sdesk path>/menus/SDesk.cfg.
+
+mplay
+the file name of the video play executable. 
+
+radioplayer
+the file name of the executable to use for playing radio. By default
+this will be sonica (if it is found on the fileserver).
+the file name of the  executable.
+
+musicplayer
+the file name of the executable to use for playing music. By default
+this will be /usr/local/bin/mp3player, but it may also be sonica.
+
+pictureviewer
+the file name of the executable to use for showing pictures. By default
+this will be /usr/local/bin/photo.
+
+slideshow
+the file name of the slideshow executable. This script will be called
+with the current directory name as an argument.
+
+playmusic
+the file name for the script used to play music in a directory. This
+script will be called with a directory name.
+
+playradio
+the file name of the radio playing executable. This script will be called
+with the name of sonica and the current file name as arguments.
+
+playmovie
+the file name of the movie playing executable. This script will be called
+with the name of mplay and the current file name as arguments.
+
+playsong
+the file name of the song playing executable. This script will be called
+with the current file name as an argument.
+
+showpicture
+the file name of the picture showing executable. This script will be called
+with the current file name as an argument.
+
+imagesdir
+the edirectory name where additional theme images may be stored. By default
+this is in <sdesk path>/images.
+
+custominfo
+customrotate
+customff
+customfb
+the file name of the scripts that will be invoked for the respective
+remote button (while inside SDesk). The special command name 'stopplay'
+can be used to stop all music.
+
+status[1-4]
+The script to call in order to set the first (through fourth) status
+icon. Returning 0 will set the icon to green, any other value means
+red. No command will leave the icon gray.
+
+status[1-4]interval
+The interval in seconds between invocations.
+
+themefile
+The file name for the theme file. Please only specify the base name,
+and place the theme files and all related files in the themes directory.
+
+security
+Enable the security feature.
+
+nosecurity
+Disable the security feature.
+
+showthumb
+Enable the displaying of picture thumbnail images.
+
+noshowthumb
+Disable the displaying of picture thumbnail images.
+
+exitisup
+The exit button will be used to go to the previous menu.
+
+exitisquit
+The exit button will be used to exit SDesk immediately.
+
+exitallowed
+Allow SDesk to exit.
+
+exitnotallowed
+SDesk can not be exited. This need to be used carefully, but is
+usefull when in protected mode.
+
+protected
+Default the startup to protected mode.
+
+notprotected
+Default the startup to not protected mode.
+
+favorite
+Multiple entries of the various favorite lists. Consists of three lines:
+type (%songs, %movies, %radios, %pictures, %slideshows, %all)
+name (the name to display)
+location (the location of the item)
+
+excluded
+A name to be excluded in the list of files.
+
+musicextension
+A valid music file extension (such as .mp3).
+
+pictureextension
+A valid music file extension (such as .jpg).
+
+videoextension
+A valid music file extension (such as .mpg).
+
+statusdailyhour
+The hour of the day to run the daily update script (00-23). If set to
+-1 the status script is not executed.
+
+showlittleicons
+Show the little icons to the left of the name. This is off by
+default, and is here for supporting the old look and feel.
+
+justsdthm
+Just search for sdthm files for the type/content image. This is mainly
+to reduce fals file lookups over the network. This is not set by default,
+as I assume there are a lot of folks out there that use .thm or cover.jpg
+etc. files.
+
+
+*.mnu
+-----
+If you choose to replace the leading % of an item definition with
+an # you can disable that item.
+
+%application
+Defines an application. Consists of three lines:
+name
+location
+protection (1 = on/0 = off)
+
+%url
+Defines an url. Consists of three lines:
+name
+location
+protection (1 = on/0 = off)
+
+%menu
+Defines a submenu. Consists of four lines:
+type (songs, movies, radios, pictures, favorites, apps, misc)
+name
+location
+protection (1 = on/0 = off)
+
+%movie
+Defines a movie. Consists of three lines:
+name
+location
+protection (1 = on/0 = off)
+
+%dvd
+Defines a DVD. Consists of three lines:
+name
+location
+protection (1 = on/0 = off)
+
+%picture
+Defines a picture. Consists of three lines:
+name
+location
+protection (1 = on/0 = off)
+
+%song
+Defines a song. Consists of three lines:
+name
+location
+protection (1 = on/0 = off)
+
+%radio
+Defines a radio station. Consists of three lines:
+name
+location (url)
+protection (1 = on/0 = off)
+
+%rssfeed
+Defines an rss feed. Consists of three lines:
+name
+location
+protection (1 = on/0 = off)
+
+%user
+Defines a user. Consists of four lines:
+menu item text
+config file location
+user name
+user password (a string containing a combination of "w", "e", "n" or "s").
+
+%rescan
+menu item text
+rescan command line
+protection (1 = on/0 = off)
+
+%stopplay
+menu item text
+
+%showplaylist
+menu item text
+
+%playvideoqueue
+menu item text
+
+%clearvideoqueue
+menu item text
+
+%space
+Defines a spacer. Consists of two lines:
+offset in pixel
+protection (1 = on/0 = off)
+
+
+*.theme
+-------
+
+textRows
+Number of menu item lines per screen.
+
+textCellHeight
+The height of an individual menu item line in pixels.
+
+textCellWidth
+The width of an individual menu item line in pixels.
+
+textTopOffset
+The top offset for the first menu item in pixels.
+
+textLeftOffset
+The left offset for the menu items in pixels.
+
+textRowOffset
+The distance between menu item rows in pixels.
+
+titleCellHeight
+The height of the menu title in pixels.
+
+titleCellWidth
+The width of the menu title in pixels.
+
+titleTopOffset
+The top offset for the title in pixels.
+
+titleLeftOffset
+The left offset for the title in pixels.
+
+userCellHeight
+The height of the user name in pixels.
+
+userCellWidth
+The width of the user name in pixels.
+
+userTopOffset
+The top offset for the user name in pixels.
+
+userLeftOffset
+The left offset for the user name in pixels.
+
+statusMessageCellHeight
+The height of the status message in pixels.
+
+statusMessageCellWidth
+The width of the status message in pixels.
+
+statusMessageTopOffset
+The top offset for the status message in pixels.
+
+statusMessageLeftOffset
+The left offset for the status message in pixels.
+
+lockTopOffset
+The top offset for the lock icon in pixels.
+
+lockLeftOffset
+The left offset for the lock icon in pixels.
+
+statusTopOffset
+The top offset for the status area in pixels.
+
+statusLeftOffset
+The left offset for the status area in pixels.
+
+statusItemWidth
+The width of each individual status item.
+
+normalFontSize
+The font size for normal (unselected) menu items.
+
+smallFontSize
+The font size for small strings, currently used for the
+summary under the movie cover image.
+
+selectedFontSize
+The font size for selected menu items.
+
+titleFontSize
+The font size for the menu title.
+
+userFontSize
+The font size for the user name.
+
+screenWidth
+The screen width.
+
+screenHeight
+The screen height.
+
+imageXOffset
+The x offset for the video cover images.
+
+imageYOffset
+The y offset for the video cover images.
+
+imageWidth
+The maximum width for the video cover images.
+
+imageHeight
+The maximum height for the video cover images.
+
+detailTextXOffset
+The x offset for the detail text.
+
+detailTextYOffset
+The y offset for the detail text.
+
+detailTextWidth
+The maximum width for the detail text.
+
+detailTextHeight
+The maximum height for the detail text.
+
+normR
+Red value for normal (unselected) menu items.
+
+normG
+Green value for normal (unselected) menu items.
+
+normB
+Blue value for normal (unselected) menu items.
+
+normA
+Alpha value for normal (unselected) menu items.
+
+selR
+Red value for selected menu items.
+
+selG
+Green value for selected menu items.
+
+selB
+Blue value for selected menu items.
+
+selA
+Alpha value for selected menu items.
+
+titleR
+Red value for the menu title.
+
+titleG
+Green value for the menu title.
+
+titleB
+Blue value for the menu title.
+
+titleA
+Alpha value for the menu title.
+
+userR
+Red value for the user name.
+
+userG
+Green value for the user name.
+
+userB
+Blue value for the user name.
+
+userA
+Alpha value for the user name.
+
+
+SDeskScan.cfg
+-------------
+This file is used by SDeskScan to customize the scanning process.
+
+%debug
+Run in debug mode. This produces a log file in the sdesk directory
+called sdeskscanlog.
+
+%security
+Enable the security feature.
+
+%nosecurity
+Disable the security feature.
+
+%dobackup
+Create .save files for newly created .mnu files. By default this is
+now off to prevent filesystem overflow.
+
+%dontoverwritevideofavorites
+Prevent SDeskScan from recreating the video favorites files. This is
+useful when you tend to modify the favorites by hand. I have them created
+automatically based upon the .nfo files, which seems to be the easier way.
+
+%defaultfavorites
+Generate the set of default favorites lists.
+
+%nodefaultfavorites
+Do not generate the set of default favorites lists.
+
+%usevlcforradio
+Use vlc to play radio stations.
+
+%usesonicaforradio
+Use sonica to play radio stations.
+
+%pictures
+directory with pictures.
+
+%movies
+directory with movies.
+
+%songs
+directory with music files.
+
+%weathersix
+the executable name for WeatherSix.
+
+%mplay
+the executable name for MPlay.
+
+%radioplayer
+the executable name for the radio player.
+
+%musicplayer
+the file name of the executable to use for playing music. By default
+this will be /usr/local/bin/mp3player, but it may also be sonica.
+
+%pictureviewer
+the file name of the executable to use for showing pictures. By default
+this will be /usr/local/bin/photo.
+
+%application
+name
+location
+protection (1 = on/0 = off)
+
+%rssfeed
+name
+location
+protection (1 = on/0 = off)
+
+%radio
+name
+genre
+location
+
+%favoritelist
+name for a favorite general list (for backward compatibility).
+
+%slideshow
+name for a slideshow list (for backward compatibility).
+
+%favorite_all
+name for a favorite general list.
+
+%favorite_songs
+name for a favorite song list.
+
+%favorite_pictures
+name for a favorite picture list.
+
+%favorite_movies
+name for a favorite movie list.
+
+%favorite_radios
+name for a favorite radio list.
+
+%favorite_slideshows
+name for a favorite slideshow list.
+
+%status[1-4]
+the script to call in order to set the first (through fourth) status
+icon. Returning 0 will set the icon to green, any other value means
+red. No command will leave the icon gray.
+
+%status[1-4]interval
+the interval in seconds between invocations.
+
+%excluded
+a name to be excluded in the list of files.
+
+%musicextension
+a valid music file extension (such as .mp3).
+
+%pictureextension
+a valid music file extension (such as .jpg).
+
+%videoextension
+a valid music file extension (such as .mpg).
+
+%custominfo
+%customrotate
+%customff
+%customfb
+the file name of the scripts that will be invoked for the respective
+remote button (while inside SDesk).
+
+%homemanagement
+add a menu item for home management
+
+%compactrootmenu
+move some of the toplevel menu items into submenus to produce a more
+compact toplevel menu.
+
+
+THANKS
+======
+Special thanks to (the order is arbitrary :-):
+    - The MPlay developers.
+    - The RemoteSim developers.
+    - The sonica developer (bpwwer).
+    - Soiaf for the fast cross file type tag retrieval code.
+    - The id3lib folks for the mp3 v2 tag retrieval code.
+    - The folks from http://www.fasticon.com/ and 
+      http://www.iconarchive.com for the icons.
+    - The vlc developers.
+    - The Roku folks... and a bunch of Roku users (The Endless,
+      soiaf, wincrasher, and many more...)

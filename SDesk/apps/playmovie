@@ -1,0 +1,19 @@
+#!/bin/sh
+
+echo "playmovie $1 $2" > /tmp/playmovie.log
+
+/usr/local/bin/ecp mp3player QUIT
+/usr/local/bin/ecp sonicaApp exit
+touch /tmp/stop.vlc
+if [ -f /tmp/vlc.runs ]; then
+    # There is a vlc running... stop it.
+    touch /tmp/stop.vlc
+    sleep 3
+    touch /tmp/stop.vlc
+fi
+
+# Run MPlay...
+echo "\"$1\" -maxbuffer -nobrowserdelete -noresume -exitatend -FixTS \"$2\"" >> /tmp/playmovie.log
+"$1" -maxbuffer -nobrowserdelete -exitatend -FixTS "$2"
+
+# eof

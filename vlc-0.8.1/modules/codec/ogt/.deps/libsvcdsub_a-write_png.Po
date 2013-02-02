@@ -1,0 +1,4 @@
+libsvcdsub_a-write_png.o libsvcdsub_a-write_png.o: write_png.c \
+  ../../../config.h
+
+../../../config.h:

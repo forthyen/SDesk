@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# We are intentionally not doing a lot of fancy stuff here. I don't
+# want to end up removing more than expected. So we erase the originally
+# requested file, plus info files with the same name and the relevant
+# postfix.
+
+echo "removefile \"$1\" \"$2\"" > /tmp/removefile.log
+
+/bin/rm "$1" >> /tmp/removefile.log 2>&1
+/bin/rm "$2.nfo" >> /tmp/removefile.log 2>&1
+/bin/rm "$2.txt" >> /tmp/removefile.log 2>&1
+/bin/rm "$2.my" >> /tmp/removefile.log 2>&1
+/bin/rm "$2.thm" >> /tmp/removefile.log 2>&1
+/bin/rm "$2.sdthm" >> /tmp/removefile.log 2>&1
+/bin/rm "$2.jpg" >> /tmp/removefile.log 2>&1
+
+# eof
